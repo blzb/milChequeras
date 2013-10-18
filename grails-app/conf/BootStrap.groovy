@@ -5,6 +5,7 @@ class BootStrap {
         def user = new ShiroUser(username: "user123", passwordHash: new Sha256Hash("password").toHex())
         user.addToPermissions("*:*")
         user.save()
+        
     }
     def destroy = {
     }
