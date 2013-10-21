@@ -6,4 +6,7 @@ class Establecimiento {
     String categoria
     static constraints = {
     }
+    String toString(){
+           return nombre
+    }
 }

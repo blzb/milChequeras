@@ -5,4 +5,7 @@ class Cheque {
     static constraints = {
     }
     String texto
+    String toString(){
+           return texto;
+    }
 }

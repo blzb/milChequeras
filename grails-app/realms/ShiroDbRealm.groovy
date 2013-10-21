@@ -3,6 +3,7 @@ import org.apache.shiro.authc.IncorrectCredentialsException
 import org.apache.shiro.authc.UnknownAccountException
 import org.apache.shiro.authc.SimpleAccount
 import org.apache.shiro.authz.permission.WildcardPermission
+import com.lucasian.cheques.*
 
 class ShiroDbRealm {
     static authTokenClass = org.apache.shiro.authc.UsernamePasswordToken
@@ -28,24 +29,32 @@ class ShiroDbRealm {
         }
 
         log.info "Found user '${user.username}' in DB"
+        user.rol.name
 
         // Now check the user's password against the hashed value stored
         // in the database.
-        def account = new SimpleAccount(username, user.passwordHash, "ShiroDbRealm")
+        UserInfo userInfo
+        if(user.rol.name == "empleado"){
+               def empleado = Empleado.findByUsername(user.username)
+               println("ESTA ENTRANDO UN EMPLEADO de la tienda:"+empleado.sucursal.clave)
+               userInfo = new UserInfo(username: user.username, rol: user.rol.name, tienda: empleado.sucursal.clave );
+        }else{
+              userInfo = new UserInfo(username: user.username, rol: user.rol.name );              
+        }        
+        def account = new SimpleAccount(userInfo, user.passwordHash, "ShiroDbRealm")
         if (!credentialMatcher.doCredentialsMatch(authToken, account)) {
             log.info "Invalid password (DB realm)"
             throw new IncorrectCredentialsException("Invalid password for user '${username}'")
         }
-
         return account
     }
 
     def hasRole(principal, roleName) {
         def roles = ShiroUser.withCriteria {
-            roles {
+            rol {
                 eq("name", roleName)
             }
-            eq("username", principal)
+            eq("username", principal.toString())
         }
 
         return roles.size() > 0
@@ -56,7 +65,7 @@ class ShiroDbRealm {
             roles {
                 'in'("name", roles)
             }
-            eq("username", principal)
+            eq("username", principal.toString())
         }
 
         return r.size() == roles.size()
@@ -68,8 +77,8 @@ class ShiroDbRealm {
         //
         // First find all the permissions that the user has that match
         // the required permission's type and project code.
-        def user = ShiroUser.findByUsername(principal)
-        def permissions = user.permissions
+        def user = ShiroUser.findByUsername(principal.toString())
+        def permissions = user.rol.permissions
 
         // Try each of the permissions found and see whether any of
         // them confer the required permission.

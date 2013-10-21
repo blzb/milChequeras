@@ -1,8 +1,11 @@
 package com.lucasian.cheques
 
 class Chequera {
-    String numeroSerie    
-    static belongTo = [serie:Serie, usuario: Usuario]
+    static belongsTo = [serie: Serie, usuario: Usuario]
+    String numeroSerie        
     static constraints = {
+    }
+    String toString(){
+           return numeroSerie
     }
 }

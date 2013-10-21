@@ -37,9 +37,12 @@ class AuthController {
             // will be thrown if the username is unrecognised or the
             // password is incorrect.
             SecurityUtils.subject.login(authToken)
-
-            log.info "Redirecting to '${targetUri}'."
-            redirect(uri: targetUri)
+            if(SecurityUtils.subject.hasRole("empleado")){
+                   redirect(controller: "consulta", action: "index")
+            }else{
+                   redirect(uri: targetUri)
+            }
+            log.info "Redirecting to '${targetUri}'."            
         }
         catch (AuthenticationException ex){
             // Authentication failed, so display the appropriate message

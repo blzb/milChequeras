@@ -7,4 +7,7 @@ class Sucursal {
     String clave    
     static constraints = {
     }
+    String toString(){
+           return "("+clave+")"+direccion
+    }
 }

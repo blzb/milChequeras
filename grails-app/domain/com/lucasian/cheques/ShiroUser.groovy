@@ -1,10 +1,14 @@
+package com.lucasian.cheques
 class ShiroUser {
     String username
     String passwordHash
     
-    static hasMany = [ roles: ShiroRole, permissions: String ]
+    static belongsTo = [rol: Rol]
 
     static constraints = {
         username(nullable: false, blank: false, unique: true)
+    }
+    static mapping = {
+        tablePerHierarchy false
     }
 }
