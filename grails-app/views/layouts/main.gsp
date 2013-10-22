@@ -54,9 +54,9 @@
   <div id="wrapper" class="boxed">
     <!-- start header -->
     <header>			
-      <div class="container">        
+      <div class="container-fluid">        
 
-        <div class="row nomargin">
+        <div class="row-fluid nomargin">
           <div class="span12">
             <div class="headnav">
               <ul>
@@ -79,7 +79,7 @@
 
           </div>
         </div>
-        <div class="row nomargin">
+        <div class="row-fluid nomargin">
           <div class="span4">
             <div class="logo">
               <a class="home" href=""><img src="${resource(dir: 'img', file: 'logo.png')}" alt="" class="logo" style="width: 50%;"/></a>
@@ -106,18 +106,8 @@
                       </ul>
                     </li-->										
                     <li>
-                      <a href="contact.html">Contacto </a>
-                    </li>
-                    <shiro:authenticated>
-                      <li class="dropdown">
-                        <a href="#">Administracion <i class="icon-angle-down"></i></a>
-                        <ul class="dropdown-menu">
-                          <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-                            <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.name}</g:link></li>
-                          </g:each>
-                        </ul>
-                      </li>
-                    </shiro:authenticated>
+                      <a href="#">Contacto </a>
+                    </li>                   
                   </ul>
                 </nav>
               </div><!-- end navigation -->	
@@ -128,10 +118,11 @@
       </div>
     </header>	
     <!-- end header -->
+    <shiro:hasRole name="administrador">
     <section id="content">
-      <div class="container">        
-        <div class="row">
-          <shiro:authenticated>
+      <div class="container-fluid">        
+        <div class="row-fluid">
+          
           <div class="span2">
             <aside class="left-sidebar">
               <div class="widget">
@@ -150,13 +141,16 @@
               </div>	
             </aside>
           </div>
-          </shiro:authenticated>
-          <div class="span10">
+          <div class="span10">          
             <g:layoutBody/>
           </div>
         </div>
       </div>
     </section>
+      </shiro:hasRole>
+    <shiro:lacksRole name="administrador">
+      <g:layoutBody/>
+    </shiro:lacksRole>
     <footer>
       <div class="container">
         <div class="row">

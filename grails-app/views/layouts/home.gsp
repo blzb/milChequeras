@@ -187,18 +187,8 @@
                       </ul>
                     </li-->										
                     <li>
-                      <a href="contact.html">Contacto </a>
-                    </li>
-                    <shiro:authenticated>
-                    <li class="dropdown">
-                      <a href="#">Administracion <i class="icon-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-                          <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.name}</g:link></li>
-                        </g:each>
-                      </ul>
-                    </li>
-                    </shiro:authenticated>
+                      <a href="#">Contacto </a>
+                    </li>                    
                   </ul>
                 </nav>
               </div><!-- end navigation -->	
