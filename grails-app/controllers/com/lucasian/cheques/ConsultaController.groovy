@@ -8,16 +8,20 @@ class ConsultaController {
        }
        def buscar(){           
               def chequera = Chequera.findByNumeroSerie(params.serie)
-              if(SecurityUtils.subject.hasRole("empleado")){
-                     //results = Cheque.executeQuery("from Cheque c where c.serie.chequeras in (:cheq)", [cheq: chequeras])           
-                     def parametros = [claveSucursal: SecurityUtils.subject.principal.tienda, idSerie: chequera.serie.id]
-                     println("LOS PARAMETROS::"+parametros)
-                     def result = Cheque.executeQuery("from Cheque c where c.sucursal.clave = :claveSucursal and c.serie.id = :idSerie",parametros )
-                     [cheques: result, serie: params.serie]
-              }              
+              if(chequera != null){
+                     if(SecurityUtils.subject.hasRole("empleado")){
+                            //results = Cheque.executeQuery("from Cheque c where c.serie.chequeras in (:cheq)", [cheq: chequeras])           
+                            def parametros = [claveSucursal: SecurityUtils.subject.principal.tienda, idSerie: chequera.serie.id]
+                            println("LOS PARAMETROS::"+parametros)
+                            def result = Cheque.executeQuery("from Cheque c where c.sucursal.clave = :claveSucursal and c.serie.id = :idSerie",parametros )
+                            [cheques: result, serie: params.serie]
+                     }              
+              }else{
+                     render(view: "/consulta/index", model: [mensaje: "La chequera no existe"])
+              }
        }
        def usar(){
-              println(params.usar);
+              println(params.usar);       
               if(consultaService.usarCheque(params.usar,params.serie)){
                      [mensaje: "El cheque ha sido usado satisfactoriamente"]
               }else{

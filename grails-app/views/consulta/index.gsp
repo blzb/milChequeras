@@ -27,8 +27,15 @@
       <div class="container-fluid">
         <div class="row-fluid">
           <div class="span12">
+            <g:if test="${mensaje != null}">
+              <div class="alert alert-error">
+			<button type="button" class="close" data-dismiss="alert">×</button>
+			<strong>${mensaje}</strong>
+              </div>
+              
+            </g:if>
             <g:form action="buscar"  class="form-search">    
-              Numero de Serie de la chequera:
+              Numero de Serie de la chequera:              
               <g:textField name="serie" class="input-medium search-query">
               </g:textField>
               <input type="submit" value="Buscar" class="btn">

@@ -31,7 +31,7 @@ environments {
     }
     production {
         dataSource {
-            dbCreate = "update"
+            dbCreate = "create-drop"
             username = "milchequeras"
             password = "milchequeras"
             driverClassName = "com.mysql.jdbc.Driver"
