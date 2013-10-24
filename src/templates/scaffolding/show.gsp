@@ -20,7 +20,7 @@
           <g:link class="btn btn-large btn-theme btn-rounded" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
         </div>				
       </div>		
-      <div class="row-fluid">
+      <!--div class="row-fluid">
         <div class="span12">	
           <ul class="breadcrumb">
             <li><a class="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label"/><i class="icon-home"></i></a> <i class="icon-angle-right"></i></li>
@@ -28,15 +28,15 @@
             <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
           </ul>
         </div>
-      </div>
+      </div-->
     </div>
   </section>
   <section id="content">
     <div class="container-fluid">
       <div class="row-fluid" style="margin-top: 20px;">
         <div id="show-${domainClass.propertyName}" class="content scaffold-show " role="main">
-          <div class="span2"></div>
-          <div class="span8 well"> 
+          
+          <div class="span12 well"> 
             <h1><g:message code="default.show.label" args="[entityName]" /></h1>
             <g:if test="\${flash.message}">
               <div class="message" role="status">\${flash.message}</div>

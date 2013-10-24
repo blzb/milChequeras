@@ -119,40 +119,55 @@
     </header>	
     <!-- end header -->
     <shiro:hasRole name="administrador">
-    <section id="content">
-      <div class="container-fluid">        
-        <div class="row-fluid">
-          
-          <div class="span2">
-            <aside class="left-sidebar">
-              <div class="widget">
-                <ul class="recent" style="text-align: center;">
-                  <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+      <section id="content">
+        <div class="container-fluid">        
+          <div class="row-fluid">
+
+            <div class="span2">
+              <aside class="left-sidebar">
+                <div class="widget">
+                  <ul class="recent" style="text-align: center;">
+
                     <li >                      
                       <h6>
-                        <g:link controller="${c.logicalPropertyName}">
-                          <i class="icon-square icon-beaker icon-64 pull-left"></i>
-<br/>${c.name}
+                        <g:link controller="chequera">
+                          <i class="icon-square icon-tags icon-64 pull-left"></i>
+                          <br/>Chequeras
                         </g:link>
                       </h6>
                     </li>
-                  </g:each>
-                </ul>
-              </div>	
-            </aside>
-          </div>
-          <div class="span10">          
-            <g:layoutBody/>
+                    <li >                      
+                      <h6>
+                        <g:link controller="serie">
+                          <i class="icon-square icon-barcode icon-64 pull-left"></i>
+                          <br/>Series
+                        </g:link>
+                      </h6>
+                    </li>
+                    <li >                      
+                      <h6>
+                        <g:link controller="sucursal">
+                          <i class="icon-square icon-shopping-cart icon-64 pull-left"></i>
+                          <br/>Sucursales
+                        </g:link>
+                      </h6>
+                    </li>
+                  </ul>
+                </div>	
+              </aside>
+            </div>
+            <div class="span10">          
+              <g:layoutBody/>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-      </shiro:hasRole>
+      </section>
+    </shiro:hasRole>
     <shiro:lacksRole name="administrador">
       <g:layoutBody/>
     </shiro:lacksRole>
-    <footer>
-      <div class="container">
+    <footer style="padding: 0px; background-color: white;">
+      <!--div class="container">
         <div class="row">
           <!--div class="span3">
             <div class="widget">
@@ -187,7 +202,7 @@
               </div>
               <div class="clear"></div>
             </div>	
-          </div-->
+          </div>
           <div class="span12">
             <div class="widget">
               <h5 class="widgetheading">Contactanos</h5>
@@ -195,68 +210,68 @@
                 <strong>Magdalena 37</strong>  Colonia del Valle
               </address>				
               <p>
-                <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <i class="icon-envelope-alt"> contacto@lucasianmexico.coms</i>
-</p>
-</div>
-</div>						
-</div>
-</div>
-<div id="sub-footer">
-<div class="container">
-<div class="row">
-<div class="span6">
-<div class="copyright">
-<p><span>&copy; Lucasian Labs 2013 All right reserved. </p>
-</div>
+                <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <i class="icon-envelope-alt"> contactolucasianmexico.coms</i>
+              </p>
+            </div>
+          </div>						
+        </div>
+      </div-->
+      <div id="sub-footer">
+        <div class="container">
+          <div class="row">
+            <div class="span6">
+              <div class="copyright">
+                <p><span>&copy; Lucasian Labs 2013 All right reserved. </p>
+              </div>
 
-</div>
+            </div>
 
-<div class="span6">					
-<ul class="social-network">
-<li><a href="index.html#" data-placement="bottom" title="Facebook"><i class="icon-facebook icon-square"></i></a></li>
-<li><a href="index.html#" data-placement="bottom" title="Twitter"><i class="icon-twitter icon-square"></i></a></li>
-<li><a href="index.html#" data-placement="bottom" title="Linkedin"><i class="icon-linkedin icon-square"></i></a></li>
-<li><a href="index.html#" data-placement="bottom" title="Pinterest"><i class="icon-pinterest icon-square"></i></a></li>
-<li><a href="index.html#" data-placement="bottom" title="Google plus"><i class="icon-google-plus icon-square"></i></a></li>
-</ul>	
+            <div class="span6">					
+              <ul class="social-network">
+                <li><a href="index.html#" data-placement="bottom" title="Facebook"><i class="icon-facebook icon-square"></i></a></li>
+                <li><a href="index.html#" data-placement="bottom" title="Twitter"><i class="icon-twitter icon-square"></i></a></li>
+                <li><a href="index.html#" data-placement="bottom" title="Linkedin"><i class="icon-linkedin icon-square"></i></a></li>
+                <li><a href="index.html#" data-placement="bottom" title="Pinterest"><i class="icon-pinterest icon-square"></i></a></li>
+                <li><a href="index.html#" data-placement="bottom" title="Google plus"><i class="icon-google-plus icon-square"></i></a></li>
+              </ul>	
 
-</div>	
-</div>
-</div>
-</div>			
-</footer>
-</div>
-<a href="index.html#" class="scrollup"><i class="icon-chevron-up icon-square icon-32 active"></i></a>	
+            </div>	
+          </div>
+        </div>
+      </div>			
+    </footer>
+  </div>
+  <a href="index.html#" class="scrollup"><i class="icon-chevron-up icon-square icon-32 active"></i></a>	
 
-<!-- javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="${resource(dir: 'js', file: 'jquery.js')}"></script>
-                  <script src="${resource(dir: 'js', file: 'jquery.easing.1.3.js')}"></script>
-                  <script src="${resource(dir: 'js', file: 'bootstrap.js')}"></script>
-                  <script src="${resource(dir: 'js/jcarousel', file: 'jquery.jcarousel.min.js')}"></script> 	
-                  <script src="${resource(dir: 'js', file: 'jquery.fancybox.pack.js')}"></script> 
-                  <script src="${resource(dir: 'js', file: 'jquery.fancybox-media.js')}"></script> 
-                  <script src="${resource(dir: 'js/google-code-prettify', file: 'prettify.js')}"></script>		
+  <!-- javascript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="${resource(dir: 'js', file: 'jquery.js')}"></script>
+  <script src="${resource(dir: 'js', file: 'jquery.easing.1.3.js')}"></script>
+  <script src="${resource(dir: 'js', file: 'bootstrap.js')}"></script>
+  <script src="${resource(dir: 'js/jcarousel', file: 'jquery.jcarousel.min.js')}"></script> 	
+  <script src="${resource(dir: 'js', file: 'jquery.fancybox.pack.js')}"></script> 
+  <script src="${resource(dir: 'js', file: 'jquery.fancybox-media.js')}"></script> 
+  <script src="${resource(dir: 'js/google-code-prettify', file: 'prettify.js')}"></script>		
 
-                  <script src="${resource(dir: 'js/portfolio', file: 'jquery.quicksand.js')}"></script> 
-                  <script src="${resource(dir: 'js/portfolio', file: 'setting.js')}"></script> 	
-                  <script src="${resource(dir: 'js/tweet', file: 'jquery.tweet.js')}"></script> 
-                  <script src="${resource(dir: 'js', file: 'jquery.flexslider.js')}"></script> 
-                  <script src="${resource(dir: 'js', file: 'jquery.nivo.slider.js')}"></script>
-                  <script src="${resource(dir: 'js', file: 'modernizr.custom.79639.js')}"></script>
-                  <script src="${resource(dir: 'js', file: 'jquery.ba-cond.min.js')}"></script>
-                  <script src="${resource(dir: 'js', file: 'jquery.slitslider.js')}"></script>
-                  <script src="${resource(dir: 'js', file: 'modernizr.custom.28468.js')}"></script>
-                  <script src="${resource(dir: 'js', file: 'jquery.cslider.js')}"></script>
-                  <script src="${resource(dir: 'js', file: 'animate.js')}"></script>
-                  <script src="${resource(dir: 'js', file: 'custom.js')}"></script>
+  <script src="${resource(dir: 'js/portfolio', file: 'jquery.quicksand.js')}"></script> 
+  <script src="${resource(dir: 'js/portfolio', file: 'setting.js')}"></script> 	
+  <script src="${resource(dir: 'js/tweet', file: 'jquery.tweet.js')}"></script> 
+  <script src="${resource(dir: 'js', file: 'jquery.flexslider.js')}"></script> 
+  <script src="${resource(dir: 'js', file: 'jquery.nivo.slider.js')}"></script>
+  <script src="${resource(dir: 'js', file: 'modernizr.custom.79639.js')}"></script>
+  <script src="${resource(dir: 'js', file: 'jquery.ba-cond.min.js')}"></script>
+  <script src="${resource(dir: 'js', file: 'jquery.slitslider.js')}"></script>
+  <script src="${resource(dir: 'js', file: 'modernizr.custom.28468.js')}"></script>
+  <script src="${resource(dir: 'js', file: 'jquery.cslider.js')}"></script>
+  <script src="${resource(dir: 'js', file: 'animate.js')}"></script>
+  <script src="${resource(dir: 'js', file: 'custom.js')}"></script>
 
-                  <script src="${resource(dir: 'js', file: 'jquery.cookie.js')}"></script>
-                  <!--script src="colorpicker/js/colorpicker.js"></script>
-                  <script src="js/optionspanel.js"></script-->
+  <script src="${resource(dir: 'js', file: 'jquery.cookie.js')}"></script>
+  <!--script src="colorpicker/js/colorpicker.js"></script>
+  <script src="js/optionspanel.js"></script-->
 
-                  <script type="text/javascript">
+  <script type="text/javascript">
 $(function() {$('#da-slider').cslider();});
 </script>
 </body>

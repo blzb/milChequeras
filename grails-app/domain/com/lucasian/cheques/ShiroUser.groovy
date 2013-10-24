@@ -7,6 +7,7 @@ class ShiroUser {
 
     static constraints = {
         username(nullable: false, blank: false, unique: true)
+        rol(nullable: true)
     }
     static mapping = {
         tablePerHierarchy false

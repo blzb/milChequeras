@@ -7,7 +7,7 @@ class ConsultaController {
        def index() { 
        }
        def buscar(){           
-              def chequera = Chequera.findByNumeroSerie(params.serie)
+              def chequera = Chequera.findByNumero(params.serie)
               if(chequera != null){
                      if(SecurityUtils.subject.hasRole("empleado")){
                             //results = Cheque.executeQuery("from Cheque c where c.serie.chequeras in (:cheq)", [cheq: chequeras])           
@@ -22,10 +22,11 @@ class ConsultaController {
        }
        def usar(){
               println(params.usar);       
-              if(consultaService.usarCheque(params.usar,params.serie)){
+              def resultado = consultaService.usarCheque(params.usar,params.serie, params.referencia)
+              if(resultado == true){
                      [mensaje: "El cheque ha sido usado satisfactoriamente"]
               }else{
-                     [mensaje: "El cheque que intenta usar ya ha sido usado anteriormente"]
+                     [mensaje: "El cheque que intenta usar ya ha sido usado el "+resultado.dateCreated+" con referencia: "+resultado.referencia]
               }
        }
 }

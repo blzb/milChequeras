@@ -5,6 +5,11 @@ class Empleado extends ShiroUser {
     String puesto
     String email
     String nombre
+    String apellidos
     static constraints = {
+           puesto (nullable: false, blank: false)
+           email (nullable: false, blank: false, email:true)
+           nombre (nullable: false, blank: false)
+           apellidos (nullable: false, blank: false)
     }
 }

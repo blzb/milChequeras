@@ -4,16 +4,15 @@
  */
 import org.apache.shiro.SecurityUtils
 class ShiroSecurityFilters {
-       def filters = {
-              all(uri: "/**") {
+       def filters = {             
+              all(uri:"/**") {
                      before = {
                             // Ignore direct views (e.g. the default main index page).
+                            println("EL CONTROLADOR::"+controllerName)
                             if (!controllerName){
                                    if(SecurityUtils.subject.hasRole("empleado")){
                                           redirect(controller: "consulta", action: "index")
-                                   }else if(SecurityUtils.subject.hasRole("administrador")){
-                                          redirect(controller: "chequera", action:"index")
-                                   }                       
+                                   }                      
                                    return true
                             } 
                             // Access control by convention.

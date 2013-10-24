@@ -15,7 +15,7 @@
     <section id="inner-headline">
       <div class="container-fluid">
         <div class="row-fluid">
-          <div class="span5">
+          <div class="span12">
             <div class="inner-heading">
               <h2>${mensaje}</h2>
             </div>
@@ -27,7 +27,7 @@
       <div class="container-fluid">
         <div class="row-fluid">
           <div class="span12">
-            <g:link action="index" class="btn">Regresar</g:link>
+            <g:link action="index" class="btn btn-large btn-theme btn-rounded">Regresar</g:link>
           </div>
         </div>
       </div>

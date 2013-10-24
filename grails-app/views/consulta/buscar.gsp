@@ -30,7 +30,10 @@
           <div class="span12">
             <g:form action="usar">    
               <input type="hidden" name="serie" value="${serie}"/>
-              <table class="table">
+              <div class="well">
+              <h4>Referencia:</h4> <input type="text" name="referencia" class="span12"/>
+              </div>
+              <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
                     <th>
@@ -54,7 +57,7 @@ ${it.texto}
                 </g:each>
                 </tbody>
               </table>
-              <input type="submit" value="Usar" class="btn">
+              <input type="submit" value="Usar" class="btn btn-large btn-theme btn-rounded">
             </g:form>
           </div>
         </div>

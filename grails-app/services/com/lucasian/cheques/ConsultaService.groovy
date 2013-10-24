@@ -5,14 +5,14 @@ import grails.transaction.Transactional
 @Transactional
 class ConsultaService {
 
-       def usarCheque(idCheque, serie) {
+       def usarCheque(idCheque, serie, referencia) {
               Cheque cheque = Cheque.get(idCheque)
-              Chequera chequera = Chequera.findByNumeroSerie(serie)
+              Chequera chequera = Chequera.findByNumero(serie)
               def results = ChequesUsados.executeQuery("from ChequesUsados cu where cu.chequera = :chequera and cu.cheque= :cheque", [chequera: chequera, cheque:cheque])
-              if(results != null && results.size >0){
-                     return false
+              if(results != null ){
+                     return results
               }else{
-                     ChequesUsados chequesUsados = new ChequesUsados(chequera:chequera, cheque:cheque)
+                     ChequesUsados chequesUsados = new ChequesUsados(chequera:chequera, cheque:cheque, referencia: referencia)
                      chequesUsados.save()
                      return true
               }              

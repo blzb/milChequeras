@@ -20,14 +20,14 @@
           <g:link class="btn btn-large btn-theme btn-rounded" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
         </div>        
       </div>			
-      <div class="row-fluid">
+      <!--div class="row-fluid">
         <div class="span12">	
           <ul class="breadcrumb">
             <li><a class="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label"/><i class="icon-home"></i></a> <i class="icon-angle-right"></i></li>
             <li><a href="#"><g:message code="default.list.label" args="[entityName]" /></a> </li>
           </ul>
         </div>
-      </div>
+      </div-->
     </div>
   </section>
   <section id="content">

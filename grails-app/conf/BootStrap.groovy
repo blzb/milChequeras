@@ -16,21 +16,14 @@ class BootStrap {
         adminUser.setRol(admin)
         adminUser.save()
         
-        def establecimiento = new Establecimiento(categoria: "Alimentos", nombre:"Carl´s Jr.")
-        establecimiento.save()
-        def sucursal = new Sucursal(direccion:"Magdalena 37", clave:"MA2")
-        sucursal.setEstablecimiento(establecimiento)
+        def sucursal = new Sucursal(direccion:"Magdalena 37", clave:"MA2", nombre:"Carls Jr")
         sucursal.save()
-        def empleadoUser = new Empleado(username: "carls", passwordHash: new Sha256Hash("password").toHex(), puesto:"Gerente", email:"angelpmza@gmail.com", nombre:"Carlos Navarrete")
+        def empleadoUser = new Empleado(username: "carls", passwordHash: new Sha256Hash("password").toHex(), puesto:"Gerente", email:"angelpmza@gmail.com", nombre:"Carlos", apellidos:"Navarrete")
         empleadoUser.setRol(empleado);
         empleadoUser.setSucursal(sucursal)
         empleadoUser.save()
         System.out.println("EMPLEADO USER:"+empleadoUser.id)
         
-        def usuarioComun = new Usuario(username:"comun", passwordHash: new Sha256Hash("password").toHex(), nombre:"Angel", apellidos:"Pimentel")
-        usuarioComun.setRol(usuario)
-        usuarioComun.save(flush:true, failOnError:true)
-        System.out.println("USUARIO COMUN:"+usuarioComun.id)
         
         def serie = new Serie(clave: "W2013", nombre:"Invierno 2013", vigencia: new Date())
         serie.save()
@@ -51,9 +44,8 @@ class BootStrap {
         cheque3.setSerie(serie)
         cheque3.save()
         
-        def chequera = new Chequera(numeroSerie:"A12")
+        def chequera = new Chequera(numero:"A12", nombre:"Angel", apellidos:"Pimentel", email:"angelpmza@gmail.com", facebook:"angel.pimentel.90", twitter: "blzb")
         chequera.setSerie(serie)
-        chequera.setUsuario(usuarioComun)
         chequera.save()
         
         
