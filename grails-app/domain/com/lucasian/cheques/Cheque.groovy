@@ -3,10 +3,12 @@ package com.lucasian.cheques
 class Cheque {
     static belongsTo = [serie: Serie, sucursal: Sucursal]    
     static constraints = {
-           texto (nullable: false, blank: false)
+           descripcion (nullable: false, blank: false, maxSize: 255)
+           clave (nullable:false, blanl: false)
     }
-    String texto
+    String descripcion
+    String clave
     String toString(){           
-           return texto;
+           return descripcion;
     }
 }

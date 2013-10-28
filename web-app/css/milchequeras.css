@@ -1,0 +1,39 @@
+/* 
+    Document   : milchequeras
+    Created on : 28/10/2013, 12:38:47 PM
+    Author     : Angel
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.btn {
+     font-weight: bold;  
+}
+.menu:hover {
+       text-decoration: none;
+}
+.icon-square{
+       background-color: #252525;
+}
+.btn-theme{
+       color: #252525;
+}
+.sortable{
+       background-image: url('../img/sortable.gif');
+       background-repeat: no-repeat;
+       background-position:  center right;
+}
+.sorted.desc{
+       background-image: url('../img/sorted-desc.gif');
+}
+
+.sorted.asc{
+       background-image: url('../img/sorted-asc.gif');
+}
+#contenido>#content>.container-fluid{
+       padding-right: 0px;
+       padding-left: 0px;
+}
+.acciones{
+       width:20%;
+}

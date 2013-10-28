@@ -39,7 +39,7 @@ class ChequeController {
 
         request.withFormat {
             form {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'chequeInstance.label', default: 'Cheque'), chequeInstance.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'chequeInstance.label', default: 'Cheque'), chequeInstance.clave])
                 redirect (controller:"serie", action:"edit", id:chequeInstance.serie.id)
             }
             '*' { respond chequeInstance, [status: CREATED] }
@@ -66,7 +66,7 @@ class ChequeController {
 
         request.withFormat {
             form {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Cheque.label', default: 'Cheque'), chequeInstance.id])
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'Cheque.label', default: 'Cheque'), chequeInstance.clave])
                 redirect (controller:"serie", action:"edit", id:chequeInstance.serie.id)
             }
             '*'{ respond chequeInstance, [status: OK] }
@@ -85,7 +85,7 @@ class ChequeController {
 
         request.withFormat {
             form {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Cheque.label', default: 'Cheque'), chequeInstance.id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Cheque.label', default: 'Cheque'), chequeInstance.clave])
                 redirect (controller:"serie", action:"edit", id:idSerie)
             }
             '*'{ render status: NO_CONTENT }

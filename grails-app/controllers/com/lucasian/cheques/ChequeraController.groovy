@@ -39,8 +39,8 @@ class ChequeraController {
 
         request.withFormat {
             form {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'chequeraInstance.label', default: 'Chequera'), chequeraInstance.id])
-                redirect chequeraInstance
+                flash.message = message(code: 'default.created.message', args: [message(code: 'chequeraInstance.label', default: 'Chequera'), chequeraInstance.numero])
+                redirect(view:"index")
             }
             '*' { respond chequeraInstance, [status: CREATED] }
         }
@@ -66,8 +66,8 @@ class ChequeraController {
 
         request.withFormat {
             form {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Chequera.label', default: 'Chequera'), chequeraInstance.id])
-                redirect chequeraInstance
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'Chequera.label', default: 'Chequera'), chequeraInstance.numero])
+                redirect(view:"index")
             }
             '*'{ respond chequeraInstance, [status: OK] }
         }
@@ -85,7 +85,7 @@ class ChequeraController {
 
         request.withFormat {
             form {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Chequera.label', default: 'Chequera'), chequeraInstance.id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Chequera.label', default: 'Chequera'), chequeraInstance.numero])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }

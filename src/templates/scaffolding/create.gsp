@@ -37,7 +37,7 @@
           <div class="span12 well">                       
             <h2><g:message code="default.create.label" args="[entityName]" /></h2>
             <g:if test="\${flash.message}">
-              <div class="message" role="status">\${flash.message}</div>
+              <div class="alert alert-error">                 <button type="button" class="close" data-dismiss="alert">×</button>\${flash.message}</div>
             </g:if>
             <g:hasErrors bean="\${${propertyName}}">
               <ul class="errors" role="alert">

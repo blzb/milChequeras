@@ -30,10 +30,19 @@
           <div class="span12">
             <g:form action="usar">    
               <input type="hidden" name="serie" value="${serie}"/>
-              <div class="well">
-              <h4>Referencia:</h4> <input type="text" name="referencia" class="span12"/>
+              <div class="modal hide fade"  id="myModal" style="border-radius: 12px !important;">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h3>Referencia</h3>
+                </div>
+                <div class="modal-body">
+                  <g:field type="text" name="referencia" required="" class="span12"/>
+                </div>
+                <div class="modal-footer" style="border-radius: 0px 0px 12px 12px;">
+                  <input type="submit" value="Usar" class="btn btn-large btn-theme btn-rounded">
+                </div>
               </div>
-              <table class="table table-striped table-bordered">
+            <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
                     <th>
@@ -48,7 +57,7 @@
                 <g:each in="${cheques}" >
                   <tr>
                     <td>
-${it.texto}
+                      ${it.clave}: ${it.descripcion}
                     </td>
                     <td>
                       <input type="radio" name="usar" value="${it.id}"/>
@@ -56,8 +65,8 @@ ${it.texto}
                   </tr>              
                 </g:each>
                 </tbody>
-              </table>
-              <input type="submit" value="Usar" class="btn btn-large btn-theme btn-rounded">
+              </table>  
+              <a href="#myModal" role="button" class="btn" data-toggle="modal">Usar</a>
             </g:form>
           </div>
         </div>

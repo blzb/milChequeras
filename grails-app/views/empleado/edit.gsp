@@ -10,12 +10,12 @@
   <section id="inner-headline">
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span6">
+        <div class="span9">
           <div class="inner-heading">
             <h2><g:message code="default.list.label" args="[entityName]" /></h2>
           </div>
         </div>	
-        <div class="span6" style="margin-top: 30px;">
+        <div class="span3" style="margin-top: 30px;">
           <g:link class="btn btn-large btn-theme btn-rounded" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
         </div>				
       </div>		
@@ -38,7 +38,7 @@
           <div class="span12 well">  
             <h2><g:message code="default.edit.label" args="[entityName]" /></h2>
             <g:if test="${flash.message}">
-              <div class="message" role="status">${flash.message}</div>
+              <div class="alert alert-info">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
             </g:if>
             <g:hasErrors bean="${empleadoInstance}">
               <ul class="errors" role="alert">

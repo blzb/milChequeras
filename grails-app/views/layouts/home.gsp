@@ -7,7 +7,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Flattern - Flat and trendy bootstrap site template</title>
+    <title>Mil Chequeras</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />    
     <meta name="author" content="" />
@@ -21,6 +21,7 @@
     <link href="${resource(dir: 'css', file: 'cslider.css')}" rel="stylesheet" />
     <link href="${resource(dir: 'css', file: 'style.css')}"  rel="stylesheet" />
     <link href="${resource(dir: 'css', file: 'bg4.css')}"  rel="stylesheet" />
+    <link href="${resource(dir: 'css', file: 'milchequeras.css')}"  rel="stylesheet" />
 
     <!-- Theme skin -->
     <link id="t-colors" href="${resource(dir: 'skins', file: 'default.css')}" rel="stylesheet" />
@@ -83,7 +84,6 @@
                 </li>
                 </shiro:authenticated>
                 <shiro:notAuthenticated>
-                <li><a href="index.html#mySignup" data-toggle="modal"><i class="icon-user"></i>Registro</a></li>
                 <li>
                 <g:link controller="auth" action="index">Entrar
                 </g:link>
@@ -262,11 +262,11 @@
 
 <div class="span6">					
 <ul class="social-network">
-<li><a href="index.html#" data-placement="bottom" title="Facebook"><i class="icon-facebook icon-square"></i></a></li>
-<li><a href="index.html#" data-placement="bottom" title="Twitter"><i class="icon-twitter icon-square"></i></a></li>
-<li><a href="index.html#" data-placement="bottom" title="Linkedin"><i class="icon-linkedin icon-square"></i></a></li>
-<li><a href="index.html#" data-placement="bottom" title="Pinterest"><i class="icon-pinterest icon-square"></i></a></li>
-<li><a href="index.html#" data-placement="bottom" title="Google plus"><i class="icon-google-plus icon-square"></i></a></li>
+<li><a href="https://www.facebook.com/milchequeras" data-placement="bottom" title="Facebook"><i class="icon-facebook icon-square"></i></a></li>
+<li><a href="#" data-placement="bottom" title="Twitter"><i class="icon-twitter icon-square"></i></a></li>
+<li><a href="#" data-placement="bottom" title="Linkedin"><i class="icon-linkedin icon-square"></i></a></li>
+<li><a href="#" data-placement="bottom" title="Pinterest"><i class="icon-pinterest icon-square"></i></a></li>
+<li><a href="#" data-placement="bottom" title="Google plus"><i class="icon-google-plus icon-square"></i></a></li>
 </ul>	
 
 </div>	

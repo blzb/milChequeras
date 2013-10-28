@@ -7,7 +7,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Flattern - Flat and trendy bootstrap site template</title>
+    <title>Mil chequeras</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
     <meta name="author" content="" />
@@ -21,6 +21,7 @@
     <link href="${resource(dir: 'css', file: 'cslider.css')}" rel="stylesheet" />
     <link href="${resource(dir: 'css', file: 'style.css')}"  rel="stylesheet" />
     <link href="${resource(dir: 'css', file: 'bg4.css')}"  rel="stylesheet" />
+    <link href="${resource(dir: 'css', file: 'milchequeras.css')}"  rel="stylesheet" />
 
     <!-- Theme skin -->
     <link id="t-colors" href="${resource(dir: 'skins', file: 'default.css')}" rel="stylesheet" />
@@ -90,7 +91,7 @@
 
               <div class="navigation">
                 <nav>
-                  <ul class="nav topnav">                                            
+                  <ul class="nav topnav visible-phone">                                            
                     <!--li class="dropdown">
                       <a href="#">Opciones <i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
@@ -104,10 +105,20 @@
                           </ul>
                         </li>
                       </ul>
-                    </li-->										
+                    </li>
                     <li>
                       <a href="#">Contacto </a>
-                    </li>                   
+                    </li-->                   
+                    <li>
+                    <g:link controller="chequera">Chequeras</g:link>
+                    </li>
+                    <li>
+                    <g:link controller="serie">Series</g:link>
+                    </li>
+                    <li>
+                    <g:link controller="sucursal">Sucursales</g:link>
+                    </li>
+
                   </ul>
                 </nav>
               </div><!-- end navigation -->	
@@ -123,14 +134,14 @@
         <div class="container-fluid">        
           <div class="row-fluid">
 
-            <div class="span2">
+            <div class="span2 hidden-phone">
               <aside class="left-sidebar">
                 <div class="widget">
                   <ul class="recent" style="text-align: center;">
 
                     <li >                      
                       <h6>
-                        <g:link controller="chequera">
+                        <g:link controller="chequera" class="menu">
                           <i class="icon-square icon-tags icon-64 pull-left"></i>
                           <br/>Chequeras
                         </g:link>
@@ -138,7 +149,7 @@
                     </li>
                     <li >                      
                       <h6>
-                        <g:link controller="serie">
+                        <g:link controller="serie" class="menu">
                           <i class="icon-square icon-barcode icon-64 pull-left"></i>
                           <br/>Series
                         </g:link>
@@ -146,7 +157,7 @@
                     </li>
                     <li >                      
                       <h6>
-                        <g:link controller="sucursal">
+                        <g:link controller="sucursal" class="menu">
                           <i class="icon-square icon-shopping-cart icon-64 pull-left"></i>
                           <br/>Sucursales
                         </g:link>
@@ -156,7 +167,7 @@
                 </div>	
               </aside>
             </div>
-            <div class="span10">          
+            <div class="span10" id="contenido">          
               <g:layoutBody/>
             </div>
           </div>
@@ -169,53 +180,53 @@
     <footer style="padding: 0px; background-color: white;">
       <!--div class="container">
         <div class="row">
-          <!--div class="span3">
-            <div class="widget">
-              <h5 class="widgetheading">Browse pages</h5>							
-              <ul class="link-list">
-                <li><a href="index.html#">About our company</a></li>
-                <li><a href="index.html#">Our services</a></li>
-                <li><a href="index.html#">Meet our team</a></li>
-                <li><a href="index.html#">Explore our portfolio</a></li>
-                <li><a href="index.html#">Get in touch with us</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="span3">
-            <div class="widget">		
-              <h5 class="widgetheading">Important stuff</h5>					
-              <ul class="link-list">
-                <li><a href="index.html#">Press release</a></li>
-                <li><a href="index.html#">Terms and conditions</a></li>
-                <li><a href="index.html#">Privacy policy</a></li>
-                <li><a href="index.html#">Career center</a></li>
-                <li><a href="index.html#">Flattern forum</a></li>
-              </ul>					
-
-            </div>		
-          </div>
-          <div class="span3">
-            <div class="widget">
-              <h5 class="widgetheading">Flickr photostream</h5>
-              <div class="flickr_badge">	
-
-              </div>
-              <div class="clear"></div>
-            </div>	
-          </div>
-          <div class="span12">
-            <div class="widget">
-              <h5 class="widgetheading">Contactanos</h5>
-              <address>
-                <strong>Magdalena 37</strong>  Colonia del Valle
-              </address>				
-              <p>
-                <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <i class="icon-envelope-alt"> contactolucasianmexico.coms</i>
-              </p>
-            </div>
-          </div>						
+      <!--div class="span3">
+        <div class="widget">
+          <h5 class="widgetheading">Browse pages</h5>							
+          <ul class="link-list">
+            <li><a href="index.html#">About our company</a></li>
+            <li><a href="index.html#">Our services</a></li>
+            <li><a href="index.html#">Meet our team</a></li>
+            <li><a href="index.html#">Explore our portfolio</a></li>
+            <li><a href="index.html#">Get in touch with us</a></li>
+          </ul>
         </div>
-      </div-->
+      </div>
+      <div class="span3">
+        <div class="widget">		
+          <h5 class="widgetheading">Important stuff</h5>					
+          <ul class="link-list">
+            <li><a href="index.html#">Press release</a></li>
+            <li><a href="index.html#">Terms and conditions</a></li>
+            <li><a href="index.html#">Privacy policy</a></li>
+            <li><a href="index.html#">Career center</a></li>
+            <li><a href="index.html#">Flattern forum</a></li>
+          </ul>					
+
+        </div>		
+      </div>
+      <div class="span3">
+        <div class="widget">
+          <h5 class="widgetheading">Flickr photostream</h5>
+          <div class="flickr_badge">	
+
+          </div>
+          <div class="clear"></div>
+        </div>	
+      </div>
+      <div class="span12">
+        <div class="widget">
+          <h5 class="widgetheading">Contactanos</h5>
+          <address>
+            <strong>Magdalena 37</strong>  Colonia del Valle
+          </address>				
+          <p>
+            <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <i class="icon-envelope-alt"> contactolucasianmexico.coms</i>
+          </p>
+        </div>
+      </div>						
+    </div>
+  </div-->
       <div id="sub-footer">
         <div class="container">
           <div class="row">
@@ -228,11 +239,11 @@
 
             <div class="span6">					
               <ul class="social-network">
-                <li><a href="index.html#" data-placement="bottom" title="Facebook"><i class="icon-facebook icon-square"></i></a></li>
-                <li><a href="index.html#" data-placement="bottom" title="Twitter"><i class="icon-twitter icon-square"></i></a></li>
-                <li><a href="index.html#" data-placement="bottom" title="Linkedin"><i class="icon-linkedin icon-square"></i></a></li>
-                <li><a href="index.html#" data-placement="bottom" title="Pinterest"><i class="icon-pinterest icon-square"></i></a></li>
-                <li><a href="index.html#" data-placement="bottom" title="Google plus"><i class="icon-google-plus icon-square"></i></a></li>
+                <li><a href="https://www.facebook.com/milchequeras" data-placement="bottom" title="Facebook"><i class="icon-facebook icon-square"></i></a></li>
+                <li><a href="#" data-placement="bottom" title="Twitter"><i class="icon-twitter icon-square"></i></a></li>
+                <li><a href="#" data-placement="bottom" title="Linkedin"><i class="icon-linkedin icon-square"></i></a></li>
+                <li><a href="#" data-placement="bottom" title="Pinterest"><i class="icon-pinterest icon-square"></i></a></li>
+                <li><a href="#" data-placement="bottom" title="Google plus"><i class="icon-google-plus icon-square"></i></a></li>
               </ul>	
 
             </div>	

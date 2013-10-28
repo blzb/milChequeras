@@ -41,7 +41,7 @@ class EmpleadoController {
 
         request.withFormat {
             form {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'empleadoInstance.label', default: 'Empleado'), empleadoInstance.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'empleadoInstance.label', default: 'Empleado'), empleadoInstance.nombre+" "+empleadoInstance.apellidos])
                 redirect (controller:"sucursal", action:"edit", id:empleadoInstance.sucursal.id)
             }
             '*' { respond empleadoInstance, [status: CREATED] }
@@ -68,7 +68,7 @@ class EmpleadoController {
 
         request.withFormat {
             form {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Empleado.label', default: 'Empleado'), empleadoInstance.id])
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'Empleado.label', default: 'Empleado'),empleadoInstance.nombre+" "+empleadoInstance.apellidos])
                 redirect (controller:"sucursal", action:"edit", id:empleadoInstance.sucursal.id)
             }
             '*'{ respond empleadoInstance, [status: OK] }
@@ -87,7 +87,7 @@ class EmpleadoController {
 
         request.withFormat {
             form {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Empleado.label', default: 'Empleado'), empleadoInstance.id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Empleado.label', default: 'Empleado'), empleadoInstance.nombre+" "+empleadoInstance.apellidos])
                 redirect (controller:"sucursal", action:"edit", id:idSucursal)
             }
             '*'{ render status: NO_CONTENT }

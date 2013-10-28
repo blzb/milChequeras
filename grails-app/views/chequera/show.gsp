@@ -11,12 +11,12 @@
   <section id="inner-headline">
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span6">
+        <div class="span9">
           <div class="inner-heading">
             <h2><g:message code="default.list.label" args="[entityName]" /></h2>
           </div>
         </div>	
-        <div class="span6" style="margin-top: 30px;">
+        <div class="span3" style="margin-top: 30px;">
           <g:link class="btn btn-large btn-theme btn-rounded" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
         </div>				
       </div>		
@@ -39,7 +39,7 @@
           <div class="span12 well"> 
             <h1><g:message code="default.show.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
-              <div class="message" role="status">${flash.message}</div>
+              <div class="alert alert-info">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
             </g:if>
             <ol class="property-list chequera">
 
@@ -75,6 +75,42 @@
                   <span id="apellidos-label" class="property-label"><g:message code="chequera.apellidos.label" default="Apellidos" /></span>
   
                 <span class="property-value" aria-labelledby="apellidos-label"><g:fieldValue bean="${chequeraInstance}" field="apellidos"/></span>
+    
+                </li>
+              </g:if>
+  
+              <g:if test="${chequeraInstance?.fechaNacimiento}">
+                <li class="fieldcontain">
+                  <span id="fechaNacimiento-label" class="property-label"><g:message code="chequera.fechaNacimiento.label" default="Fecha Nacimiento" /></span>
+  
+                <span class="property-value" aria-labelledby="fechaNacimiento-label"><g:formatDate date="${chequeraInstance?.fechaNacimiento}" /></span>
+    
+                </li>
+              </g:if>
+  
+              <g:if test="${chequeraInstance?.sexo}">
+                <li class="fieldcontain">
+                  <span id="sexo-label" class="property-label"><g:message code="chequera.sexo.label" default="Sexo" /></span>
+  
+                <span class="property-value" aria-labelledby="sexo-label"><g:fieldValue bean="${chequeraInstance}" field="sexo"/></span>
+    
+                </li>
+              </g:if>
+  
+              <g:if test="${chequeraInstance?.colonia}">
+                <li class="fieldcontain">
+                  <span id="colonia-label" class="property-label"><g:message code="chequera.colonia.label" default="Colonia" /></span>
+  
+                <span class="property-value" aria-labelledby="colonia-label"><g:fieldValue bean="${chequeraInstance}" field="colonia"/></span>
+    
+                </li>
+              </g:if>
+  
+              <g:if test="${chequeraInstance?.telefono}">
+                <li class="fieldcontain">
+                  <span id="telefono-label" class="property-label"><g:message code="chequera.telefono.label" default="Telefono" /></span>
+  
+                <span class="property-value" aria-labelledby="telefono-label"><g:fieldValue bean="${chequeraInstance}" field="telefono"/></span>
     
                 </li>
               </g:if>

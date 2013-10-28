@@ -40,7 +40,7 @@ class SerieController {
 
         request.withFormat {
             form {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'serieInstance.label', default: 'Serie'), serieInstance.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'serieInstance.label', default: 'Serie'), serieInstance.clave])
                 redirect (view:"index")
             }
             '*' { respond serieInstance, [status: CREATED] }
@@ -67,8 +67,8 @@ class SerieController {
 
         request.withFormat {
             form {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Serie.label', default: 'Serie'), serieInstance.id])
-                redirect serieInstance
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'Serie.label', default: 'Serie'), serieInstance.clave])
+                redirect(view:"index")
             }
             '*'{ respond serieInstance, [status: OK] }
         }
@@ -86,7 +86,7 @@ class SerieController {
 
         request.withFormat {
             form {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Serie.label', default: 'Serie'), serieInstance.id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Serie.label', default: 'Serie'), serieInstance.clave])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }

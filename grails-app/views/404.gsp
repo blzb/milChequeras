@@ -10,7 +10,7 @@
       <div class="row-fluid">
         <div class="span12">
           <div class="inner-heading">
-            <h2>500</h2>
+            <h2>No encontrado</h2>
           </div>
         </div>	                       
       </div>			
@@ -23,7 +23,7 @@
         <div class="span12">
           <div class="alert alert-error">
             <button type="button" class="close" data-dismiss="alert">×</button>
-            <strong>Error de sistema</strong><br/> Ha ocurrido un error, contacta al administrador
+            <strong>404</strong><br/> El recurso que esta buscando no existe
           </div>
         </div>
       </div>

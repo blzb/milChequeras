@@ -29,22 +29,24 @@ class BootStrap {
         serie.save()
         System.out.println(serie.id)
         
-        def cheque1 = new Cheque(texto: "Descuento de 25%")
+        def cheque1 = new Cheque(descripcion: "Descuento de 25%", clave:"A1")
         cheque1.setSucursal(sucursal)
         cheque1.setSerie(serie)
         cheque1.save()
         
-        def cheque2 = new Cheque(texto: "Descuento de 50%")
+        def cheque2 = new Cheque(descripcion: "Descuento de 50%", clave:"A2")
         cheque2.setSucursal(sucursal) 
         cheque2.setSerie(serie)
         cheque2.save()
         
-        def cheque3 = new Cheque(texto: "Descuento de 75%")
+        def cheque3 = new Cheque(descripcion: "Descuento de 75%", clave:"A3")
         cheque3.setSucursal(sucursal)
         cheque3.setSerie(serie)
         cheque3.save()
         
-        def chequera = new Chequera(numero:"A12", nombre:"Angel", apellidos:"Pimentel", email:"angelpmza@gmail.com", facebook:"angel.pimentel.90", twitter: "blzb")
+        def chequera = new Chequera(numero:"A12", nombre:"Angel", 
+               apellidos:"Pimentel", email:"angelpmza@gmail.com", facebook:"angel.pimentel.90",
+               twitter: "blzb", fechaNacimiento: new Date(), sexo:"Hombre")
         chequera.setSerie(serie)
         chequera.save()
         

@@ -10,7 +10,6 @@
 	<g:textField class="span12" name="numero" required="" value="${chequeraInstance?.numero}"/>
 </div>
 
-
 <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'nombre', 'error')} required">
 	<label for="nombre">
 		<g:message code="chequera.nombre.label" default="Nombre" />
@@ -36,6 +35,39 @@
 </div>
 
 
+
+<div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'fechaNacimiento', 'error')} required">
+	<label for="fechaNacimiento">
+		<g:message code="chequera.fechaNacimiento.label" default="Fecha Nacimiento" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:datePicker name="fechaNacimiento" precision="day"  value="${chequeraInstance?.fechaNacimiento}"  />
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'sexo', 'error')} required">
+	<label for="sexo">
+		<g:message code="chequera.sexo.label" default="Sexo" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select name="sexo" from="${chequeraInstance.constraints.sexo.inList}" required="" value="${chequeraInstance?.sexo}" valueMessagePrefix="chequera.sexo"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'colonia', 'error')} ">
+	<label for="colonia">
+		<g:message code="chequera.colonia.label" default="Colonia" />
+		
+	</label>
+	<g:textField class="span12" name="colonia" value="${chequeraInstance?.colonia}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'telefono', 'error')} ">
+	<label for="telefono">
+		<g:message code="chequera.telefono.label" default="Telefono" />
+		
+	</label>
+	<g:textField class="span12" name="telefono" value="${chequeraInstance?.telefono}"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'facebook', 'error')} ">
 	<label for="facebook">
 		<g:message code="chequera.facebook.label" default="Facebook" />
@@ -43,7 +75,6 @@
 	</label>
 	<g:textField class="span12" name="facebook" value="${chequeraInstance?.facebook}"/>
 </div>
-
 
 <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'twitter', 'error')} ">
 	<label for="twitter">
@@ -53,6 +84,7 @@
 	<g:textField class="span12" name="twitter" value="${chequeraInstance?.twitter}"/>
 </div>
 
+
 <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'serie', 'error')} required">
 	<label for="serie">
 		<g:message code="chequera.serie.label" default="Serie" />
@@ -60,4 +92,3 @@
 	</label>
 	<g:select id="serie" name="serie.id" from="${com.lucasian.cheques.Serie.list()}" optionKey="id" required="" value="${chequeraInstance?.serie?.id}" class="many-to-one"/>
 </div>
-

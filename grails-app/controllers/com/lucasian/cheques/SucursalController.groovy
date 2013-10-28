@@ -39,7 +39,7 @@ class SucursalController {
 
         request.withFormat {
             form {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'sucursalInstance.label', default: 'Sucursal'), sucursalInstance.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'sucursalInstance.label', default: 'Sucursal'), sucursalInstance.nombre+"("+sucursalInstance.clave+")"])
                 redirect(view:"index")
             }
             '*' { respond sucursalInstance, [status: CREATED] }
@@ -66,8 +66,8 @@ class SucursalController {
 
         request.withFormat {
             form {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Sucursal.label', default: 'Sucursal'), sucursalInstance.id])
-                redirect sucursalInstance
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'Sucursal.label', default: 'Sucursal'), sucursalInstance.nombre+"("+sucursalInstance.clave+")"])
+                redirect(view:"index")
             }
             '*'{ respond sucursalInstance, [status: OK] }
         }
@@ -85,7 +85,7 @@ class SucursalController {
 
         request.withFormat {
             form {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Sucursal.label', default: 'Sucursal'), sucursalInstance.id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Sucursal.label', default: 'Sucursal'), sucursalInstance.nombre+"("+sucursalInstance.clave+")"])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
