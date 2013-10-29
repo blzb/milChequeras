@@ -62,6 +62,7 @@ grails.project.dependency.resolution = {
         compile ":create-domain-uml:0.5"
         compile ":fields:1.3"
         compile ":trimmer:0.1"
+        compile ":mail:1.0.1"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate:3.6.10.1" // or ":hibernate4:4.1.11.1"

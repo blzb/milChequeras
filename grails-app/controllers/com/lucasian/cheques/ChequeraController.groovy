@@ -7,6 +7,7 @@ import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class ChequeraController {
+    ActivationService activationService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -36,7 +37,7 @@ class ChequeraController {
         }
 
         chequeraInstance.save flush:true
-
+        activationService.activar(chequeraInstance)
         request.withFormat {
             form {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'chequeraInstance.label', default: 'Chequera'), chequeraInstance.numero])

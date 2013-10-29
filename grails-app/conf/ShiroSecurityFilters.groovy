@@ -12,7 +12,10 @@ class ShiroSecurityFilters {
                             if (!controllerName){
                                    if(SecurityUtils.subject.hasRole("empleado")){
                                           redirect(controller: "consulta", action: "index")
-                                   }                      
+                                   }  
+                                    if(SecurityUtils.subject.hasRole("administrador")){
+                                          redirect(controller: "chequera", action: "index")
+                                   }                                    
                                    return true
                             } 
                             // Access control by convention.
