@@ -45,7 +45,8 @@
             
             <g:sortableColumn property="nombre" title="${message(code: 'chequera.nombre.label', default: 'Nombre')}" />            
 
-            <g:sortableColumn property="apellidos" title="${message(code: 'chequera.apellidos.label', default: 'Apellidos')}" />
+            <g:sortableColumn property="apellidoPaterno" title="${message(code: 'chequera.apellidoPaterno.label', default: 'Apellido Paterno')}" />
+            <g:sortableColumn property="apellidoMaterno" title="${message(code: 'chequera.apellidoMaterno.label', default: 'Apellido Materno')}" />
             <th class="acciones">
             </th>
             </tr>
@@ -59,7 +60,8 @@
       
               <td>${fieldValue(bean: chequeraInstance, field: "nombre")}</td>
       
-              <td>${fieldValue(bean: chequeraInstance, field: "apellidos")}</td>
+              <td>${fieldValue(bean: chequeraInstance, field: "apellidoPaterno")}</td>
+              <td>${fieldValue(bean: chequeraInstance, field: "apellidoMaterno")}</td>
       
               <td>
               <g:form url="[resource:chequeraInstance, action:'delete']" method="DELETE">

@@ -60,13 +60,18 @@
                       ${it.clave}: ${it.descripcion}
                     </td>
                     <td>
-                      <input type="radio" name="usar" value="${it.id}"/>
+                      <g:if test="${it.usado}">
+                        Ya fue utilizado
+                      </g:if>
+                      <g:else>
+                        <input type="radio" name="usar" value="${it.id}" onclick="$('#myModal').modal('show')"/>
+                      </g:else>
+                      
                     </td>
                   </tr>              
                 </g:each>
                 </tbody>
               </table>  
-              <a href="#myModal" role="button" class="btn" data-toggle="modal">Usar</a>
             </g:form>
           </div>
         </div>

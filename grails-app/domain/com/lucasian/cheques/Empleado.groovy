@@ -5,11 +5,22 @@ class Empleado extends ShiroUser {
     String puesto
     String email
     String nombre
-    String apellidos
+    String apellidoPaterno
+    String apellidoMaterno
+    String getApellidos(){
+           if(apellidoMaterno){
+                  apellidoPaterno+" "+apellidoMaterno
+           }else{
+                  apellidoPaterno
+           }
+           
+    }
+    static transients = ['apellidos']
     static constraints = {
            puesto (nullable: false, blank: false)
            email (nullable: false, blank: false, email:true)
            nombre (nullable: false, blank: false)
-           apellidos (nullable: false, blank: false)
+           apellidoPaterno (nullable: false, blank: false)
+           apellidoMaterno (nullable:true)
     }
 }

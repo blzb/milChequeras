@@ -30,7 +30,9 @@ class ChequeraController {
             notFound()
             return
         }
-
+       chequeraInstance.clearErrors()
+       chequeraInstance.fechaNacimiento = Date.parse("dd/MM/yyyy", params.fechaNacimiento)
+       chequeraInstance.validate()
         if (chequeraInstance.hasErrors()) {
             respond chequeraInstance.errors, view:'create'
             return
@@ -57,6 +59,9 @@ class ChequeraController {
             notFound()
             return
         }
+       chequeraInstance.clearErrors()
+       chequeraInstance.fechaNacimiento = Date.parse("dd/MM/yyyy", params.fechaNacimiento)
+       chequeraInstance.validate()
 
         if (chequeraInstance.hasErrors()) {
             respond chequeraInstance.errors, view:'edit'

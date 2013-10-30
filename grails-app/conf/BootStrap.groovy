@@ -18,7 +18,7 @@ class BootStrap {
         
         def sucursal = new Sucursal(direccion:"Magdalena 37", clave:"MA2", nombre:"Carls Jr")
         sucursal.save()
-        def empleadoUser = new Empleado(username: "carls", passwordHash: new Sha256Hash("password").toHex(), puesto:"Gerente", email:"angelpmza@gmail.com", nombre:"Carlos", apellidos:"Navarrete")
+        def empleadoUser = new Empleado(username: "carls", passwordHash: new Sha256Hash("password").toHex(), puesto:"Gerente", email:"angelpmza@gmail.com", nombre:"Carlos", apellidoPaterno:"Navarrete")
         empleadoUser.setRol(empleado);
         empleadoUser.setSucursal(sucursal)
         empleadoUser.save()
@@ -45,7 +45,7 @@ class BootStrap {
         cheque3.save()
         
         def chequera = new Chequera(numero:"A12", nombre:"Angel", 
-               apellidos:"Pimentel", email:"angelpmza@gmail.com", facebook:"angel.pimentel.90",
+               apellidoPaterno:"Pimentel", apellidoMaterno:"Meza", email:"angelpmza@gmail.com", facebook:"angel.pimentel.90",
                twitter: "blzb", fechaNacimiento: new Date(), sexo:"Hombre")
         chequera.setSerie(serie)
         chequera.save()

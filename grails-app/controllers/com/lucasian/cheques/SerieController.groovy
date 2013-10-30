@@ -8,98 +8,107 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class SerieController {
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+       static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
+       def index(Integer max) {
+              params.max = Math.min(max ?: 10, 100)
         
-        respond Serie.list(params), model:[serieInstanceCount: Serie.count()]
-    }
+              respond Serie.list(params), model:[serieInstanceCount: Serie.count()]
+       }
 
-    def show(Serie serieInstance) {
-        respond serieInstance
-    }
+       def show(Serie serieInstance) {
+              respond serieInstance
+       }
 
-    def create() {
-        respond new Serie(params)
-    }
+       def create() {
+              respond new Serie(params)
+       }
 
-    @Transactional
-    def save(Serie serieInstance) {
-        if (serieInstance == null) {
-            notFound()
-            return
-        }
+       @Transactional
+       def save(Serie serieInstance) {
 
-        if (serieInstance.hasErrors()) {
-            respond serieInstance.errors, view:'create'
-            return
-        }
+              if (serieInstance == null) {
+                     notFound()
+                     return
+              }
+              
+              serieInstance.clearErrors()
+              serieInstance.vigencia = Date.parse("dd/MM/yyyy", params.vigencia)
+              serieInstance.validate()
+              
+              if (serieInstance.hasErrors()) {
+                     respond serieInstance.errors, view:'create'
+                     return
+              }
 
-        serieInstance.save flush:true
+              serieInstance.save flush:true
 
-        request.withFormat {
-            form {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'serieInstance.label', default: 'Serie'), serieInstance.clave])
-                redirect (view:"index")
-            }
+              request.withFormat {
+                     form {
+                            flash.message = message(code: 'default.created.message', args: [message(code: 'serieInstance.label', default: 'Serie'), serieInstance.clave])
+                            redirect (view:"index")
+                     }
             '*' { respond serieInstance, [status: CREATED] }
-        }
-    }
+              }
+       }
 
-    def edit(Serie serieInstance) {
-        respond serieInstance
-    }
+       def edit(Serie serieInstance) {
+              respond serieInstance
+       }
 
-    @Transactional
-    def update(Serie serieInstance) {
-        if (serieInstance == null) {
-            notFound()
-            return
-        }
+       @Transactional
+       def update(Serie serieInstance) {           
+              if (serieInstance == null) {
+                     notFound()
+                     return
+              }
+              
+              serieInstance.clearErrors()
+              serieInstance.vigencia = Date.parse("dd/MM/yyyy", params.vigencia)
+              serieInstance.validate()
+              
+              if (serieInstance.hasErrors()) {
+                     respond serieInstance.errors, view:'edit'
+                     return
+              }
 
-        if (serieInstance.hasErrors()) {
-            respond serieInstance.errors, view:'edit'
-            return
-        }
+              serieInstance.save flush:true
 
-        serieInstance.save flush:true
-
-        request.withFormat {
-            form {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Serie.label', default: 'Serie'), serieInstance.clave])
-                redirect(view:"index")
-            }
+              request.withFormat {
+                     form {
+                            flash.message = message(code: 'default.updated.message', args: [message(code: 'Serie.label', default: 'Serie'), serieInstance.clave])
+                            redirect(view:"index")
+                     }
             '*'{ respond serieInstance, [status: OK] }
-        }
-    }
+              }
+       }
 
-    @Transactional
-    def delete(Serie serieInstance) {
+       @Transactional
+       def delete(Serie serieInstance) {
 
-        if (serieInstance == null) {
-            notFound()
-            return
-        }
+              if (serieInstance == null) {
+                     notFound()
+                     return
+              }
 
-        serieInstance.delete flush:true
+              serieInstance.delete flush:true
 
-        request.withFormat {
-            form {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Serie.label', default: 'Serie'), serieInstance.clave])
-                redirect action:"index", method:"GET"
-            }
+              request.withFormat {
+                     form {
+                            flash.message = message(code: 'default.deleted.message', args: [message(code: 'Serie.label', default: 'Serie'), serieInstance.clave])
+                            redirect action:"index", method:"GET"
+                     }
             '*'{ render status: NO_CONTENT }
-        }
-    }
+              }
+       }
 
-    protected void notFound() {
-        request.withFormat {
-            form {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'serieInstance.label', default: 'Serie'), params.id])
-                redirect action: "index", method: "GET"
-            }
+       protected void notFound() {
+              request.withFormat {
+                     form {
+                            flash.message = message(code: 'default.not.found.message', args: [message(code: 'serieInstance.label', default: 'Serie'), params.id])
+                            redirect action: "index", method: "GET"
+                     }
             '*'{ render status: NOT_FOUND }
-        }
-    }
+              }
+       }
 }

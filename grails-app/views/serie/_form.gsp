@@ -23,7 +23,22 @@
     <g:message code="serie.vigencia.label" default="Vigencia" />
     <span class="required-indicator">*</span>
   </label>
-  <g:datePicker name="vigencia" precision="day"  value="${serieInstance?.vigencia}"  />
+  <div id="datetimepicker1" class="input-append date">
+    <g:textField  readonly="" class="span12" name="vigencia" required="" data-format="dd/MM/yyyy " value="${formatDate(format:'dd/MM/yyyy',date:serieInstance?.vigencia)}"/>
+    <span class="add-on">
+      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+      </i>
+    </span>
+  </div>
+  <script type="text/javascript">
+    $('#datetimepicker1').datetimepicker({
+      language: 'es',
+      pickTime: false ,
+      startDate: new Date(${(new Date()).time})
+    });
+</script>
+  
+  <!--g:datePicker name="vigencia" precision="day"  value="${serieInstance?.vigencia}"  /-->
 </div>
 
 <!--div class="fieldcontain ${hasErrors(bean: serieInstance, field: 'chequeras', 'error')} ">

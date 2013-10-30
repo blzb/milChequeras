@@ -41,6 +41,12 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
     <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
+    <link href="${resource(dir: 'css', file: 'bootstrap-datetimepicker.min.css')}" rel="stylesheet" />
+    <script src="${resource(dir: 'js', file: 'jquery.js')}"></script>
+    <script src="${resource(dir: 'js', file: 'jquery.easing.1.3.js')}"></script>
+    <script src="${resource(dir: 'js', file: 'bootstrap.js')}"></script>
+    <script src="${resource(dir: 'js', file: 'bootstrap-datetimepicker.min.js')}"></script>
+  
     <link rel="shortcut icon" href="ico/favicon.png" />
   <g:layoutHead/>
   <r:layoutResources />
@@ -256,10 +262,7 @@
 
   <!-- javascript
   ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="${resource(dir: 'js', file: 'jquery.js')}"></script>
-  <script src="${resource(dir: 'js', file: 'jquery.easing.1.3.js')}"></script>
-  <script src="${resource(dir: 'js', file: 'bootstrap.js')}"></script>
+  <!-- Placed at the end of the document so the pages load faster --> 
   <script src="${resource(dir: 'js/jcarousel', file: 'jquery.jcarousel.min.js')}"></script> 	
   <script src="${resource(dir: 'js', file: 'jquery.fancybox.pack.js')}"></script> 
   <script src="${resource(dir: 'js', file: 'jquery.fancybox-media.js')}"></script> 

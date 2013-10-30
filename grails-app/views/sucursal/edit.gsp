@@ -66,7 +66,8 @@
                 <thead>
                   <tr>
                 <g:sortableColumn property="nombre" title="${message(code: 'empleado.nombre.label', default: 'Nombre')}" />
-                <g:sortableColumn property="apellidos" title="${message(code: 'empleado.apellidos.label', default: 'Apellidos')}" />
+                <g:sortableColumn property="apellidoPaterno" title="${message(code: 'empleado.apellidoPaterno.label', default: 'Apellido Paterno')}" />
+                <g:sortableColumn property="apellidoMaterno" title="${message(code: 'empleado.apellidoMaterno.label', default: 'Apellido Materno')}" />
                 <g:sortableColumn property="puesto" title="${message(code: 'empleado.puesto.label', default: 'Puesto')}" />
 
                 </tr>
@@ -76,7 +77,8 @@
                   <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 
                     <td>${fieldValue(bean: empleadoInstance, field: "nombre")}</td>
-                  <td>${fieldValue(bean: empleadoInstance, field: "apellidos")}</td>
+                  <td>${fieldValue(bean: empleadoInstance, field: "apellidoPaterno")}</td>
+                  <td>${fieldValue(bean: empleadoInstance, field: "apellidoMaterno")}</td>
                   <td>${fieldValue(bean: empleadoInstance, field: "puesto")}</td>
                   <td>
                   <g:form url="[resource:empleadoInstance, action:'delete']" method="DELETE">

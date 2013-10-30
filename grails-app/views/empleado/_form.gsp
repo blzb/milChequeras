@@ -34,13 +34,22 @@
   <g:textField class="span12" name="nombre" required="" value="${empleadoInstance?.nombre}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'apellidos', 'error')} required">
-  <label for="apellidos">
-    <g:message code="empleado.apellidos.label" default="Apellidos" />
+<div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'apellidoPaterno', 'error')} required">
+  <label for="apellidoPaterno">
+    <g:message code="empleado.apellidoPaterno.label" default="Apellido Paterno" />
     <span class="required-indicator">*</span>
   </label>
-  <g:textField class="span12" name="apellidos" required="" value="${empleadoInstance?.apellidos}"/>
+  <g:textField class="span12" name="apellidoPaterno" required="" value="${empleadoInstance?.apellidoPaterno}"/>
 </div>
+
+<div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'apellidoMaterno', 'error')} required">
+  <label for="apellidoMaterno">
+    <g:message code="empleado.apellidoMaterno.label" default="Apellido Materno" />
+    <span class="required-indicator">*</span>
+  </label>
+  <g:textField class="span12" name="apellidoMaterno" value="${empleadoInstance?.apellidoMaterno}"/>
+</div>
+
 <g:if test="${nuevo}">
   <div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'passwordHash', 'error')} ">
     <label for="passwordHash">

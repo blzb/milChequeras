@@ -13,8 +13,18 @@ class ConsultaController {
                      if(SecurityUtils.subject.hasRole("empleado")){
                             //results = Cheque.executeQuery("from Cheque c where c.serie.chequeras in (:cheq)", [cheq: chequeras])           
                             def parametros = [claveSucursal: SecurityUtils.subject.principal.tienda, idSerie: chequera.serie.id]
+                            def usados = ChequesUsados.executeQuery("Select c.cheque.id from ChequesUsados c where c.chequera.serie.id = :idSerie", [idSerie: chequera.serie.id])                            
                             def result = Cheque.executeQuery("from Cheque c where c.sucursal.clave = :claveSucursal and c.serie.id = :idSerie",parametros )
-                            [cheques: result, serie: params.serie]
+                            def cheques = result.collect{
+                                   if(usados.contains(it.id)){
+                                          it.usado=true
+                                          it
+                                   }else{
+                                          it.usado=false
+                                          it
+                                   }
+                            }
+                            [cheques: cheques, serie: params.serie]                            
                      }              
               }else{
                      render(view: "/consulta/index", model: [noEncontrado: true, serie:params.serie])
