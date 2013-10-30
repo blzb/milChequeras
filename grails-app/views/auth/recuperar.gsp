@@ -10,7 +10,7 @@
         <div class="row-fluid">
           <div class="span5">
             <div class="inner-heading">
-              <h2>Entrar a tu cuenta</h2>
+              <h2>Recupera tu contraseña</h2>
             </div>
           </div>	                       
         </div>			
@@ -19,39 +19,30 @@
       <section id="content">
         <div class="container-fluid">
           <div class="row-fluid">
-      <g:form action="signIn">
-        <input type="hidden" name="targetUri" value="${targetUri}" />
+      <g:form action="enviarRecuperacion">
         <div class="form-horizontal span4 offset3">
-          <g:if test="${flash.message}">
+           <g:if test="${flash.message}">
             <div class="alert alert-error">
             <button type="button" class="close" data-dismiss="alert">×</button>
             ${flash.message}
             </div>           
           </g:if>
           <div class="control-group">
-            <label class="control-label" for="inputText">Usuario</label>
+            <label class="control-label" for="inputSigninPassword">Usuario</label>
             <div class="controls">
-              <input type="text" name="username" value="" class="span12"/>
+              <g:textField name="usuario" value="" class="span12" required=""/>
             </div>
           </div>
           <div class="control-group">
-            <label class="control-label" for="inputSigninPassword">Password</label>
+            <label class="control-label" for="confirmPassword">Email:</label>
             <div class="controls">
-              <input type="password" name="password" value="" class="span12" />
+              <g:textField name="email" value="" class="span12" required=""/>
             </div>
           </div>
           <div class="control-group">
-            <label class="control-label" for="inputSigninPassword">Recordarme?</label>
             <div class="controls">
-              <g:checkBox name="rememberMe" value="${rememberMe}" />
-            </div>
-          </div>
-
-          <div class="control-group">
-            <div class="controls">
-              <input type="submit" value="Entrar" class="btn"/>
-            </div>
-            <p class="aligncenter margintop20">Olvidaste tu password? <g:link controller="auth" action="recuperar">Recuperar</g:link></p>
+              <input type="submit" value="Recuperar" class="btn"/>
+            </div>            
           </div>
         </div>        
       </g:form>

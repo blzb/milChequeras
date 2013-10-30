@@ -5,9 +5,11 @@ import org.apache.shiro.web.util.SavedRequest
 import org.apache.shiro.web.util.WebUtils
 import org.apache.shiro.crypto.hash.Sha256Hash
 import com.lucasian.cheques.ShiroUser
+import grails.plugin.mail.*
 
 class AuthController {
     def shiroSecurityManager
+    MailService mailService
 
     def index = { redirect(action: "login", params: params) }
 
@@ -16,6 +18,22 @@ class AuthController {
     }
     def cambiar ={
            
+    }
+    def recuperar = {
+           
+    }
+    def enviarRecuperacion = {
+           def usuario = ShiroUser.findByUsernameAndEmail(params.usuario, params.email)
+           if(usuario?.email){
+                  mailService.sendMail {     
+                            to usuario.email
+                            subject "Recupera tu contraseña"
+                            body 'Tu contraseña es'
+                     }
+                     flash.message = "Se ha enviado un correo a la direccion indicada con instrucciones para recuperar tu contraseña"
+           }else{                  
+                  flash.message = "No tenemos registro el usuario que indicaste"
+           }           
     }
     def guardar ={
            if(params.password == params.confirmPassword){
