@@ -46,7 +46,7 @@
     <script src="${resource(dir: 'js', file: 'jquery.easing.1.3.js')}"></script>
     <script src="${resource(dir: 'js', file: 'bootstrap.js')}"></script>
     <script src="${resource(dir: 'js', file: 'bootstrap-datetimepicker.min.js')}"></script>
-  
+
     <link rel="shortcut icon" href="ico/favicon.png" />
   <g:layoutHead/>
   <r:layoutResources />
@@ -284,7 +284,21 @@
   <script src="${resource(dir: 'js', file: 'jquery.cookie.js')}"></script>
   <!--script src="colorpicker/js/colorpicker.js"></script>
   <script src="js/optionspanel.js"></script-->
+  <script type="text/javascript">
 
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-45232320-1']);
+    _gaq.push(['_setDomainName', 'dialectika.com.mx']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
   <script type="text/javascript">
 $(function() {$('#da-slider').cslider();});
 </script>
