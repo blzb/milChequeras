@@ -72,6 +72,10 @@
                   <g:link controller="auth" action="signOut">Salir
                   </g:link>
                   </li>
+                  <li>
+                  <g:link controller="auth" action="cambiar">Cambiar contraseña
+                  </g:link>
+                  </li>
                 </shiro:authenticated>
                 <shiro:notAuthenticated>
                   <li><a href="index.html#mySignup" data-toggle="modal"><i class="icon-user"></i>Registro</a></li>
@@ -89,7 +93,7 @@
         <div class="row-fluid nomargin">
           <div class="span4">
             <div class="logo">
-              <a class="home" href=""><img src="${resource(dir: 'img', file: 'logo.png')}" alt="" class="logo" style="width: 50%;"/></a>
+              <g:link uri="/" class="home" ><img src="${resource(dir: 'img', file: 'logo.png')}" alt="" class="logo" style="width: 50%;"/></g:link>
             </div>
           </div>
           <div class="span8">

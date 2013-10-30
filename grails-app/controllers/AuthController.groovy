@@ -3,6 +3,8 @@ import org.apache.shiro.authc.AuthenticationException
 import org.apache.shiro.authc.UsernamePasswordToken
 import org.apache.shiro.web.util.SavedRequest
 import org.apache.shiro.web.util.WebUtils
+import org.apache.shiro.crypto.hash.Sha256Hash
+import com.lucasian.cheques.ShiroUser
 
 class AuthController {
     def shiroSecurityManager
@@ -12,7 +14,19 @@ class AuthController {
     def login = {
         return [ username: params.username, rememberMe: (params.rememberMe != null), targetUri: params.targetUri ]
     }
-
+    def cambiar ={
+           
+    }
+    def guardar ={
+           if(params.password == params.confirmPassword){
+                  def usuario = ShiroUser.findByUsername(SecurityUtils.subject.principal)
+                  usuario.passwordHash = new Sha256Hash(params.password).toHex()
+                  redirect(uri: "/")
+           }else{
+                  flash.message = message(code: "La confirmacion no es igual, verifica")
+                  redirect(action: "cambiar")
+           }
+    }
     def signIn = {
         def authToken = new UsernamePasswordToken(params.username, params.password as String)
 
@@ -54,8 +68,8 @@ class AuthController {
         catch (AuthenticationException ex){
             // Authentication failed, so display the appropriate message
             // on the login page.
+            flash.message = "usuario/password invalido";
             log.info "Authentication failure for user '${params.username}'."
-            flash.message = message(code: "login.failed")
 
             // Keep the username and "remember me" setting so that the
             // user doesn't have to enter them again.
