@@ -8,12 +8,11 @@ class ShiroSecurityFilters {
               all(uri:"/**") {
                      before = {
                             // Ignore direct views (e.g. the default main index page).
-                            println("EL CONTROLADOR::"+controllerName)
                             if (!controllerName){
                                    if(SecurityUtils.subject.hasRole("empleado")){
                                           redirect(controller: "consulta", action: "index")
                                    }  
-                                    if(SecurityUtils.subject.hasRole("administrador")){
+                                   if(SecurityUtils.subject.hasRole("administrador") || SecurityUtils.subject.hasRole("vendedor")){
                                           redirect(controller: "chequera", action: "index")
                                    }                                    
                                    return true
@@ -21,6 +20,6 @@ class ShiroSecurityFilters {
                             // Access control by convention.
                             accessControl()
                      }
-              }
+              }              
        }
 }

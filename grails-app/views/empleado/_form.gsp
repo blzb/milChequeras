@@ -50,23 +50,19 @@
   <g:textField class="span12" name="apellidoMaterno" value="${empleadoInstance?.apellidoMaterno}"/>
 </div>
 
-<g:if test="${nuevo}">
+
   <div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'passwordHash', 'error')} ">
     <label for="passwordHash">
       <g:message code="empleado.passwordHash.label" default="Password" />
 
     </label>
-    <g:textField class="span12" name="passwordHash" value="${empleadoInstance?.passwordHash}"/>
+    <g:textField class="span12" name="passwordHash" value=""/>
   </div>
-  <div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'sucursal', 'error')} required">
-    <g:hiddenField  id="sucursal" name="sucursal.id"  value="${params.sucursal.id}" />
-  </div>
-</g:if>
-<g:else>
+  
   <div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'sucursal', 'error')} required">
     <g:hiddenField  id="sucursal" name="sucursal.id" value="${empleadoInstance?.sucursal?.id}" />
   </div>
-</g:else>
+
 
 
 

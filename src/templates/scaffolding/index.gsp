@@ -11,12 +11,12 @@
   <section id="inner-headline">
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span6">
+        <div class="span9">
           <div class="inner-heading">
             <h2><g:message code="default.list.label" args="[entityName]" /></h2>
           </div>
         </div>	
-        <div class="span6" style="margin-top: 30px;">
+        <div class="span3" style="margin-top: 30px;">
           <g:link class="btn btn-large btn-theme btn-rounded" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
         </div>        
       </div>			

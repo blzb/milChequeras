@@ -124,6 +124,9 @@
                     <li>
                     <g:link controller="sucursal">Sucursales</g:link>
                     </li>
+                    <li>
+                    <g:link controller="sucursal">Vendedores</g:link>
+                    </li>
 
                   </ul>
                 </nav>
@@ -169,6 +172,14 @@
                         </g:link>
                       </h6>
                     </li>
+                    <li >                      
+                      <h6>
+                        <g:link controller="vendedor" class="menu">
+                          <i class="icon-square icon-money icon-64 pull-left"></i>
+                          <br/>Vendedores
+                        </g:link>
+                      </h6>
+                    </li>                    
                   </ul>
                 </div>	
               </aside>

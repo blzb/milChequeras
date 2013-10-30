@@ -25,7 +25,6 @@ class EmpleadoController {
 
     @Transactional
     def save(Empleado empleadoInstance) {
-        println("*************"+ Rol.findByName("empleado"))
         empleadoInstance.rol = Rol.findByName("empleado")
         if (empleadoInstance == null) {
             notFound()
@@ -36,7 +35,7 @@ class EmpleadoController {
             respond empleadoInstance.errors, view:'create'
             return
         }
-        empleadoInstance.passwordHash = new Sha256Hash(empleadoInstance.passwordHash).toHex()
+        empleadoInstance.passwordHash = new Sha256Hash(params.passwordHash).toHex()
         empleadoInstance.save flush:true
 
         request.withFormat {
@@ -63,7 +62,7 @@ class EmpleadoController {
             respond empleadoInstance.errors, view:'edit'
             return
         }
-
+        empleadoInstance.passwordHash = new Sha256Hash(params.passwordHash).toHex()
         empleadoInstance.save flush:true
 
         request.withFormat {
