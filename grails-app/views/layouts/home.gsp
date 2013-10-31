@@ -13,18 +13,18 @@
     <meta name="author" content="" />
 
     <!-- css -->
-    <link href="${resource(dir: 'css', file: 'bootstrap.css')}" rel="stylesheet" />
-    <link href="${resource(dir: 'css', file: 'bootstrap-responsive.css')}" rel="stylesheet" />
-    <link href="${resource(dir: 'css/fancybox', file: 'jquery.fancybox.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'css', file: 'jcarousel.css')}" rel="stylesheet" />
-    <link href="${resource(dir: 'css', file: 'flexslider.css')}" rel="stylesheet" />
-    <link href="${resource(dir: 'css', file: 'cslider.css')}" rel="stylesheet" />
-    <link href="${resource(dir: 'css', file: 'style.css')}"  rel="stylesheet" />
-    <link href="${resource(dir: 'css', file: 'bg4.css')}"  rel="stylesheet" />
-    <link href="${resource(dir: 'css', file: 'milchequeras.css')}"  rel="stylesheet" />
+    <link href="${resource(dir: 'flattern/css', file: 'bootstrap.css')}" rel="stylesheet" />
+    <link href="${resource(dir: 'flattern/css', file: 'bootstrap-responsive.css')}" rel="stylesheet" />
+    <link href="${resource(dir: 'flattern/css/fancybox', file: 'jquery.fancybox.css')}" rel="stylesheet">
+    <link href="${resource(dir: 'flattern/css', file: 'jcarousel.css')}" rel="stylesheet" />
+    <link href="${resource(dir: 'flattern/css', file: 'flexslider.css')}" rel="stylesheet" />
+    <link href="${resource(dir: 'flattern/css', file: 'cslider.css')}" rel="stylesheet" />
+    <link href="${resource(dir: 'flattern/css', file: 'style.css')}"  rel="stylesheet" />
+    <link href="${resource(dir: 'flattern/css', file: 'bg4.css')}"  rel="stylesheet" />
+    <link href="${resource(dir: 'flattern/css', file: 'milchequeras.css')}"  rel="stylesheet" />
 
     <!-- Theme skin -->
-    <link id="t-colors" href="${resource(dir: 'skins', file: 'default.css')}" rel="stylesheet" />
+    <link id="t-colors" href="${resource(dir: 'flattern/skins', file: 'default.css')}" rel="stylesheet" />
 
     <!-- color picker -->
     <link rel="stylesheet" href="colorpicker/css/colorpicker.css" type="text/css" />
@@ -163,7 +163,7 @@
         <div class="row nomargin">
           <div class="span4">
             <div class="logo">
-              <a class="home" href=""><img src="${resource(dir: 'img', file: 'logo.png')}" alt="" class="logo" style="width: 50%;"/></a>
+              <a class="home" href=""><img src="${resource(dir: 'flattern/img', file: 'logo.png')}" alt="" class="logo" style="width: 50%;"/></a>
             </div>
           </div>
           <div class="span8">
@@ -277,31 +277,31 @@
 </div>
 <a href="index.html#" class="scrollup"><i class="icon-chevron-up icon-square icon-32 active"></i></a>	
 
-<!-- javascript
+<!-- javascript'flattern/img
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="${resource(dir: 'js', file: 'jquery.js')}"></script>
-<script src="${resource(dir: 'js', file: 'jquery.easing.1.3.js')}"></script>
-<script src="${resource(dir: 'js', file: 'bootstrap.js')}"></script>
-<script src="${resource(dir: 'js/jcarousel', file: 'jquery.jcarousel.min.js')}"></script> 	
-<script src="${resource(dir: 'js', file: 'jquery.fancybox.pack.js')}"></script> 
-<script src="${resource(dir: 'js', file: 'jquery.fancybox-media.js')}"></script> 
-<script src="${resource(dir: 'js/google-code-prettify', file: 'prettify.js')}"></script>		
+<script src="${resource(dir: 'flattern/js', file: 'jquery.js')}"></script>
+<script src="${resource(dir: 'flattern/js', file: 'jquery.easing.1.3.js')}"></script>
+<script src="${resource(dir: 'flattern/js', file: 'bootstrap.js')}"></script>
+<script src="${resource(dir: 'flattern/js/jcarousel', file: 'jquery.jcarousel.min.js')}"></script> 	
+<script src="${resource(dir: 'flattern/js', file: 'jquery.fancybox.pack.js')}"></script> 
+<script src="${resource(dir: 'flattern/js', file: 'jquery.fancybox-media.js')}"></script> 
+<script src="${resource(dir: 'flattern/js/google-code-prettify', file: 'prettify.js')}"></script>		
 
-<script src="${resource(dir: 'js/portfolio', file: 'jquery.quicksand.js')}"></script> 
-<script src="${resource(dir: 'js/portfolio', file: 'setting.js')}"></script> 	
-<script src="${resource(dir: 'js/tweet', file: 'jquery.tweet.js')}"></script> 
-<script src="${resource(dir: 'js', file: 'jquery.flexslider.js')}"></script> 
-<script src="${resource(dir: 'js', file: 'jquery.nivo.slider.js')}"></script>
-<script src="${resource(dir: 'js', file: 'modernizr.custom.79639.js')}"></script>
-<script src="${resource(dir: 'js', file: 'jquery.ba-cond.min.js')}"></script>
-<script src="${resource(dir: 'js', file: 'jquery.slitslider.js')}"></script>
-<script src="${resource(dir: 'js', file: 'modernizr.custom.28468.js')}"></script>
-<script src="${resource(dir: 'js', file: 'jquery.cslider.js')}"></script>
-<script src="${resource(dir: 'js', file: 'animate.js')}"></script>
-<script src="${resource(dir: 'js', file: 'custom.js')}"></script>
+<script src="${resource(dir: 'flattern/js/portfolio', file: 'jquery.quicksand.js')}"></script> 
+<script src="${resource(dir: 'flattern/js/portfolio', file: 'setting.js')}"></script> 	
+<script src="${resource(dir: 'flattern/js/tweet', file: 'jquery.tweet.js')}"></script> 
+<script src="${resource(dir: 'flattern/js', file: 'jquery.flexslider.js')}"></script> 
+<script src="${resource(dir: 'flattern/js', file: 'jquery.nivo.slider.js')}"></script>
+<script src="${resource(dir: 'flattern/js', file: 'modernizr.custom.79639.js')}"></script>
+<script src="${resource(dir: 'flattern/js', file: 'jquery.ba-cond.min.js')}"></script>
+<script src="${resource(dir: 'flattern/js', file: 'jquery.slitslider.js')}"></script>
+<script src="${resource(dir: 'flattern/js', file: 'modernizr.custom.28468.js')}"></script>
+<script src="${resource(dir: 'flattern/js', file: 'jquery.cslider.js')}"></script>
+<script src="${resource(dir: 'flattern/js', file: 'animate.js')}"></script>
+<script src="${resource(dir: 'flattern/js', file: 'custom.js')}"></script>
 
-<script src="${resource(dir: 'js', file: 'jquery.cookie.js')}"></script>
+<script src="${resource(dir: 'flattern/js', file: 'jquery.cookie.js')}"></script>
 <!--script src="colorpicker/js/colorpicker.js"></script>
 <script src="js/optionspanel.js"></script-->
 <script type="text/javascript">
