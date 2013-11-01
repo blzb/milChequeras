@@ -83,6 +83,9 @@
                     <li class="visible-tablet">
                        <g:link controller="vendedor" class="menu">Vendedores</g:link>
                     </li>
+                    <li class="visible-tablet">
+                       <g:link controller="usuario" class="menu">Usuario</g:link>
+                    </li>
                     <li>
                     <g:link controller="auth" action="signOut">Salir
                     </g:link>
@@ -151,6 +154,16 @@
                         <g:link controller="vendedor" class="menu">
                           <i class="icon-circled active  icon-money icon-64 pull-left"></i>
                           <br/>Vendedores
+                        </g:link>
+                      </h6>
+                    </div>
+                  </div>
+                  <div class="row-fluid">
+                    <div class="span6 centered">
+                      <h6>
+                        <g:link controller="usuario" class="menu">
+                          <i class="icon-circled active  icon-user icon-64 pull-left"></i>
+                          <br/>Usuarios
                         </g:link>
                       </h6>
                     </div>

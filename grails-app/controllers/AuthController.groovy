@@ -4,7 +4,7 @@ import org.apache.shiro.authc.UsernamePasswordToken
 import org.apache.shiro.web.util.SavedRequest
 import org.apache.shiro.web.util.WebUtils
 import org.apache.shiro.crypto.hash.Sha256Hash
-import com.lucasian.cheques.ShiroUser
+import com.lucasian.cheques.Usuario
 import grails.plugin.mail.*
 import org.apache.commons.lang.RandomStringUtils
 
@@ -24,7 +24,7 @@ class AuthController {
            
        }
        def enviarRecuperacion = {
-              def usuario = ShiroUser.findByUsernameAndEmail(params.usuario, params.email)
+              def usuario = Usuario.findByUsernameAndEmail(params.usuario, params.email)
               if(usuario?.email){
                      int randomStringLength = 12
                      String charset = (('a'..'z') + ('A'..'Z') + ('0'..'9')).join()
@@ -42,7 +42,7 @@ class AuthController {
        }
        def guardar ={
               if(params.password == params.confirmPassword){
-                     def usuario = ShiroUser.findByUsername(SecurityUtils.subject.principal)
+                     def usuario = Usuario.findByUsername(SecurityUtils.subject.principal)
                      usuario.passwordHash = new Sha256Hash(params.password).toHex()
                      redirect(uri: "/")
               }else{

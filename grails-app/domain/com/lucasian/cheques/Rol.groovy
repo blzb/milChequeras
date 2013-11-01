@@ -2,8 +2,8 @@ package com.lucasian.cheques
 class Rol {
     String name
 
-    static hasMany = [ users: ShiroUser, permissions: String ]
-    static belongsTo = ShiroUser
+    static hasMany = [ users: Usuario, permissions: String ]
+    static belongsTo = Usuario
 
     static constraints = {
         name(nullable: false, blank: false, unique: true)

@@ -1,5 +1,5 @@
 package com.lucasian.cheques
-class ShiroUser {
+class Usuario {
        String username
        String passwordHash
        String nombre

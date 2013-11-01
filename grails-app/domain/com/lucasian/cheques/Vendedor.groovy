@@ -1,6 +1,6 @@
 package com.lucasian.cheques
 
-class Vendedor extends ShiroUser {
+class Vendedor extends Usuario {
 
     static constraints = {
     }

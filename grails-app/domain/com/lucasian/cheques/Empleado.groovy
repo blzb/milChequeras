@@ -1,6 +1,6 @@
 package com.lucasian.cheques
 
-class Empleado extends ShiroUser {    
+class Empleado extends Usuario {    
     static belongsTo = [sucursal: Sucursal]
     String puesto
 

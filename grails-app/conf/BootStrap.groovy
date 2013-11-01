@@ -12,7 +12,7 @@ class BootStrap {
         def vendedor = new Rol(name:"vendedor")
         vendedor.addToPermissions("chequera:*")
         vendedor.save()
-        def adminUser = new ShiroUser(username: "user123", passwordHash: new Sha256Hash("password").toHex(), nombre:"Hector", apellidoPaterno:"Fernandez", email:"hector.fernandez@lucasianmexico.com")
+        def adminUser = new Usuario(username: "user123", passwordHash: new Sha256Hash("password").toHex(), nombre:"Hector", apellidoPaterno:"Fernandez", email:"hector.fernandez@lucasianmexico.com")
         adminUser.setRol(admin)
         adminUser.save()
         def vendedorUser = new Vendedor(username: "vendedor1", passwordHash: new Sha256Hash("password").toHex(), nombre:"Angel", apellidoPaterno:"Pimentel", email:"angelpmza@gmail.com")
