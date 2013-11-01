@@ -18,7 +18,7 @@
     <!--link href="${resource(dir: 'serenity/js/google-code-prettify', file: 'prettify.css')}" rel="stylesheet"-->
     <link href="${resource(dir: 'serenity/css', file: 'flexslider.css')}" rel="stylesheet">
     <link href="${resource(dir: 'serenity/css', file: 'sequence.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/css', file: 'font-awesome.css')}" rel="stylesheet">
+    <link href="${resource(dir: 'serenity/css', file: 'font-awesome.min.css')}" rel="stylesheet">
     <link href="${resource(dir: 'serenity/css', file: 'overwrite.css')}" rel="stylesheet">
     <link href="${resource(dir: 'serenity/css', file: 'style.css')}" rel="stylesheet">
     <link href="${resource(dir: 'serenity/color', file: 'default.css')}" rel="stylesheet">
@@ -118,58 +118,42 @@
         <div class="container-fluid">        
           <div class="row-fluid">
 
-            <div class="span2 visible-desktop" style="margin-top: 115px;" >
+            <div class="span2 visible-desktop" style="margin-top: 115px; " >
 
-              <aside class="left-sidebar" data-spy="affix" data-offset-top="0">
+              <aside class="left-sidebar span2" data-spy="affix" data-offset-top="0" style="background-color: white;">
                 <div class="widget ">
                   <h4>Catalogos</h4>
-                  <div class="row-fluid">
-                    <div class="span6 centered ">
-                      <h6>
+                  <div style="width: 78px; display: inline-block" class="centered">
                         <g:link controller="chequera" class="menu">
                           <i class="icon-circled active  icon-tags icon-64 pull-left"></i>
-                          <br/>Chequeras
+                          Chequeras
                         </g:link>
-                      </h6>
                     </div>
                    
-                     <div class="span6 centered ">
-                      <h6>
+                     <div style="width: 78px; display: inline-block" class="centered">
                         <g:link controller="serie" class="menu">
                           <i class="icon-circled active  icon-barcode icon-64 pull-left"></i>
-                          <br/>Series
+                          Series
                         </g:link>
-                      </h6>
                     </div>
-                  </div>
-                  <div class="row-fluid">
-                    <div class="span6 centered">
-                      <h6>
+                    <div style="width: 78px; display: inline-block" class="centered">
                         <g:link controller="sucursal" class="menu">
                           <i class="icon-circled active  icon-shopping-cart icon-64 pull-left"></i>
-                          <br/>Sucursales
+                          Sucursales
                         </g:link>
-                      </h6>
                     </div>
-                    <div class="span6 centered">
-                      <h6>
+                    <div style="width: 78px; display: inline-block" class="centered">
                         <g:link controller="vendedor" class="menu">
                           <i class="icon-circled active  icon-money icon-64 pull-left"></i>
-                          <br/>Vendedores
+                          Vendedores
                         </g:link>
-                      </h6>
                     </div>
-                  </div>
-                  <div class="row-fluid">
-                    <div class="span6 centered">
-                      <h6>
+                    <div style="width: 78px; display: inline-block" class="centered">
                         <g:link controller="usuario" class="menu">
                           <i class="icon-circled active  icon-user icon-64 pull-left"></i>
-                          <br/>Usuarios
+                          Usuarios
                         </g:link>
-                      </h6>
                     </div>
-                  </div>
                 </div>                 	
               </aside>
             </div>

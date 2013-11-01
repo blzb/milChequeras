@@ -24,7 +24,7 @@
       
             <g:sortableColumn property="nombre" title="${message(code: 'serie.nombre.label', default: 'Nombre')}" />
       
-            <g:sortableColumn property="vigencia" title="${message(code: 'serie.vigencia.label', default: 'Vigencia')}" />
+            <g:sortableColumn  class="hidden-phone" property="vigencia" title="${message(code: 'serie.vigencia.label', default: 'Vigencia')}" />
             <th class="acciones">
             </th>
       
@@ -38,7 +38,7 @@
     
               <td>${fieldValue(bean: serieInstance, field: "nombre")}</td>
       
-              <td><g:formatDate format="dd/MMMM/yyyy"  date="${serieInstance.vigencia}" /></td>
+              <td  class="hidden-phone"><g:formatDate format="dd/MMMM/yyyy"  date="${serieInstance.vigencia}" /></td>
               <td>
                  <g:form url="[resource:serieInstance, action:'delete']" method="DELETE" style="margin-bottom: 0px;">
               <fieldset class="buttons">

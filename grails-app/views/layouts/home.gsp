@@ -18,7 +18,7 @@
     <!--link href="${resource(dir: 'serenity/js/google-code-prettify', file: 'prettify.css')}" rel="stylesheet"-->
     <link href="${resource(dir: 'serenity/css', file: 'flexslider.css')}" rel="stylesheet">
     <link href="${resource(dir: 'serenity/css', file: 'sequence.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/css', file: 'font-awesome.css')}" rel="stylesheet">
+    <link href="${resource(dir: 'serenity/css', file: 'font-awesome.min.css')}" rel="stylesheet">
     <link href="${resource(dir: 'serenity/css', file: 'overwrite.css')}" rel="stylesheet">
     <link href="${resource(dir: 'serenity/css', file: 'style.css')}" rel="stylesheet">
     <link href="${resource(dir: 'serenity/color', file: 'default.css')}" rel="stylesheet">
