@@ -5,18 +5,8 @@
     <meta name="layout" content="home" />  
 </head>
 <body>
-  <section id="inner-headline">
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span12">
-          <div class="inner-heading">
-            <h2>No encontrado</h2>
-          </div>
-        </div>	                       
-      </div>			
-    </div>
-  </section>
-
+  <g:render  template="/headers/header" model="['titulo':'No encontrado']"/> 
+  
   <section id="content">
     <div class="container-fluid">
       <div class="row-fluid">

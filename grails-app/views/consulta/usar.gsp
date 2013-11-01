@@ -12,22 +12,12 @@
     <title>Sample title</title>
   </head>
   <body>
-    <section id="inner-headline">
-      <div class="container-fluid">
-        <div class="row-fluid">
-          <div class="span12">
-            <div class="inner-heading">
-              <g:if test="${usado}">
-                <h2>El cheque fue usado satisfactoriamente</h2>
-              </g:if>
-              <g:else>
-                <h2>El cheque que desea usar ya fue utilizado</h2>
-              </g:else>
-            </div>
-          </div>	                       
-        </div>			
-      </div>
-    </section>
+    <g:if test="${usado}">
+      <g:render  template="/headers/header" model="['titulo':'El cheque fue usado satisfactoriamente']"/>   
+    </g:if>
+    <g:else>
+      <g:render  template="/headers/header" model="['titulo':'El cheque que desea usar ya fue utilizado']"/>   
+    </g:else>    
     <section id="content">
       <div class="container-fluid">
         <div class="row-fluid">

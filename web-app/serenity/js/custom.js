@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
 	$("<option />", {
 		"selected": "selected",
 		"value"   : "",
-		"text"    : "Go to..."
+		"text"    : "Ir a..."
 	}).appendTo("nav select");
       
 	// Populate dropdown with menu items

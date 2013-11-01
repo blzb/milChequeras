@@ -9,8 +9,7 @@ class Cheque {
     }
     String descripcion
     String clave
-    boolean usado
-    static transients = ['usado']
+    
     String toString(){           
            return descripcion;
     }

@@ -78,6 +78,15 @@
   .hidden-tablet {
     display: none !important;
   }
+  .row-fluid .span10 {
+    width: 100% !important;
+    margin-left: 0 !important;
+    *width: 99.94680851063829% !important;
+  }
+  #subintro{
+        padding-top: 0px !important; 
+  }
+   
 }
 
 @media (max-width: 767px) {
@@ -92,6 +101,9 @@
   }
   .hidden-phone {
     display: none !important;
+  }
+  #subintro{
+        padding-top: 0px !important; 
   }
 }
 

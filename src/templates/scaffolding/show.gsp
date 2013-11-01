@@ -69,7 +69,7 @@ props.each { p -> %>
               </g:if>
   <%  } %>
             </ol>
-            <g:form url="[resource:${propertyName}, action:'delete']" method="DELETE">
+            <g:form url="[resource:${propertyName}, action:'delete']" method="DELETE" style="margin-bottom: 0px;">
               <fieldset class="buttons">
                 <g:link class="edit btn" action="edit" resource="\${${propertyName}}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
                 <g:actionSubmit class="delete btn" action="delete" value="\${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('\${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />

@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="layout" content="serenity" />
+    <meta name="layout" content="main" />
     <title>Welcome to Grails</title>
+    <script src="${resource(dir: 'serenity/js/sequence', file: 'sequence.jquery-min.js')}"></script>
+    <script src="${resource(dir: 'serenity/js/sequence', file: 'setting.js')}"></script>
   </head>
   <body>
     <!--section id="featured">
@@ -64,41 +66,41 @@
                     <!-- Layer 1 -->
                     <li style="display: list-item; width: 100%; height: 100%; position: absolute; z-index: 1;" class="">
                       <div class="info animate-out" style="display: block;">
-                        <h2>Bootstrap based</h2>
+                        <h2>Multiplataforma</h2>
                         <br>
-                        <h3>Corporate business</h3>
+                        <h3>Celulares, Computadoras, Tabletas</h3>
                         <p>
-                          Lorem ipsum dolor sit amet, munere commodo ut nam, quod volutpat in per. At nec case iriure, consul recteque nec et.
+                          Accesa desde cualquier dispositivo a  nuestro servicio
                         </p>
-                        <a class="btn btn-success" href="#">Learn more »</a>
+                        <a class="btn btn-success" href="#">Leer mas »</a>
                       </div>
                       <img class="slider_img animate-out" src="${resource(dir: 'serenity/img/slides/sequence/', file: 'img-1.png')}" alt="" style="">
                     </li>
                     <!-- Layer 2 -->
                     <li style="display: list-item; width: 100%; height: 100%; position: absolute; z-index: 3;" class="current-frame">
                       <div class="info animate-in" style="display: block;">
-                        <h2>Smart and fresh</h2>
+                        <h2>Servicios</h2>
                         <br>
-                        <h3>Rich of features</h3>
+                        <h3>Miles de establecimientos</h3>
                         <p>
-                          Lorem ipsum dolor sit amet, munere commodo ut nam, quod volutpat in per. At nec case iriure, consul recteque nec et.
+                          Promociones y descuentos para que puedas utilizar los servicios de nuestros establecimientos asociados
                         </p>
-                        <a class="btn btn-success" href="#">Learn more »</a>
+                        <a class="btn btn-success" href="#">Leer mas »</a>
                       </div>
                       <img class="slider_img animate-in" src="${resource(dir: 'serenity/img/slides/sequence/', file: 'img-2.png')}" alt="" style="">
                     </li>
                     <!-- Layer 3 -->
                     <li style="display: list-item; width: 100%; height: 100%; position: absolute; z-index: 1;" class="">
                       <div class="info animate-out" style="display: block;">
-                        <h2>Far from ugly</h2>
+                        <h2>Productos</h2>
                         <br>
-                        <h3>Latest technology</h3>
+                        <h3>Miles de productos</h3>
                         <p>
-                          Lorem ipsum dolor sit amet, munere commodo ut nam, quod volutpat in per. At nec case iriure, consul recteque nec et.
+                          Promociones y descuentos para que puedas adquirir todos los productos que siempre quisiste
                         </p>
-                        <a class="btn btn-success" href="#">Learn more »</a>
+                        <a class="btn btn-success" href="#">Leer mas »</a>
                       </div>
-                      <img class="slider_img animate-out" src="${resource(dir: 'serenity/img/slides/sequence/', file: 'img-3.png')}" alt="" style="">
+                      <img class="slider_img animate-out" src="${resource(dir: 'serenity/img/slides/sequence/', file: 'img-4.png')}" alt="" style="">
                     </li>
                   </ul>
                 </div>

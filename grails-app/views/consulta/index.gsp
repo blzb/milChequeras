@@ -12,18 +12,8 @@
     <title>Sample title</title>
   </head>
   <body>
-    <section id="inner-headline">
-      <div class="container-fluid">
-        <div class="row-fluid">
-          <div class="span10">
-            <div class="inner-heading">
-              <h2>Buscar Numero de Chequera</h2>
-            </div>
-          </div>	                       
-        </div>			
-      </div>
-    </section>
-    <section id="content" style="min-height: 431px;">
+    <g:render  template="/headers/header" model="['titulo':'Buscar Numero de Chequera']"/>   
+    <section id="content" >
       <div class="container-fluid">
         <div class="row-fluid">
           <div class="span12">
@@ -39,10 +29,11 @@
               <div class="row-fluid">
                 <div class="span1"></div>
                 <div class="span10">
-                  <g:textField  name="serie" class="span12 input-medium search-query" style=" font-size: 2.5em; min-height: 2em;">
+                  <g:textField  name="serie" required="" class="span12 input-medium search-query" style=" font-size: 2.5em; min-height: 2em;">
                   </g:textField>
                 </div>
               </div>
+              <br/>
               <div class="row-fluid">
                 <div class="span1"></div>
                 <div class="span10">

@@ -5,17 +5,7 @@
     <title>Login</title>
   </head>
   <body>
-    <section id="inner-headline">
-      <div class="container-fluid">
-        <div class="row-fluid">
-          <div class="span5">
-            <div class="inner-heading">
-              <h2>Recupera tu contraseña</h2>
-            </div>
-          </div>	                       
-        </div>			
-      </div>
-    </section>
+    <g:render  template="/headers/header" model="['titulo':'Recupera tu contraseña']"/> 
       <section id="content">
         <div class="container-fluid">
           <div class="row-fluid">

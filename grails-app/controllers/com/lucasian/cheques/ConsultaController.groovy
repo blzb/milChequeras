@@ -13,17 +13,19 @@ class ConsultaController {
                      if(SecurityUtils.subject.hasRole("empleado")){
                             //results = Cheque.executeQuery("from Cheque c where c.serie.chequeras in (:cheq)", [cheq: chequeras])           
                             def parametros = [claveSucursal: SecurityUtils.subject.principal.tienda, idSerie: chequera.serie.id]
-                            def usados = ChequesUsados.executeQuery("Select c.cheque.id from ChequesUsados c where c.chequera.serie.id = :idSerie", [idSerie: chequera.serie.id])                            
+                            def usados = ChequesUsados.executeQuery("from ChequesUsados c where c.chequera.serie.id = :idSerie", [idSerie: chequera.serie.id])                                                        
+                            def usadosMap = usados.collectEntries { 
+                                   [(it.cheque.id): it]
+                            }
                             def result = Cheque.executeQuery("from Cheque c where c.sucursal.clave = :claveSucursal and c.serie.id = :idSerie",parametros )
                             def cheques = result.collect{
-                                   if(usados.contains(it.id)){
-                                          it.usado=true
-                                          it
+                                   if(usadosMap[it.id]){
+                                          [cheque: it, usado: usadosMap[it.id]]
                                    }else{
-                                          it.usado=false
-                                          it
+                                          [cheque: it]
                                    }
                             }
+                            println(cheques)
                             [cheques: cheques, serie: params.serie]                            
                      }              
               }else{
