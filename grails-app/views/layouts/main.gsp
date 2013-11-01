@@ -23,6 +23,7 @@
     <link href="${resource(dir: 'serenity/css', file: 'style.css')}" rel="stylesheet">
     <link href="${resource(dir: 'serenity/color', file: 'default.css')}" rel="stylesheet">
     <link href="${resource(dir: 'serenity/css', file: 'milchequeras.css')}" rel="stylesheet">
+    <link href="${resource(dir: 'serenity/css', file: 'bootstrap-datetimepicker.min.css')}" rel="stylesheet">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -41,6 +42,7 @@
     <script src="${resource(dir: 'serenity/js/hover', file: 'jquery-hover-effect.js')}"></script>
     <script src="${resource(dir: 'serenity/js/hover', file: 'setting.js')}"></script>
     <script src="${resource(dir: 'serenity/js', file: 'custom.js')}"></script>
+    <script src="${resource(dir: 'serenity/js', file: 'bootstrap-datetimepicker.min.js')}"></script>
     <!-- css -->
 
     <!-- Fav and touch icons -->
