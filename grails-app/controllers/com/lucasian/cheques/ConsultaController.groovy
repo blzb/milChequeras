@@ -9,11 +9,12 @@ class ConsultaController {
        def buscar(){ 
               params.serie = params.serie.trim()
               def chequera = Chequera.findByNumero(params.serie)
+              
               if(chequera != null){
                      if(SecurityUtils.subject.hasRole("empleado")){
                             //results = Cheque.executeQuery("from Cheque c where c.serie.chequeras in (:cheq)", [cheq: chequeras])           
                             def parametros = [claveSucursal: SecurityUtils.subject.principal.tienda, idSerie: chequera.serie.id]
-                            def usados = ChequesUsados.executeQuery("from ChequesUsados c where c.chequera.serie.id = :idSerie", [idSerie: chequera.serie.id])                                                        
+                            def usados = ChequesUsados.executeQuery("from ChequesUsados c where c.chequera.id = :idChequera", [idChequera: chequera.id])                                                        
                             def usadosMap = usados.collectEntries { 
                                    [(it.cheque.id): it]
                             }
