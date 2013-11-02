@@ -50,17 +50,16 @@
     <span class="required-indicator">*</span>
   </label>
   <!--g:datePicker name="fechaNacimiento" precision="day"  value="${chequeraInstance?.fechaNacimiento}"  /-->
-  <div id="datetimepicker1" class="input-append date">
-    <g:textField readonly="" class="span12" name="fechaNacimiento" required="" data-format="dd/MM/yyyy " value="${formatDate(format:'dd/MM/yyyy',date:chequeraInstance?.fechaNacimiento)}"/>
+  <div class="input-append date" id="datetimepicker1" data-date="${formatDate(format:'dd/mm/yyyy',date:chequeraInstance?.fechaNacimiento)}" data-date-format="dd/mm/yyyy">
+    <g:textField readonly="" class="span12" name="fechaNacimiento" required="" value="${formatDate(format:'dd/mm/yyyy',date:chequeraInstance?.fechaNacimiento)}"/>
     <span class="add-on">
-      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+      <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="icon-calendar">
       </i>
     </span>
   </div>
   <script type="text/javascript">
-    $('#datetimepicker1').datetimepicker({
-      language: 'es',
-      pickTime: false
+    $('#datetimepicker1').datepicker({
+      language: 'es'
     });
   </script>
 </div>

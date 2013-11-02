@@ -30,7 +30,7 @@
               </fieldset>
               <br/>
               <fieldset class="">
-                <g:submitButton name="create" class="btn btn-large btn-theme btn-rounded" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+                <g:submitButton name="create" class="btn btn-large btn-theme btn-rounded" value="${message(code: 'default.button.create.label', default: 'Create')}" /><g:link action="index" class="btn btn-large btn-theme btn-rounded">Cancelar</g:link>
               </fieldset>
             </g:form>
           </div>

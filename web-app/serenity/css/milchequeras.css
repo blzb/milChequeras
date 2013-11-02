@@ -84,3 +84,11 @@ code {
 .btn{
        font-family: Tahoma, Arial, sans-serif;
 }
+.nohoverActive:hover{
+       background-color: #94c045 !important;
+       cursor: default !important;
+}
+.nohover:hover{
+       background-color: #3c3c3c !important;
+       cursor: default !important;
+}

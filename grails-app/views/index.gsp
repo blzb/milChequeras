@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="layout" content="main" />
+    <meta name="layout" content="home" />
     <title>Welcome to Grails</title>
     <script src="${resource(dir: 'serenity/js/sequence', file: 'sequence.jquery-min.js')}"></script>
     <script src="${resource(dir: 'serenity/js/sequence', file: 'setting.js')}"></script>

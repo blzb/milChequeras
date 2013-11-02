@@ -41,10 +41,19 @@ class AuthController {
               }           
        }
        def guardar ={
+              if(params.password == "" || params.confirmPassword == "" || params.oldPassword == ""){
+                     flash.message = message(code: "La constraseña no puede ser vacia")
+                     redirect(action: "cambiar")
+              }
               if(params.password == params.confirmPassword){
                      def usuario = Usuario.findByUsername(SecurityUtils.subject.principal)
-                     usuario.passwordHash = new Sha256Hash(params.password).toHex()
-                     redirect(uri: "/")
+                     if(usuario.passwordHash == new Sha256Hash(params.oldPassword).toHex()){
+                            usuario.passwordHash = new Sha256Hash(params.password).toHex()
+                            redirect(uri: "/")
+                     }else{
+                            flash.message = message(code: "Tu password actual no es correcto")
+                            redirect(action: "cambiar")  
+                     }
               }else{
                      flash.message = message(code: "La confirmacion no es igual, verifica")
                      redirect(action: "cambiar")

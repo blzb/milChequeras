@@ -4,7 +4,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: serieInstance, field: 'clave', 'error')} required">
   <label for="clave">
-<g:message code="serie.clave.label" default="Clave" />
+    <g:message code="serie.clave.label" default="Clave" />
     <span class="required-indicator">*</span>
   </label>
   <g:textField class="span12" name="clave" required="" value="${serieInstance?.clave}"/>
@@ -22,23 +22,26 @@
   <label for="vigencia">
     <g:message code="serie.vigencia.label" default="Vigencia" />
     <span class="required-indicator">*</span>
-  </label>
-  <div id="datetimepicker1" class="input-append date">
-    <g:textField  readonly="" class="span12" name="vigencia" required="" data-format="dd/MM/yyyy " value="${formatDate(format:'dd/MM/yyyy',date:serieInstance?.vigencia)}"/>
+  </label>  
+  <div class="input-append date" id="datetimepicker1" data-date="${formatDate(format:'dd/mm/yyyy',date:serieInstance?.vigencia)}" data-date-format="dd/mm/yyyy">
+    <g:textField readonly="" class="span12" name="vigencia" required="" value="${formatDate(format:'dd/mm/yyyy',date:serieInstance?.vigencia)}"/>
     <span class="add-on">
-      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+      <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="icon-calendar">
       </i>
     </span>
   </div>
   <script type="text/javascript">
-    $('#datetimepicker1').datetimepicker({
-      language: 'es',
-      pickTime: false ,
-      startDate: new Date(${(new Date()).time})
+       var nowTemp = new Date();
+    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+    $('#datetimepicker1').datepicker({
+     onRender: function(date) {
+        return date.valueOf() < now.valueOf() ? 'disabled' : '';
+      }
     });
-</script>
-  
-  <!--g:datePicker name="vigencia" precision="day"  value="${serieInstance?.vigencia}"  /-->
+
+  </script>
+
+<!--g:datePicker name="vigencia" precision="day"  value="${serieInstance?.vigencia}"  /-->
 </div>
 
 <!--div class="fieldcontain ${hasErrors(bean: serieInstance, field: 'chequeras', 'error')} ">

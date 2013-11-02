@@ -19,15 +19,21 @@
             </div>           
           </g:if>
           <div class="control-group">
-            <label class="control-label" for="inputSigninPassword">Password</label>
+            <label class="control-label" for="inputSigninPassword">Password Actual</label>
             <div class="controls">
-              <input type="password" name="password" value="" class="span12"/>
+              <g:passwordField  name="oldPassword" value="" class="span12" required=""/>
             </div>
           </div>
           <div class="control-group">
-            <label class="control-label" for="confirmPassword">Confirmar Password:</label>
+            <label class="control-label" for="inputSigninPassword">Nuevo Password</label>
             <div class="controls">
-              <input type="password" name="confirmPassword" value="" class="span12" />
+              <g:passwordField name="password" value="" class="span12" required=""/>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="confirmPassword">Confirmar Nuevo Password:</label>
+            <div class="controls">
+              <g:passwordField name="confirmPassword" value="" class="span12" required=""/>
             </div>
           </div>
           <div class="control-group">

@@ -54,7 +54,7 @@
 ${it.cheque.clave}: ${it.cheque.descripcion}
                     </td>
                     <td style="text-align: center; ">
-                      <i class="icon-circled icon-64 icon-meh"></i>
+                      <i class="icon-circled icon-64 icon-ban-circle nohover"></i>
                     </td>
                     <td style="vertical-align: middle;">
                       <a class="btn btn-inverse btn-large span12" href="#" onclick="detalle('${it.usado.dateCreated.format('dd/MMMM/yyyy HH:mm:ss')}','${it.usado.referencia}');">
@@ -69,7 +69,7 @@ ${it.cheque.clave}: ${it.cheque.descripcion}
                       <b>${it.cheque.clave}: ${it.cheque.descripcion}</b>
                     </td>
                     <td  style="text-align: center;">
-                      <i class="icon-circled icon-64 icon-smile active"></i>                      
+                      <i class="icon-circled icon-64 icon-ok active nohoverActive"></i>                      
                     </td>
                     <td style="vertical-align: middle;">
                       <!--input type="radio" name="usar" value="${it.cheque.id}" onclick="('#myModal').modal('show')"/-->

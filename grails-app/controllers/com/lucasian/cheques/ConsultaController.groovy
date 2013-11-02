@@ -26,7 +26,6 @@ class ConsultaController {
                                           [cheque: it]
                                    }
                             }
-                            println(cheques)
                             [cheques: cheques, serie: params.serie]                            
                      }              
               }else{
