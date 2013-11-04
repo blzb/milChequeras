@@ -38,9 +38,9 @@ class ConsultaController {
               params.referencia = params.referencia.trim()
               def resultado = consultaService.usarCheque(params.usar,params.serie, params.referencia)
               if(resultado == true){
-                     [usado: true]
+                     [usado: true, serie: params.serie]
               }else{
-                     [usado:false, chequera: resultado]
+                     [usado:false, chequera: resultado, serie: params.serie]
               }
        }
 }

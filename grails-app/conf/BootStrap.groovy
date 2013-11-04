@@ -52,7 +52,7 @@ class BootStrap {
                twitter: "blzb", fechaNacimiento: new Date(), sexo:"Hombre")
         chequera.setSerie(serie)
         chequera.save()
-        
+        Locale.setDefault(new Locale("es","MX")) 
         
     }
     def destroy = {

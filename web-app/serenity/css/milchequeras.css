@@ -15,7 +15,9 @@
 .sortable{
        background-image: url('../img/sortable.gif');
        background-repeat: no-repeat;
-       background-position:  center right;
+       background-position-x: 0%;
+       background-position-y: 50%;
+       padding-left: 20px !important;
 }
 .sorted.desc{
        background-image: url('../img/sorted-desc.gif');
@@ -87,8 +89,13 @@ code {
 .nohoverActive:hover{
        background-color: #94c045 !important;
        cursor: default !important;
+       text-decoration: none;
 }
 .nohover:hover{
        background-color: #3c3c3c !important;
        cursor: default !important;
+       text-decoration: none;
+}
+.tooltip.left {
+  margin-left: -10px !important;
 }

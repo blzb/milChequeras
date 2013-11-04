@@ -50,11 +50,13 @@
               <g:each in="${cheques}" >
                 <g:if test="${it.usado}">
                   <tr>
-                    <td style="vertical-align: middle;">
+                    <td style="vertical-align: middle;">  
 ${it.cheque.clave}: ${it.cheque.descripcion}
                     </td>
                     <td style="text-align: center; ">
-                      <i class="icon-circled icon-64 icon-ban-circle nohover"></i>
+
+                        <i class="icon-circled icon-64 icon-ban-circle nohover tip"  data-toggle="tooltip" data-placement="left" title="Ya fue utilizado" data-trigger="hover focus click"></i>
+                      </a>
                     </td>
                     <td style="vertical-align: middle;">
                       <a class="btn btn-inverse btn-large span12" href="#" onclick="detalle('${it.usado.dateCreated.format('dd/MMMM/yyyy HH:mm:ss')}','${it.usado.referencia}');">
@@ -69,7 +71,7 @@ ${it.cheque.clave}: ${it.cheque.descripcion}
                       <b>${it.cheque.clave}: ${it.cheque.descripcion}</b>
                     </td>
                     <td  style="text-align: center;">
-                      <i class="icon-circled icon-64 icon-ok active nohoverActive"></i>                      
+                      <i class="icon-circled icon-64 icon-ok active nohoverActive tip"   data-toggle="tooltip" data-placement="left" title="Esta libre para utilizarse" data-trigger="hover focus click">></i>                      
                     </td>
                     <td style="vertical-align: middle;">
                       <!--input type="radio" name="usar" value="${it.cheque.id}" onclick="('#myModal').modal('show')"/-->
@@ -107,6 +109,7 @@ ${it.cheque.clave}: ${it.cheque.descripcion}
     </div>
   </div>
   <script>
+    $(".tip").tooltip();
     function usarCheque(id){        
         $('#referenciaModal').modal('show');
         $('#usar').val(id);

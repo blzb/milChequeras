@@ -31,7 +31,11 @@
               </div>
             </div>
           </g:else>
-          <g:link action="index" class="btn btn-large btn-theme btn-rounded">Regresar</g:link>
+          <g:form action="buscar">                  
+            <input type="hidden" value="${serie}" name="serie" />
+            <input type="submit" value="Regresar" class="btn btn-large btn-theme btn-rounded ">
+            <g:link action="index" class="btn btn-large btn-theme btn-rounded">Nueva Busqueda</g:link>
+          </g:form>          
         </div>
       </div>
     </section>  

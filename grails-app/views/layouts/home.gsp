@@ -106,9 +106,9 @@
       <div class="container">
         <div class="row">
           <div class="span6">
-            <p>
+            <a href="http://lucasianmexico.com/">
               &copy; Lucasian Labs 2013 All right reserved.
-            </p>
+            </a>
           </div>
           <div class="span6">
             <p class="pull-right" style="margin: -10 0 0 0;">
