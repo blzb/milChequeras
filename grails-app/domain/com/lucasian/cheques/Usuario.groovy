@@ -15,8 +15,7 @@ class Usuario {
               nombre (nullable: false, blank: false, size:1..100)
               apellidoPaterno (nullable: false, blank: false, size: 1..100)
               apellidoMaterno (nullable:true, size: 1..100)
-              email (nullable: false, blank: false, email:true, size:1.255)
-
+              email (nullable: false, blank: false, email:true, size:1..255)
        }
        static mapping = {
               tablePerHierarchy false

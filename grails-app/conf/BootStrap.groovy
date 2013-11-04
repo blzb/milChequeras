@@ -19,7 +19,7 @@ class BootStrap {
         vendedorUser.setRol(vendedor);
         vendedorUser.save()
         
-        def sucursal = new Sucursal(direccion:"Magdalena 37", clave:"MA2", nombre:"Carls Jr")
+        def sucursal = new Sucursal(local:"Magdalena 37", clave:"MA2", nombre:"Carls Jr")
         sucursal.save()
         def empleadoUser = new Empleado(username: "carls", passwordHash: new Sha256Hash("password").toHex(), puesto:"Gerente", email:"angelpmza@gmail.com", nombre:"Carlos", apellidoPaterno:"Navarrete")
         empleadoUser.setRol(empleado);
