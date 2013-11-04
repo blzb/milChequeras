@@ -5,6 +5,6 @@ class ChequesUsados {
     String referencia
     Date dateCreated
     static constraints = {
-           referencia (nullable: false, blank: false)
+           referencia (nullable: false, blank: false, size:1..255)
     }
 }

@@ -10,12 +10,12 @@ class Usuario {
        static belongsTo = [rol: Rol]
 
        static constraints = {
-              username(nullable: false, blank: false, unique: true)
+              username(nullable: false, blank: false, unique: true, size:5..50)
               rol(nullable: true)
-              nombre (nullable: false, blank: false)
-              apellidoPaterno (nullable: false, blank: false)
-              apellidoMaterno (nullable:true)
-              email (nullable: false, blank: false, email:true)
+              nombre (nullable: false, blank: false, size:1..100)
+              apellidoPaterno (nullable: false, blank: false, size: 1..100)
+              apellidoMaterno (nullable:true, size: 1..100)
+              email (nullable: false, blank: false, email:true, size:1.255)
 
        }
        static mapping = {

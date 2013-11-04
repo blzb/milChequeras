@@ -15,17 +15,17 @@ class Chequera {
     String colonia
     String telefono
     static constraints = {
-           numero (nullable: false, blank: false)
-           email (nullable: false, blank: false, email:true)
-           nombre (nullable: false, blank: false)
-           apellidoPaterno (nullable: false, blank: false)
-           apellidoMaterno(nullable: true)
+           numero (nullable: false, blank: false, size:1..100)
+           email (nullable: false, blank: false, email:true, size: 1..255)
+           nombre (nullable: false, blank: false, size: 1..100)
+           apellidoPaterno (nullable: false, blank: false, size: 1..100)
+           apellidoMaterno(nullable: true, size:0..100)
            fechaNacimiento (nullable:false)
            sexo(inList:['Hombre','Mujer'], blank:false, nullable: false)
-           colonia (nullable:true)
-           telefono (nullable: true)
-           facebook(nullable:true)
-           twitter(nullable:true)
+           colonia (nullable:true, size: 0..100)
+           telefono (nullable: true, size: 0..20)
+           facebook(nullable:true, size: 0..255)
+           twitter(nullable:true, size:0..255)
     }
     String getApellidos(){
            if(apellidoMaterno){

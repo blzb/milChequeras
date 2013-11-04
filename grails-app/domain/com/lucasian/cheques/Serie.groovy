@@ -6,8 +6,8 @@ class Serie {
     Date vigencia
     static hasMany = [chequeras: Chequera, cheques: Cheque]
     static constraints = {
-           clave (nullable: false, blank: false)
-           nombre (nullable: false, blank: false)
+           clave (nullable: false, blank: false, size:1..100)
+           nombre (nullable: false, blank: false, size: 1..100)
            vigencia (nullable: false)
     }
     String toString(){

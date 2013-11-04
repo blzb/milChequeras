@@ -14,7 +14,7 @@ class Empleado extends Usuario {
     }
     static transients = ['apellidos']
     static constraints = {
-           puesto (nullable: false, blank: false)
+           puesto (nullable: false, blank: false, size:1..100)
            
     }
 }

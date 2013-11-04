@@ -4,8 +4,8 @@ class Cheque {
     static belongsTo = [serie: Serie, sucursal: Sucursal]    
     static hasMany = [usados: ChequesUsados]
     static constraints = {
-           descripcion (nullable: false, blank: false, maxSize: 255)
-           clave (nullable:false, blanl: false)
+           descripcion (nullable: false, blank: false, size:1..255)
+           clave (nullable:false, blanl: false, size: 1..100)
     }
     String descripcion
     String clave

@@ -6,7 +6,7 @@ class Rol {
     static belongsTo = Usuario
 
     static constraints = {
-        name(nullable: false, blank: false, unique: true)
+        name(nullable: false, blank: false, unique: true, size:5..50)
     }
     String toString(){
            return name
