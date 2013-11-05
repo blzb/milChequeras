@@ -6,7 +6,7 @@
               <span class="required-indicator">*</span>
 		
 	</label>
-	<g:textField name="clave" required="" value="${chequeInstance?.clave}"/>
+	<g:textField name="clave" required="" maxLength="100" value="${chequeInstance?.clave}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: chequeInstance, field: 'descripcion', 'error')} required">

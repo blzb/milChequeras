@@ -7,7 +7,7 @@
     <g:message code="serie.clave.label" default="Clave" />
     <span class="required-indicator">*</span>
   </label>
-  <g:textField class="span12" name="clave" required="" value="${serieInstance?.clave}"/>
+  <g:textField class="span12" name="clave" required="" maxLength="100" value="${serieInstance?.clave}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: serieInstance, field: 'nombre', 'error')} required">
@@ -15,7 +15,7 @@
     <g:message code="serie.nombre.label" default="Nombre" />
     <span class="required-indicator">*</span>
   </label>
-  <g:textField class="span12" name="nombre" required="" value="${serieInstance?.nombre}"/>
+  <g:textField class="span12" name="nombre" required="" maxLength="100" value="${serieInstance?.nombre}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: serieInstance, field: 'vigencia', 'error')} required">

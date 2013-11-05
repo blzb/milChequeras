@@ -7,7 +7,7 @@
     <g:message code="tienda.local.label" default="Local" />
     <span class="required-indicator">*</span>
   </label>
-  <g:textField class="span12" name="local" required="" value="${tiendaInstance?.local}"/>
+  <g:textField class="span12" name="local" required="" maxLength="100" value="${tiendaInstance?.local}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tiendaInstance, field: 'clave', 'error')} required">
@@ -15,7 +15,7 @@
     <g:message code="tienda.clave.label" default="Clave" />
     <span class="required-indicator">*</span>
   </label>
-  <g:textField class="span12" name="clave" required="" value="${tiendaInstance?.clave}"/>
+  <g:textField class="span12" name="clave" required="" maxLength="100" value="${tiendaInstance?.clave}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tiendaInstance, field: 'nombre', 'error')} required">
@@ -23,7 +23,7 @@
     <g:message code="tienda.nombre.label" default="Nombre" />
     <span class="required-indicator">*</span>
   </label>
-  <g:textField class="span12" name="nombre" required="" value="${tiendaInstance?.nombre}"/>
+  <g:textField class="span12" name="nombre" required="" maxLength="100" value="${tiendaInstance?.nombre}"/>
 </div>
 
 <!--div class="fieldcontain ${hasErrors(bean: tiendaInstance, field: 'cheques', 'error')} ">

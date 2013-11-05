@@ -7,7 +7,7 @@
 		<g:message code="usuario.username.label" default="Username" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField class="span12" name="username" required="" value="${usuarioInstance?.username}"/>
+	<g:textField class="span12" name="username" required="" maxLength="50" value="${usuarioInstance?.username}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'nombre', 'error')} required">
@@ -15,7 +15,7 @@
 		<g:message code="usuario.nombre.label" default="Nombre" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField class="span12" name="nombre" required="" value="${usuarioInstance?.nombre}"/>
+	<g:textField class="span12" name="nombre" required="" maxLength="100" value="${usuarioInstance?.nombre}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'apellidoPaterno', 'error')} required">
@@ -23,7 +23,7 @@
 		<g:message code="usuario.apellidoPaterno.label" default="Apellido Paterno" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField class="span12" name="apellidoPaterno" required="" value="${usuarioInstance?.apellidoPaterno}"/>
+	<g:textField class="span12" name="apellidoPaterno" required="" maxLength="100" value="${usuarioInstance?.apellidoPaterno}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'apellidoMaterno', 'error')} ">
@@ -31,7 +31,7 @@
 		<g:message code="usuario.apellidoMaterno.label" default="Apellido Materno" />
 		
 	</label>
-	<g:textField class="span12" name="apellidoMaterno" value="${usuarioInstance?.apellidoMaterno}"/>
+	<g:textField class="span12" name="apellidoMaterno" maxLength="100" value="${usuarioInstance?.apellidoMaterno}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'email', 'error')} required">
@@ -39,7 +39,7 @@
 		<g:message code="usuario.email.label" default="Email" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field class="span12" type="email" name="email" required="" value="${usuarioInstance?.email}"/>
+	<g:field class="span12" type="email" name="email" required="" maxLength="255" value="${usuarioInstance?.email}"/>
 </div>
 
 

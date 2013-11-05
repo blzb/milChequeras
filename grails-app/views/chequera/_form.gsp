@@ -2,12 +2,12 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'numero', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'numero', 'error')} required ">
   <label for="numero">
     <g:message code="chequera.numero.label" default="Numero" />
     <span class="required-indicator">*</span>
   </label>
-  <g:textField class="span12" name="numero" required="" value="${chequeraInstance?.numero}"/>
+  <g:textField class="span12" name="numero" required=""  maxLength="100"  value="${chequeraInstance?.numero}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'nombre', 'error')} required">
@@ -15,7 +15,7 @@
     <g:message code="chequera.nombre.label" default="Nombre" />
     <span class="required-indicator">*</span>
   </label>
-  <g:textField class="span12" name="nombre" required="" value="${chequeraInstance?.nombre}"/>
+  <g:textField class="span12" name="nombre" required="" maxLength="100" value="${chequeraInstance?.nombre}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'apellidoPaterno', 'error')} required">
@@ -23,14 +23,14 @@
     <g:message code="chequera.apellidoPaterno.label" default="Apellido Paterno" />
     <span class="required-indicator">*</span>
   </label>
-  <g:textField class="span12" name="apellidoPaterno" required="" value="${chequeraInstance?.apellidoPaterno}"/>
+  <g:textField class="span12" name="apellidoPaterno" required="" maxLength="100" value="${chequeraInstance?.apellidoPaterno}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'apellidoMaterno', 'error')} required">
   <label for="apellidoMaterno">
     <g:message code="chequera.apellidoMaterno.label" default="Apellido Materno" />
   </label>
-  <g:textField class="span12" name="apellidoMaterno" value="${chequeraInstance?.apellidoMaterno}"/>
+  <g:textField class="span12" name="apellidoMaterno" maxLength="100" value="${chequeraInstance?.apellidoMaterno}"/>
 </div>
 
 
@@ -39,7 +39,7 @@
     <g:message code="chequera.email.label" default="Email" />
     <span class="required-indicator">*</span>
   </label>
-  <g:field class="span12" type="email" name="email" required="" value="${chequeraInstance?.email}"/>
+  <g:field class="span12" type="email" name="email" required=""  maxLength="255" value="${chequeraInstance?.email}"/>
 </div>
 
 
@@ -69,7 +69,7 @@
     <g:message code="chequera.sexo.label" default="Sexo" />
     <span class="required-indicator">*</span>
   </label>
-  <g:select name="sexo" from="${chequeraInstance.constraints.sexo.inList}" required="" value="${chequeraInstance?.sexo}" valueMessagePrefix="chequera.sexo"/>
+  <g:select name="sexo" from="${chequeraInstance.constraints.sexo.inList}" required=""  value="${chequeraInstance?.sexo}" valueMessagePrefix="chequera.sexo"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'colonia', 'error')} ">
@@ -77,7 +77,7 @@
     <g:message code="chequera.colonia.label" default="Colonia" />
 
   </label>
-  <g:textField class="span12" name="colonia" value="${chequeraInstance?.colonia}"/>
+  <g:textField class="span12" name="colonia" maxLength="100" value="${chequeraInstance?.colonia}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'telefono', 'error')} ">
@@ -85,7 +85,7 @@
     <g:message code="chequera.telefono.label" default="Telefono" />
 
   </label>
-  <g:textField class="span12" name="telefono" value="${chequeraInstance?.telefono}"/>
+  <g:textField class="span12" name="telefono" maxLength="20" value="${chequeraInstance?.telefono}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'facebook', 'error')} ">
@@ -93,7 +93,7 @@
     <g:message code="chequera.facebook.label" default="Facebook" />
 
   </label>
-  <g:textField class="span12" name="facebook" value="${chequeraInstance?.facebook}"/>
+  <g:textField class="span12" name="facebook" maxLength="255" value="${chequeraInstance?.facebook}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'twitter', 'error')} ">
@@ -101,7 +101,7 @@
     <g:message code="chequera.twitter.label" default="Twitter" />
 
   </label>
-  <g:textField class="span12" name="twitter" value="${chequeraInstance?.twitter}"/>
+  <g:textField class="span12" name="twitter" maxLength="255" value="${chequeraInstance?.twitter}"/>
 </div>
 
 

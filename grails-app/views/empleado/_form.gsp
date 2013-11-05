@@ -7,7 +7,7 @@
     <g:message code="empleado.username.label" default="Username" />
     <span class="required-indicator">*</span>
   </label>
-  <g:textField class="span12" name="username" required="" value="${empleadoInstance?.username}"/>
+  <g:textField class="span12" name="username" required="" maxLength="50" value="${empleadoInstance?.username}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'puesto', 'error')} required">
@@ -15,7 +15,7 @@
     <g:message code="empleado.puesto.label" default="Puesto" />
     <span class="required-indicator">*</span>
   </label>
-  <g:textField class="span12" name="puesto" required="" value="${empleadoInstance?.puesto}"/>
+  <g:textField class="span12" name="puesto" required="" maxLength="100" value="${empleadoInstance?.puesto}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'email', 'error')} required">
@@ -23,7 +23,7 @@
     <g:message code="empleado.email.label" default="Email" />
     <span class="required-indicator">*</span>
   </label>
-  <g:field class="span12" type="email" name="email" required="" value="${empleadoInstance?.email}"/>
+  <g:field class="span12" type="email" name="email" required="" maxLength="255" value="${empleadoInstance?.email}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'nombre', 'error')} required">
@@ -31,7 +31,7 @@
     <g:message code="empleado.nombre.label" default="Nombre" />
     <span class="required-indicator">*</span>
   </label>
-  <g:textField class="span12" name="nombre" required="" value="${empleadoInstance?.nombre}"/>
+  <g:textField class="span12" name="nombre" required="" maxLength="100" value="${empleadoInstance?.nombre}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'apellidoPaterno', 'error')} required">
@@ -39,7 +39,7 @@
     <g:message code="empleado.apellidoPaterno.label" default="Apellido Paterno" />
     <span class="required-indicator">*</span>
   </label>
-  <g:textField class="span12" name="apellidoPaterno" required="" value="${empleadoInstance?.apellidoPaterno}"/>
+  <g:textField class="span12" name="apellidoPaterno" required="" maxLength="100" value="${empleadoInstance?.apellidoPaterno}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'apellidoMaterno', 'error')} required">
@@ -47,7 +47,7 @@
     <g:message code="empleado.apellidoMaterno.label" default="Apellido Materno" />
     <span class="required-indicator">*</span>
   </label>
-  <g:textField class="span12" name="apellidoMaterno" value="${empleadoInstance?.apellidoMaterno}"/>
+  <g:textField class="span12" name="apellidoMaterno" maxLength="100" value="${empleadoInstance?.apellidoMaterno}"/>
 </div>
 
 
