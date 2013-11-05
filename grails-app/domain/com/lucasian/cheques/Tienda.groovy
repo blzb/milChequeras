@@ -1,6 +1,6 @@
 package com.lucasian.cheques
 
-class Sucursal {
+class Tienda {
     static hasMany = [cheques: Cheque, empleados: Empleado]
     String local
     String clave    

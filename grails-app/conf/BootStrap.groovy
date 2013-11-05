@@ -19,11 +19,11 @@ class BootStrap {
         vendedorUser.setRol(vendedor);
         vendedorUser.save()
         
-        def sucursal = new Sucursal(local:"Magdalena 37", clave:"MA2", nombre:"Carls Jr")
-        sucursal.save()
+        def tienda = new Tienda(local:"Magdalena 37", clave:"MA2", nombre:"Carls Jr")
+        tienda.save()
         def empleadoUser = new Empleado(username: "carls", passwordHash: new Sha256Hash("password").toHex(), puesto:"Gerente", email:"angelpmza@gmail.com", nombre:"Carlos", apellidoPaterno:"Navarrete")
         empleadoUser.setRol(empleado);
-        empleadoUser.setSucursal(sucursal)
+        empleadoUser.setTienda(tienda)
         empleadoUser.save()
         System.out.println("EMPLEADO USER:"+empleadoUser.id)
         
@@ -33,17 +33,17 @@ class BootStrap {
         System.out.println(serie.id)
         
         def cheque1 = new Cheque(descripcion: "Descuento de 25%", clave:"A1")
-        cheque1.setSucursal(sucursal)
+        cheque1.setTienda(tienda)
         cheque1.setSerie(serie)
         cheque1.save()
         
         def cheque2 = new Cheque(descripcion: "Descuento de 50%", clave:"A2")
-        cheque2.setSucursal(sucursal) 
+        cheque2.setTienda(tienda) 
         cheque2.setSerie(serie)
         cheque2.save()
         
         def cheque3 = new Cheque(descripcion: "Descuento de 75%", clave:"A3")
-        cheque3.setSucursal(sucursal)
+        cheque3.setTienda(tienda)
         cheque3.setSerie(serie)
         cheque3.save()
         

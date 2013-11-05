@@ -126,10 +126,10 @@
                     <g:link controller="serie">Series</g:link>
                     </li>
                     <li>
-                    <g:link controller="sucursal">Sucursales</g:link>
+                    <g:link controller="tienda">Sucursales</g:link>
                     </li>
                     <li>
-                    <g:link controller="sucursal">Vendedores</g:link>
+                    <g:link controller="tienda">Vendedores</g:link>
                     </li>
 
                   </ul>
@@ -170,7 +170,7 @@
                     </li>
                     <li >                      
                       <h6>
-                        <g:link controller="sucursal" class="menu">
+                        <g:link controller="tienda" class="menu">
                           <i class="icon-square icon-shopping-cart icon-64 pull-left"></i>
                           <br/>Sucursales
                         </g:link>

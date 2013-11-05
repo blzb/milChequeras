@@ -17,12 +17,12 @@
 	<g:textArea class="span12" name="descripcion" cols="40" rows="5" maxlength="255" required="" value="${chequeInstance?.descripcion}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: chequeInstance, field: 'sucursal', 'error')} required">
-	<label for="sucursal">
-		<g:message code="cheque.sucursal.label" default="Sucursal" />
+<div class="fieldcontain ${hasErrors(bean: chequeInstance, field: 'tienda', 'error')} required">
+	<label for="tienda">
+		<g:message code="cheque.tienda.label" default="Tienda" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="sucursal" name="sucursal.id" from="${com.lucasian.cheques.Sucursal.list()}" optionKey="id" required="" value="${chequeInstance?.sucursal?.id}" class="many-to-one"/>
+	<g:select id="tienda" name="tienda.id" from="${com.lucasian.cheques.Tienda.list()}" optionKey="id" required="" value="${chequeInstance?.tienda?.id}" class="many-to-one"/>
 </div>
 
 <g:if test="${nuevo}">

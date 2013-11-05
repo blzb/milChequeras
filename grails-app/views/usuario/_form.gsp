@@ -43,14 +43,6 @@
 </div>
 
 
-<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'rol', 'error')} ">
-	<label for="rol">
-		<g:message code="usuario.rol.label" default="Rol" />
-		
-	</label>
-	<g:select id="rol" name="rol.id" from="${com.lucasian.cheques.Rol.list()}" optionKey="id" value="${usuarioInstance?.rol?.id}" class="many-to-one" noSelection="['null': '']"/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'passwordHash', 'error')} ">
 	<label for="passwordHash">
 		<g:message code="usuario.passwordHash.label" default="Password" />

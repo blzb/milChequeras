@@ -13,7 +13,8 @@ class UsuarioController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Usuario.list(params), model:[usuarioInstanceCount: Usuario.count()]
+        def adminRol = Rol.findByName("administrador")        
+        [usuarioInstanceList:Usuario.executeQuery("from Usuario u where u.rol.id = :idRol", [idRol: adminRol.id], params), usuarioInstanceCount: Usuario.countByRol(adminRol)]
     }
 
     def show(Usuario usuarioInstance) {
@@ -26,6 +27,7 @@ class UsuarioController {
 
     @Transactional
     def save(Usuario usuarioInstance) {
+        usuarioInstance.rol = Rol.findByName("administrador")
         if (usuarioInstance == null) {
             notFound()
             return
@@ -53,6 +55,7 @@ class UsuarioController {
 
     @Transactional
     def update(Usuario usuarioInstance) {
+         usuarioInstance.rol = Rol.findByName("administrador")
         if (usuarioInstance == null) {
             notFound()
             return

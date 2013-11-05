@@ -47,7 +47,7 @@
 
                 <g:sortableColumn property="descripcion" title="${message(code: 'cheque.descripcion.label', default: 'Descripcion')}" />
 
-                <th><g:message code="cheque.sucursal.label" default="Sucursal" /></th>
+                <th><g:message code="cheque.tienda.label" default="Tienda" /></th>
 
                 </tr>
                 </thead>
@@ -58,7 +58,7 @@
                     <td>${fieldValue(bean: chequeInstance, field: "descripcion")}</td>
 
 
-                    <td>${fieldValue(bean: chequeInstance, field: "sucursal")}</td>
+                    <td>${fieldValue(bean: chequeInstance, field: "tienda")}</td>
 
                     <td>
                   <g:form url="[resource:chequeInstance, action:'delete']" method="DELETE" style="margin-bottom: 0px;">

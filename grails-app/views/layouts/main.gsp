@@ -79,13 +79,13 @@
                       <g:link controller="serie" class="menu">Series</g:link>
                     </li>
                     <li class="visible-tablet">
-                      <g:link controller="sucursal" class="menu">Sucursales</g:link>
+                      <g:link controller="tienda" class="menu">Tiendas</g:link>
                     </li>
                     <li class="visible-tablet">
                        <g:link controller="vendedor" class="menu">Vendedores</g:link>
                     </li>
                     <li class="visible-tablet">
-                       <g:link controller="usuario" class="menu">Usuario</g:link>
+                       <g:link controller="usuario" class="menu">Admins</g:link>
                     </li>
                     <li>
                     <g:link controller="auth" action="signOut">Salir
@@ -136,9 +136,9 @@
                         </g:link>
                     </div>
                     <div style="width: 78px; display: inline-block" class="centered">
-                        <g:link controller="sucursal" class="menu">
+                        <g:link controller="tienda" class="menu">
                           <i class="icon-circled active  icon-shopping-cart icon-64 pull-left"></i>
-                          Sucursales
+                          Tiendas
                         </g:link>
                     </div>
                     <div style="width: 78px; display: inline-block" class="centered">
@@ -150,7 +150,7 @@
                     <div style="width: 78px; display: inline-block" class="centered">
                         <g:link controller="usuario" class="menu">
                           <i class="icon-circled active  icon-user icon-64 pull-left"></i>
-                          Usuarios
+                          Admins
                         </g:link>
                     </div>
                 </div>                 	

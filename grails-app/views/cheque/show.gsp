@@ -48,11 +48,11 @@
                 </li>
               </g:if>
   
-              <g:if test="${chequeInstance?.sucursal}">
+              <g:if test="${chequeInstance?.tienda}">
                 <li class="fieldcontain">
-                  <span id="sucursal-label" class="property-label"><g:message code="cheque.sucursal.label" default="Sucursal" /></span>
+                  <span id="tienda-label" class="property-label"><g:message code="cheque.tienda.label" default="Tienda" /></span>
   
-                <span class="property-value" aria-labelledby="sucursal-label"><g:link controller="sucursal" action="show" id="${chequeInstance?.sucursal?.id}">${chequeInstance?.sucursal?.encodeAsHTML()}</g:link></span>
+                <span class="property-value" aria-labelledby="tienda-label"><g:link controller="tienda" action="show" id="${chequeInstance?.tienda?.id}">${chequeInstance?.tienda?.encodeAsHTML()}</g:link></span>
     
                 </li>
               </g:if>

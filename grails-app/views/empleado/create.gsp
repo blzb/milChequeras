@@ -30,7 +30,7 @@
               </fieldset>
               <br/>
               <fieldset class="">
-                <g:submitButton name="create" class="btn btn-large btn-theme btn-rounded" value="${message(code: 'default.button.create.label', default: 'Create')}" /><g:link controller="sucursal" action="edit" id="${params.sucursal.id}" class="btn btn-large btn-theme btn-rounded">Cancelar</g:link>
+                <g:submitButton name="create" class="btn btn-large btn-theme btn-rounded" value="${message(code: 'default.button.create.label', default: 'Create')}" /><g:link controller="tienda" action="edit" id="${params.tienda.id}" class="btn btn-large btn-theme btn-rounded">Cancelar</g:link>
               </fieldset>
             </g:form>
           </div>

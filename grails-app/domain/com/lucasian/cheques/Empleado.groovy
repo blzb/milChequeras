@@ -1,7 +1,7 @@
 package com.lucasian.cheques
 
 class Empleado extends Usuario {    
-    static belongsTo = [sucursal: Sucursal]
+    static belongsTo = [tienda: Tienda]
     String puesto
 
     String getApellidos(){

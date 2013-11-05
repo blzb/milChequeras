@@ -84,11 +84,11 @@
                 </li>
               </g:if>
   
-              <g:if test="${empleadoInstance?.sucursal}">
+              <g:if test="${empleadoInstance?.tienda}">
                 <li class="fieldcontain">
-                  <span id="sucursal-label" class="property-label"><g:message code="empleado.sucursal.label" default="Sucursal" /></span>
+                  <span id="tienda-label" class="property-label"><g:message code="empleado.tienda.label" default="Tienda" /></span>
   
-                <span class="property-value" aria-labelledby="sucursal-label"><g:link controller="sucursal" action="show" id="${empleadoInstance?.sucursal?.id}">${empleadoInstance?.sucursal?.encodeAsHTML()}</g:link></span>
+                <span class="property-value" aria-labelledby="tienda-label"><g:link controller="tienda" action="show" id="${empleadoInstance?.tienda?.id}">${empleadoInstance?.tienda?.encodeAsHTML()}</g:link></span>
     
                 </li>
               </g:if>

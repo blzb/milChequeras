@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta name="layout" content="main">
-  <g:set var="entityName" value="${message(code: 'usuario.label', default: 'Usuario')}" />
+  <g:set var="entityName" value="${message(code: 'usuario.label', default: 'Administrador')}" />
   <title><g:message code="default.list.label" args="[entityName]" /></title>
 </head>
 <body>	
@@ -27,10 +27,6 @@
       
             <g:sortableColumn property="apellidoMaterno" title="${message(code: 'usuario.apellidoMaterno.label', default: 'Apellido Materno')}" />
 
-      
-                <th><g:message code="usuario.rol.label" default="Rol" /></th>
-      
-            
             </tr>
             </thead>
             <tbody>
@@ -42,8 +38,7 @@
               <td>${fieldValue(bean: usuarioInstance, field: "apellidoPaterno")}</td>
       
               <td>${fieldValue(bean: usuarioInstance, field: "apellidoMaterno")}</td>
-    
-              <td>${fieldValue(bean: usuarioInstance, field: "rol")}</td>
+   
       
               <td>
               <g:form url="[resource:usuarioInstance, action:'delete']" method="DELETE" style="margin-bottom: 0px;">

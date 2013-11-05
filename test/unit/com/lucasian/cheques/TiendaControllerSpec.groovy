@@ -5,9 +5,9 @@ package com.lucasian.cheques
 import grails.test.mixin.*
 import spock.lang.*
 
-@TestFor(SucursalController)
-@Mock(Sucursal)
-class SucursalControllerSpec extends Specification {
+@TestFor(TiendaController)
+@Mock(Tienda)
+class TiendaControllerSpec extends Specification {
 
     def populateValidParams(params) {
         assert params != null
@@ -21,8 +21,8 @@ class SucursalControllerSpec extends Specification {
             controller.index()
 
         then:"The model is correct"
-            !model.sucursalInstanceList
-            model.sucursalInstanceCount == 0
+            !model.tiendaInstanceList
+            model.tiendaInstanceCount == 0
     }
 
     void "Test the create action returns the correct model"() {
@@ -30,31 +30,31 @@ class SucursalControllerSpec extends Specification {
             controller.create()
 
         then:"The model is correctly created"
-            model.sucursalInstance!= null
+            model.tiendaInstance!= null
     }
 
     void "Test the save action correctly persists an instance"() {
 
         when:"The save action is executed with an invalid instance"
-            def sucursal = new Sucursal()
-            sucursal.validate()
-            controller.save(sucursal)
+            def tienda = new Tienda()
+            tienda.validate()
+            controller.save(tienda)
 
         then:"The create view is rendered again with the correct model"
-            model.sucursalInstance!= null
+            model.tiendaInstance!= null
             view == 'create'
 
         when:"The save action is executed with a valid instance"
             response.reset()
             populateValidParams(params)
-            sucursal = new Sucursal(params)
+            tienda = new Tienda(params)
 
-            controller.save(sucursal)
+            controller.save(tienda)
 
         then:"A redirect is issued to the show action"
-            response.redirectedUrl == '/sucursal/show/1'
+            response.redirectedUrl == '/tienda/show/1'
             controller.flash.message != null
-            Sucursal.count() == 1
+            Tienda.count() == 1
     }
 
     void "Test that the show action returns the correct model"() {
@@ -66,11 +66,11 @@ class SucursalControllerSpec extends Specification {
 
         when:"A domain instance is passed to the show action"
             populateValidParams(params)
-            def sucursal = new Sucursal(params)
-            controller.show(sucursal)
+            def tienda = new Tienda(params)
+            controller.show(tienda)
 
         then:"A model is populated containing the domain instance"
-            model.sucursalInstance == sucursal
+            model.tiendaInstance == tienda
     }
 
     void "Test that the edit action returns the correct model"() {
@@ -82,11 +82,11 @@ class SucursalControllerSpec extends Specification {
 
         when:"A domain instance is passed to the edit action"
             populateValidParams(params)
-            def sucursal = new Sucursal(params)
-            controller.edit(sucursal)
+            def tienda = new Tienda(params)
+            controller.edit(tienda)
 
         then:"A model is populated containing the domain instance"
-            model.sucursalInstance == sucursal
+            model.tiendaInstance == tienda
     }
 
     void "Test the update action performs an update on a valid domain instance"() {
@@ -98,22 +98,22 @@ class SucursalControllerSpec extends Specification {
 
         when:"An invalid domain instance is passed to the update action"
             response.reset()
-            def sucursal = new Sucursal()
-            sucursal.validate()
-            controller.update(sucursal)
+            def tienda = new Tienda()
+            tienda.validate()
+            controller.update(tienda)
 
         then:"The edit view is rendered again with the invalid instance"
             view == 'edit'
-            model.sucursalInstance == sucursal
+            model.tiendaInstance == tienda
 
         when:"A valid domain instance is passed to the update action"
             response.reset()
             populateValidParams(params)
-            sucursal = new Sucursal(params).save(flush: true)
-            controller.update(sucursal)
+            tienda = new Tienda(params).save(flush: true)
+            controller.update(tienda)
 
         then:"A redirect is issues to the show action"
-            response.redirectedUrl == "/sucursal/show/$sucursal.id"
+            response.redirectedUrl == "/tienda/show/$tienda.id"
             flash.message != null
     }
 
@@ -127,17 +127,17 @@ class SucursalControllerSpec extends Specification {
         when:"A domain instance is created"
             response.reset()
             populateValidParams(params)
-            def sucursal = new Sucursal(params).save(flush: true)
+            def tienda = new Tienda(params).save(flush: true)
 
         then:"It exists"
-            Sucursal.count() == 1
+            Tienda.count() == 1
 
         when:"The domain instance is passed to the delete action"
-            controller.delete(sucursal)
+            controller.delete(tienda)
 
         then:"The instance is deleted"
-            Sucursal.count() == 0
-            response.redirectedUrl == '/sucursal/index'
+            Tienda.count() == 0
+            response.redirectedUrl == '/tienda/index'
             flash.message != null
     }
 }

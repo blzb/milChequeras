@@ -54,6 +54,7 @@ class VendedorController {
 
     @Transactional
     def update(Vendedor vendedorInstance) {
+        vendedorInstance.rol = Rol.findByName("vendedor")
         if (vendedorInstance == null) {
             notFound()
             return

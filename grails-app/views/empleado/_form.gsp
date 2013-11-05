@@ -59,8 +59,8 @@
     <g:textField class="span12" name="passwordHash" value=""/>
   </div>
   
-  <div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'sucursal', 'error')} required">
-    <g:hiddenField  id="sucursal" name="sucursal.id" value="${empleadoInstance?.sucursal?.id}" />
+  <div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'tienda', 'error')} required">
+    <g:hiddenField  id="tienda" name="tienda.id" value="${empleadoInstance?.tienda?.id}" />
   </div>
 
 

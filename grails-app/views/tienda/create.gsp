@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="layout" content="main">
-  <g:set var="entityName" value="${message(code: 'sucursal.label', default: 'Sucursal')}" />
+  <g:set var="entityName" value="${message(code: 'tienda.label', default: 'Tienda')}" />
   <title><g:message code="default.create.label" args="[entityName]" /></title>
 </head>
 <body>
@@ -10,23 +10,23 @@
   <section id="content">
     <div class="container-fluid">
       <div class="row-fluid" style="margin-top: 20px;">
-        <div id="create-sucursal" class="content scaffold-create" role="main">                                
+        <div id="create-tienda" class="content scaffold-create" role="main">                                
           
           <div class="span12 well">                       
             <h2><g:message code="default.create.label" args="[entityName]" /></h2>
             <g:if test="${flash.message}">
               <div class="alert alert-info">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
             </g:if>
-            <g:hasErrors bean="${sucursalInstance}">
+            <g:hasErrors bean="${tiendaInstance}">
               <ul class="errors" role="alert">
-                <g:eachError bean="${sucursalInstance}" var="error">
+                <g:eachError bean="${tiendaInstance}" var="error">
                   <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
                 </g:eachError>
               </ul>
             </g:hasErrors>
-            <g:form class="" url="[resource:sucursalInstance, action:'save']" >
+            <g:form class="" url="[resource:tiendaInstance, action:'save']" >
                     <fieldset class="form">
-                <g:render template="form" model="[sucursalInstance: sucursalInstance, nuevo: true]"/>
+                <g:render template="form" model="[tiendaInstance: tiendaInstance, nuevo: true]"/>
               </fieldset>
               <br/>
               <fieldset class="">
