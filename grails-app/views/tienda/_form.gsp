@@ -26,6 +26,19 @@
   <g:textField class="span12" name="nombre" required="" maxLength="100" value="${tiendaInstance?.nombre}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: tiendaInstance, field: 'imagen', 'error')}">
+  <label for="imagen">
+    <g:message code="tienda.imagen.label" default="Imagen" />
+  </label>
+  <input type="file" name="imagen"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: tiendaInstance, field: 'imagen', 'error')}">
+  <g:if test="${tiendaInstance.imagen != null}">
+    <img  src="${createLink(controller:'tienda', action:'showPayload', id:"${tiendaInstance.id}")}" 
+  </g:if>
+</div>
+
 <!--div class="fieldcontain ${hasErrors(bean: tiendaInstance, field: 'cheques', 'error')} ">
        <label for="cheques">
 <g:message code="tienda.cheques.label" default="Cheques" />

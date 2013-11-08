@@ -6,9 +6,9 @@ import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
-class TiendaController {
+class TiendaController {  
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    static allowedMethods = [save: "POST", update: "POST", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -25,6 +25,7 @@ class TiendaController {
 
     @Transactional
     def save(Tienda tiendaInstance) {
+        if (tiendaInstance.imagen.length == 0){ tiendaInstance.imagen=null}
         if (tiendaInstance == null) {
             notFound()
             return
@@ -40,10 +41,15 @@ class TiendaController {
         request.withFormat {
             form {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'tiendaInstance.label', default: 'Tienda'), tiendaInstance.nombre+"("+tiendaInstance.clave+")"])
-                redirect(view:"index")
+                redirect(view:"index") 
+            }
+            multipartForm{
+                flash.message = message(code: 'default.created.message', args: [message(code: 'tiendaInstance.label', default: 'Tienda'), tiendaInstance.nombre+"("+tiendaInstance.clave+")"])
+                redirect(view:"index") 
             }
             '*' { respond tiendaInstance, [status: CREATED] }
         }
+        
     }
 
     def edit(Tienda tiendaInstance) {
@@ -51,7 +57,8 @@ class TiendaController {
     }
 
     @Transactional
-    def update(Tienda tiendaInstance) {
+    def update(Tienda tiendaInstance) {  
+        if (tiendaInstance.imagen.length == 0){ tiendaInstance.imagen=null}
         if (tiendaInstance == null) {
             notFound()
             return
@@ -69,13 +76,18 @@ class TiendaController {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Tienda.label', default: 'Tienda'), tiendaInstance.nombre+"("+tiendaInstance.clave+")"])
                 redirect(view:"index")
             }
+            multipartForm {
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'Tienda.label', default: 'Tienda'), tiendaInstance.nombre+"("+tiendaInstance.clave+")"])
+                redirect(view:"index")
+            }
+            
             '*'{ respond tiendaInstance, [status: OK] }
         }
     }
 
     @Transactional
     def delete(Tienda tiendaInstance) {
-
+        println ('tiendaInstance.toString():::' + tiendaInstance.toString())
         if (tiendaInstance == null) {
             notFound()
             return
@@ -90,6 +102,13 @@ class TiendaController {
             }
             '*'{ render status: NO_CONTENT }
         }
+    }
+    
+    
+    def showPayload() { 
+        def tiendaInstance = Tienda.get(params.id) 
+        response.outputStream << tiendaInstance.imagen // write the image to the outputstream
+        response.outputStream.flush() 
     }
 
     protected void notFound() {

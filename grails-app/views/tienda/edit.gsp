@@ -25,7 +25,7 @@
                 </g:eachError>
               </ul>
             </g:hasErrors>
-            <g:form url="[resource:tiendaInstance, action:'update']" method="PUT" >
+            <g:form url="[resource:tiendaInstance, action:'update']" enctype="multipart/form-data">
               <g:hiddenField name="version" value="${tiendaInstance?.version}" />
               <fieldset class="form">
                 <g:render template="form"/>
