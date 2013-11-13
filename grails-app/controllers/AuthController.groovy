@@ -88,7 +88,7 @@ class AuthController {
                             redirect(controller: "consulta", action: "index")
                      }else if(SecurityUtils.subject.hasRole("administrador")){
                             if(targetUri=="/"){
-                                   redirect(controller: "chequera", action:"index")
+                                   redirect(controller: "dashboard", action:"index")
                             }else{
                                    redirect(uri: targetUri)
                             }                   

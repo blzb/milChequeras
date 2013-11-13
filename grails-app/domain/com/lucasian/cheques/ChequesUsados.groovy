@@ -7,4 +7,7 @@ class ChequesUsados {
     static constraints = {
            referencia (nullable: false, blank: false, size:1..255)
     }
+    String toString(){
+           return referencia+"("+dateCreated+")"
+    }
 }

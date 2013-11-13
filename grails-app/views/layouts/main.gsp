@@ -116,12 +116,10 @@
       <section id="content">
         <div class="container-fluid">        
           <div class="row-fluid">
-
             <div class="span2 visible-desktop" style="margin-top: 115px; " >
-
               <aside class="left-sidebar span2" data-spy="affix" data-offset-top="0" style="background-color: white;">
                 <div class="widget ">
-                  <h4>Catalogos</h4>
+                  <div align="center"><h4>Catalogos</h4></div>
                   <div style="width: 78px; display: inline-block" class="centered">
                         <g:link controller="chequera" class="menu">
                           <i class="icon-circled active  icon-tags icon-64 pull-left"></i>
@@ -151,6 +149,18 @@
                         <g:link controller="usuario" class="menu">
                           <i class="icon-circled active  icon-user icon-64 pull-left"></i>
                           Admins
+                        </g:link>
+                    </div>
+                   <div style="width: 78px; display: inline-block" class="centered">
+                        <g:link controller="reporte" class="menu">
+                          <i class="icon-circled active  icon-magic icon-64 pull-left"></i>
+                          Reportes
+                        </g:link>
+                    </div>
+                  <div style="width: 78px; display: inline-block" class="centered">
+                        <g:link controller="dashboard" class="menu">
+                          <i class="icon-circled active  icon-bar-chart icon-64 pull-left"></i>
+                          Dashboard
                         </g:link>
                     </div>
                 </div>                 	

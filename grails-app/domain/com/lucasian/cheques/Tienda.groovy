@@ -14,6 +14,6 @@ class Tienda {
            imagen(nullable:true, maxSize: 1024 * 1024)
     }
     String toString(){
-           return nombre+"("+clave+")"+"("+imagen+")"
+           return nombre+"("+clave+")"
     }
 }

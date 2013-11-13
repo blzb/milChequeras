@@ -54,7 +54,8 @@ grails.project.dependency.resolution = {
     plugins {
         // plugins for the build system only
         build ":tomcat:7.0.42"
-
+        compile ":google-chart:0.5.2"
+        compile ":google-visualization:0.6.2"
         // plugins for the compile step
         compile ":scaffolding:2.0.0"
         //compile ':cache:1.1.1'
@@ -64,9 +65,10 @@ grails.project.dependency.resolution = {
         compile ":trimmer:0.1"
         compile ":mail:1.0.1"
         //compile ":hdiv:1.0-RC2"
+        
 
         // plugins needed at runtime but not for compilation
-        runtime ":hibernate:3.6.10.1" // or ":hibernate4:4.1.11.1"
+        runtime ":hibernate:3.6.10.2" // or ":hibernate4:4.1.11.1"
         runtime ":database-migration:1.3.5"
         runtime ":jquery:1.10.2"
         runtime ":resources:1.2"
@@ -75,5 +77,6 @@ grails.project.dependency.resolution = {
         //runtime ":zipped-resources:1.0.1"
         //runtime ":cached-resources:1.1"
         //runtime ":yui-minify-resources:0.1.5"
+        
     }
 }

@@ -11,6 +11,6 @@ class Cheque {
     String clave
     
     String toString(){           
-           return descripcion;
+           return "descripcion: "+descripcion+"serie: "+serie+ "tienda: "+tienda;
     }
 }
