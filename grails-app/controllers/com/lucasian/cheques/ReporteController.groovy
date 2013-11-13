@@ -1,5 +1,5 @@
 package com.lucasian.cheques
-import demo.demo.*
+
 class ReporteController{
     
     def index(Integer max) {
@@ -9,61 +9,13 @@ class ReporteController{
         //println("Tienda.list(params): " + Tienda.list(params))
         respond Tienda.list(params), model:[tiendaInstanceCount: Tienda.count()]
     }//fin de index
-    
+     
 //    def report(Tienda tiendaInstance) {  
 //        println("en report");
 //        respond tiendaInstance 
 //    } 
 
-    def ok(Tienda tiendaInstance) {
-        println("en report1 :D")
-        println ("params: "+params.id)
-        params.id = params.id.trim() 
-        //cheques
-        def cheques = Cheque.executeQuery("from Cheque c where c.tienda.id = :idTienda", [idTienda: params.id.toLong()])
-        println("numero de cheques: " + cheques.size)
-        // println("cheques: " + cheques)  
-        
-        def series= Cheque.executeQuery("select c.serie.clave, count(c.id) from Cheque c where c.tienda.id = :idTienda group by c.serie.clave ", [idTienda: params.id.toLong()])
-        println("series de los cheques de la tienda "+params.id +": "+series )  
-        
-        println("probando: "+series.size)
-        
-        def labls = series.collect{it[0]}
-        println("labels: " + labls )
-        
-        def values = series.collect{it[1]}
-        println("values: " + values)
-        
-        def chart = new GoogleChartBuilder()
-        def textList = (1..series.size).toList()
-        def textList2 = (1..series.size).toList()
-        def result = chart.pie3DChart{
-            title(color:808080, size:16){
-                row('Series')
-                row('Tienda ' +tiendaInstance.nombre)
-                row('Total de cheques ' +cheques.size)
-            }
-            size(w:350, h:200)
-            data(encoding:'simple'){
-                dataSet(values)
-            }
-            labels{
-                labls.each{ label(it) }
-            }
-            grid(y:55, x:20, dash:3, space:1)
-        }
-        
-        
-        println(result.toString())
-        //         response.contentType = 'image/png'
-        //        response.outputStream << result // write the image to the outputstream
-        //        response.outputStream.flush() 
-          
-        def properties = params.properties
-        println(result)
-        
-    }//end deff
+ 
 
     
     

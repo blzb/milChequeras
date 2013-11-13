@@ -54,7 +54,7 @@ grails.project.dependency.resolution = {
     plugins {
         // plugins for the build system only
         build ":tomcat:7.0.42"
-        compile ":google-chart:0.5.2"
+        
         compile ":google-visualization:0.6.2"
         // plugins for the compile step
         compile ":scaffolding:2.0.0"
