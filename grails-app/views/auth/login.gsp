@@ -5,50 +5,58 @@
     <title>Login</title>
   </head>
   <body>
-      <g:render  template="/headers/header" model="['titulo':'Entra a tu cuenta' ]"/> 
-      <section id="content">
-        <div class="container-fluid">
-          <div class="row-fluid">
-      <g:form action="signIn">
-        <input type="hidden" name="targetUri" value="${targetUri}" />
-        <div class="form-horizontal span4 offset3">
-          <g:if test="${flash.message}">
-            <div class="alert alert-error">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            ${flash.message}
-            </div>           
-          </g:if>
-          <div class="control-group">
-            <label class="control-label" for="inputText">Usuario</label>
-            <div class="controls">
-              <input type="text" name="username" value="" class="span12"/>
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="inputSigninPassword">Password</label>
-            <div class="controls">
-              <input type="password" name="password" value="" class="span12" />
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="inputSigninPassword">Recordarme?</label>
-            <div class="controls">
-              <g:checkBox name="rememberMe" value="${rememberMe}" />
+
+          <div class="widget-main">
+            <h4 class="header blue lighter bigger">
+              <i class="icon-coffee green"></i>
+              Entrar
+            </h4>
+
+            <div class="space-6"></div>
+
+            <g:form action="signIn">
+              <g:if test="${flash.message}">
+                <div class="alert  alert-danger">
+                  <button type="button" class="close" data-dismiss="alert">×</button>
+${flash.message}
+                </div>           
+              </g:if>
+              <input type="hidden" name="targetUri" value="${targetUri}" />
+              <fieldset>
+                <label class="block clearfix">
+                  <span class="block input-icon input-icon-right">
+                    <input type="text" class="form-control" placeholder="Usuario" name="username" />
+                    <i class="icon-user"></i>
+                  </span>
+                </label>
+
+                <label class="block clearfix">
+                  <span class="block input-icon input-icon-right">
+                    <input type="password"  name="password" class="form-control" placeholder="Password" />
+                    <i class="icon-lock"></i>
+                  </span>
+                </label>
+
+                <div class="space"></div>
+
+                <div class="clearfix">
+                  <label class="inline">
+                    <g:checkBox name="rememberMe" value="${rememberMe}" class="ace"/>
+                    <span class="lbl">Recordarme</span>
+                  </label>
+                  <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
+                    <i class="icon-key"></i>
+                    Login
+                  </button>
+                </div>
+              </fieldset>
+            </g:form>
+          </div><!-- /widget-main -->
+          <div class="toolbar clearfix">
+            <div>
+             <g:link controller="auth" action="recuperar" class="user-signup-link">Recuperar password</g:link>
             </div>
           </div>
 
-          <div class="control-group">
-            <div class="controls">
-              <input type="submit" value="Entrar" class="btn"/>
-            </div>
-            <p class="aligncenter margintop20">Olvidaste tu password? <g:link controller="auth" action="recuperar">Recuperar</g:link></p>
-          </div>
-        </div>        
-      </g:form>
-          </div>
-        </div>
-      </section>
-
-
-</body>
+  </body>
 </html>

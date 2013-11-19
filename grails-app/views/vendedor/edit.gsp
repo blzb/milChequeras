@@ -14,9 +14,9 @@
         <div id="edit-vendedor" class="content scaffold-edit" role="main">
           
           <div class="span12 well">  
-            <h2><g:message code="default.edit.label" args="[entityName]" /></h2>
+            <h2 class="header smaller lighter blue"><g:message code="default.edit.label" args="[entityName]" /></h2>
             <g:if test="${flash.message}">
-              <div class="alert alert-error">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
+              <div class="alert  alert-danger">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
             </g:if>
             <g:hasErrors bean="${vendedorInstance}">
               <ul class="errors" role="alert">
@@ -25,7 +25,7 @@
                 </g:eachError>
               </ul>
             </g:hasErrors>
-            <g:form url="[resource:vendedorInstance, action:'update']" method="PUT" >
+            <g:form class="form-horizontal" url="[resource:vendedorInstance, action:'update']" method="PUT" >
                     <g:hiddenField name="version" value="${vendedorInstance?.version}" />
               <fieldset class="form">
                 <g:render template="form"/>

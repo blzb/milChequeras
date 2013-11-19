@@ -13,9 +13,9 @@
         <div id="create-tienda" class="content scaffold-create" role="main">                                
           
           <div class="span12 well">                       
-            <h2><g:message code="default.create.label" args="[entityName]" /></h2>
+            <h2 class="header smaller lighter blue"><g:message code="default.create.label" args="[entityName]" /></h2>
             <g:if test="${flash.message}">
-              <div class="alert alert-info">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
+              <div class="alert  alert-info">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
             </g:if>
             <g:hasErrors bean="${tiendaInstance}">
               <ul class="errors" role="alert">
@@ -24,7 +24,7 @@
                 </g:eachError>
               </ul>
             </g:hasErrors>
-            <g:form class="" url="[resource:tiendaInstance, action:'save']"  enctype="multipart/form-data">
+            <g:form class="form-horizontal" url="[resource:tiendaInstance, action:'save']"  enctype="multipart/form-data">
                     <fieldset class="form">
                 <g:render template="form" model="[tiendaInstance: tiendaInstance, nuevo: true]"/>
               </fieldset>

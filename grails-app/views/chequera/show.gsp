@@ -17,7 +17,7 @@
           <div class="span12 well"> 
             <h1><g:message code="default.show.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
-              <div class="alert alert-info">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
+              <div class="alert  alert-info">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
             </g:if>
             <ol class="property-list chequera">
 

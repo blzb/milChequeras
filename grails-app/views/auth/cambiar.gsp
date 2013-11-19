@@ -5,48 +5,48 @@
     <title>Login</title>
   </head>
   <body>
-    <g:render  template="/headers/header" model="['titulo':'Nueva Contraseña']"/>     
-      <section id="content">
-        <div class="container-fluid">
-          <div class="row-fluid">
+
+    <div class="widget-main">
+      <h4 class="header blue lighter bigger">
+        Nueva Contraseña
+      </h4>
+
+      <div class="space-6"></div>
       <g:form action="guardar">
         <input type="hidden" name="targetUri" value="${targetUri}" />
-        <div class="form-horizontal span4 offset3">
-           <g:if test="${flash.message}">
-            <div class="alert alert-error">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            ${flash.message}
+        <fieldset>
+          <g:if test="${flash.message}">
+            <div class="alert  alert-danger">
+              <button type="button" class="close" data-dismiss="alert">×</button>
+${flash.message}
             </div>           
           </g:if>
-          <div class="control-group">
-            <label class="control-label" for="inputSigninPassword">Password Actual</label>
-            <div class="controls">
-              <g:passwordField  name="oldPassword" value="" class="span12" required=""/>
-            </div>
+          <label class="block clearfix">
+            <span class="block input-icon input-icon-righ">            
+              <g:passwordField  name="oldPassword" value="" class="form-control" required="" placeholder="Password Actual"/>
+            </span>
+          </label>
+          <label class="block clearfix">
+            <span class="block input-icon input-icon-righ">  
+              <g:passwordField name="password" value="" class="form-control" required="" placeholder="Nuevo Password"/>
+            </span>
+          </label>
+          <label class="block clearfix">
+            <span class="block input-icon input-icon-righ">  
+              <g:passwordField name="confirmPassword" value="" class="form-control" required="" placeholder="Confirmar Nuevo Password"/>
+            </span>
+          </label>
+          <div class="clearfix">                  
+            <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">                    
+              Guardar
+            </button>
+            <g:link action="index" class="width-35 pull-left btn btn-sm btn-primary">Cancelar</g:link>
           </div>
-          <div class="control-group">
-            <label class="control-label" for="inputSigninPassword">Nuevo Password</label>
-            <div class="controls">
-              <g:passwordField name="password" value="" class="span12" required=""/>
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="confirmPassword">Confirmar Nuevo Password:</label>
-            <div class="controls">
-              <g:passwordField name="confirmPassword" value="" class="span12" required=""/>
-            </div>
-          </div>
-          <div class="control-group">
-            <div class="controls">
-              <input type="submit" value="Guardar" class="btn"/>
-            </div>            
-          </div>
-        </div>        
+        </fieldset>        
       </g:form>
-          </div>
-        </div>
-      </section>
+
+    </div><!-- /widget-main -->
 
 
-</body>
+  </body>
 </html>

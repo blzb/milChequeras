@@ -2,27 +2,32 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: serieInstance, field: 'clave', 'error')} required">
-  <label for="clave">
+<div class="fieldcontain form-group ${hasErrors(bean: serieInstance, field: 'clave', 'error')} required">
+  <label class="col-sm-3 control-label no-padding-right" for="clave">
     <g:message code="serie.clave.label" default="Clave" />
     <span class="required-indicator">*</span>
   </label>
-  <g:textField class="span12" name="clave" required="" maxLength="100" value="${serieInstance?.clave}"/>
+  <div class="col-sm-9">
+  <g:textField class="col-xs-10 col-sm-10" name="clave" required="" maxLength="100" value="${serieInstance?.clave}"/>
+  </div>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: serieInstance, field: 'nombre', 'error')} required">
-  <label for="nombre">
+<div class="fieldcontain form-group ${hasErrors(bean: serieInstance, field: 'nombre', 'error')} required">
+  <label class="col-sm-3 control-label no-padding-right" for="nombre">
     <g:message code="serie.nombre.label" default="Nombre" />
     <span class="required-indicator">*</span>
   </label>
-  <g:textField class="span12" name="nombre" required="" maxLength="100" value="${serieInstance?.nombre}"/>
+  <div class="col-sm-9">
+  <g:textField class="col-xs-10 col-sm-10" name="nombre" required="" maxLength="100" value="${serieInstance?.nombre}"/>
+  </div>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: serieInstance, field: 'vigencia', 'error')} required">
-  <label for="vigencia">
+<div class="fieldcontain form-group ${hasErrors(bean: serieInstance, field: 'vigencia', 'error')} required">
+  <label class="col-sm-3 control-label no-padding-right" for="vigencia">
     <g:message code="serie.vigencia.label" default="Vigencia" />
     <span class="required-indicator">*</span>
   </label>  
+  <div class="col-sm-9">
   <div class="input-append date" id="datetimepicker1" data-date="${formatDate(format:'dd/mm/yyyy',date:serieInstance?.vigencia)}" data-date-format="dd/mm/yyyy">
     <g:textField readonly="" class="span12" name="vigencia" required="" value="${formatDate(format:'dd/mm/yyyy',date:serieInstance?.vigencia)}"/>
     <span class="add-on">
@@ -40,12 +45,12 @@
     });
 
   </script>
-
+  </div>
 <!--g:datePicker name="vigencia" precision="day"  value="${serieInstance?.vigencia}"  /-->
 </div>
 
 <!--div class="fieldcontain ${hasErrors(bean: serieInstance, field: 'chequeras', 'error')} ">
-       <label for="chequeras">
+       <label class="col-sm-3 control-label no-padding-right" for="chequeras">
 <g:message code="serie.chequeras.label" default="Chequeras" />
               
        </label>

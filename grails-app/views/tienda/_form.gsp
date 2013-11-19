@@ -2,45 +2,54 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: tiendaInstance, field: 'local', 'error')} required">
-  <label for="local">
+<div class=" form-group  fieldcontain ${hasErrors(bean: tiendaInstance, field: 'local', 'error')} required">
+  <label class="col-sm-3 control-label no-padding-right" for="local">
     <g:message code="tienda.local.label" default="Local" />
     <span class="required-indicator">*</span>
   </label>
-  <g:textField class="span12" name="local" required="" maxLength="100" value="${tiendaInstance?.local}"/>
+  <div class="col-sm-9">
+    <g:textField class="col-xs-10 col-sm-10" name="local" required="" maxLength="100" value="${tiendaInstance?.local}"/>
+  </div>
+
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: tiendaInstance, field: 'clave', 'error')} required">
-  <label for="clave">
+<div class="fieldcontain form-group ${hasErrors(bean: tiendaInstance, field: 'clave', 'error')} required">
+  <label class="col-sm-3 control-label no-padding-right" for="clave">
     <g:message code="tienda.clave.label" default="Clave" />
     <span class="required-indicator">*</span>
   </label>
-  <g:textField class="span12" name="clave" required="" maxLength="100" value="${tiendaInstance?.clave}"/>
+  <div class="col-sm-9">
+  <g:textField class="col-xs-10 col-sm-10" name="clave" required="" maxLength="100" value="${tiendaInstance?.clave}"/>
+  </div>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: tiendaInstance, field: 'nombre', 'error')} required">
-  <label for="nombre">
+<div class="fieldcontain form-group ${hasErrors(bean: tiendaInstance, field: 'nombre', 'error')} required">
+  <label class="col-sm-3 control-label no-padding-right" for="nombre">
     <g:message code="tienda.nombre.label" default="Nombre" />
     <span class="required-indicator">*</span>
   </label>
-  <g:textField class="span12" name="nombre" required="" maxLength="100" value="${tiendaInstance?.nombre}"/>
+  <div class="col-sm-9">
+  <g:textField class="col-xs-10 col-sm-10" name="nombre" required="" maxLength="100" value="${tiendaInstance?.nombre}"/>
+  </div>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: tiendaInstance, field: 'imagen', 'error')}">
-  <label for="imagen">
+<div class="fieldcontain form-group ${hasErrors(bean: tiendaInstance, field: 'imagen', 'error')}">
+  <label class="col-sm-3 control-label no-padding-right" for="imagen">
     <g:message code="tienda.imagen.label" default="Imagen" />
   </label>
+  <div class="col-sm-9">
   <input type="file" name="imagen"/>
+  </div>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: tiendaInstance, field: 'imagen', 'error')}">
+<div class="fieldcontain form-group ${hasErrors(bean: tiendaInstance, field: 'imagen', 'error')}">
   <g:if test="${tiendaInstance.imagen != null}">
-    <img  src="${createLink(controller:'tienda', action:'showPayload', id:"${tiendaInstance.id}")}" 
+    <img  src="${createLink(controller:'tienda', action:'showPayload', id:tiendaInstance.id)}" 
   </g:if>
 </div>
 
 <!--div class="fieldcontain ${hasErrors(bean: tiendaInstance, field: 'cheques', 'error')} ">
-       <label for="cheques">
+       <label class="col-sm-3 control-label no-padding-right" for="cheques">
 <g:message code="tienda.cheques.label" default="Cheques" />
               
        </label>

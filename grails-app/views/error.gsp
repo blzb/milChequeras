@@ -11,7 +11,7 @@
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span12">
-          <div class="alert alert-error">
+          <div class="alert  alert-danger">
             <button type="button" class="close" data-dismiss="alert">×</button>
             <strong>Error de sistema</strong><br/> Ha ocurrido un error, contacta al administrador
           </div>

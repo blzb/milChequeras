@@ -20,4 +20,13 @@ class Usuario {
        static mapping = {
               tablePerHierarchy false
        }
+       String getApellidos(){
+              if(apellidoMaterno){
+                     apellidoPaterno+" "+apellidoMaterno
+              }else{
+                     apellidoPaterno
+              }
+           
+       }
+       static transients = ['apellidos']
 }

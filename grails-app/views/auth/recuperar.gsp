@@ -5,41 +5,35 @@
     <title>Login</title>
   </head>
   <body>
-    <g:render  template="/headers/header" model="['titulo':'Recupera tu contraseña']"/> 
-      <section id="content">
-        <div class="container-fluid">
-          <div class="row-fluid">
+    <div class="widget-main">
+      <h4 class="header blue lighter bigger">
+        Recuperar Contraseña
+      </h4>
+      <div class="space-6"></div>
       <g:form action="enviarRecuperacion">
-        <div class="form-horizontal span4 offset3">
-           <g:if test="${flash.message}">
-            <div class="alert alert-error">
+        <g:if test="${flash.message}">
+          <div class="alert  alert-danger">
             <button type="button" class="close" data-dismiss="alert">×</button>
-            ${flash.message}
-            </div>           
-          </g:if>
-          <div class="control-group">
-            <label class="control-label" for="inputSigninPassword">Usuario</label>
-            <div class="controls">
-              <g:textField name="usuario" value="" class="span12" required=""/>
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="confirmPassword">Email:</label>
-            <div class="controls">
-              <g:textField name="email" value="" class="span12" required=""/>
-            </div>
-          </div>
-          <div class="control-group">
-            <div class="controls">
-              <input type="submit" value="Recuperar" class="btn"/>
-            </div>            
-          </div>
-        </div>        
-      </g:form>
-          </div>
+${flash.message}
+          </div>           
+        </g:if>
+        <label class="block clearfix">
+          <span class="block input-icon input-icon-righ">            
+            <g:textField name="usuario" value="" class="form-control" placeholder="Usuario" required=""/>
+          </span>
+        </label>
+        <label class="block clearfix">
+          <span class="block input-icon input-icon-righ">            
+            <g:textField name="email" value="" class="form-control" placeholder="Email" required=""/>
+          </span>
+        </label>
+        <div class="clearfix">                  
+          <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">                    
+            Recuperar
+          </button>
+          <g:link action="index" class="width-35 pull-left btn btn-sm btn-primary">Cancelar</g:link>
         </div>
-      </section>
-
-
-</body>
+      </g:form>
+    </div>
+  </body>
 </html>

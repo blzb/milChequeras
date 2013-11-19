@@ -13,9 +13,9 @@
         <div id="create-${domainClass.propertyName}" class="content scaffold-create" role="main">                                
           
           <div class="span12 well">                       
-            <h2><g:message code="default.create.label" args="[entityName]" /></h2>
+            <h2 class="header smaller lighter blue"><g:message code="default.create.label" args="[entityName]" /></h2>
             <g:if test="\${flash.message}">
-              <div class="alert alert-error">                 <button type="button" class="close" data-dismiss="alert">×</button>\${flash.message}</div>
+              <div class="alert  alert-danger">                 <button type="button" class="close" data-dismiss="alert">×</button>\${flash.message}</div>
             </g:if>
             <g:hasErrors bean="\${${propertyName}}">
               <ul class="errors" role="alert">
@@ -24,7 +24,7 @@
                 </g:eachError>
               </ul>
             </g:hasErrors>
-            <g:form class="" url="[resource:${propertyName}, action:'save']" <%= multiPart ? ' enctype="multipart/form-data"' : '' %>>
+            <g:form class="form-horizontal" url="[resource:${propertyName}, action:'save']" <%= multiPart ? ' enctype="multipart/form-data"' : '' %>>
                     <fieldset class="form">
                 <g:render template="form"/>
               </fieldset>

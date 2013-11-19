@@ -16,7 +16,7 @@
         <div class="span12 well">  
           
           <g:if test="${flash.message}">
-            <div class="alert alert-info">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
+            <div class="alert  alert-info">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
           </g:if>
           <g:hasErrors bean="${tiendaInstance}">
             <ul class="errors" role="alert">

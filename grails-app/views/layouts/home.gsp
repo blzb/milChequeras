@@ -11,37 +11,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />    
     <meta name="author" content="" />
-    <link href="${resource(dir: 'serenity/css', file: 'bootstrap.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/css', file: 'bootstrap-responsive.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/css', file: 'docs.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/css', file: 'prettyPhoto.css')}" rel="stylesheet">
-    <!--link href="${resource(dir: 'serenity/js/google-code-prettify', file: 'prettify.css')}" rel="stylesheet"-->
-    <link href="${resource(dir: 'serenity/css', file: 'flexslider.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/css', file: 'sequence.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/css', file: 'font-awesome.min.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/css', file: 'overwrite.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/css', file: 'style.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/color', file: 'default.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/css', file: 'milchequeras.css')}" rel="stylesheet">
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-    <script src="${resource(dir: 'serenity/js', file: 'jquery-1.8.2.min.js')}"></script>
-    <script src="${resource(dir: 'serenity/js', file: 'jquery.easing.1.3.js')}"></script>
-    <script src="${resource(dir: 'serenity/js/google-code-prettify', file: 'prettify.js')}"></script>
-    <script src="${resource(dir: 'serenity/js', file: 'modernizr.js')}"></script>
-    <script src="${resource(dir: 'serenity/js', file: 'bootstrap.js')}"></script>
-    <script src="${resource(dir: 'serenity/js', file: 'jquery.elastislide.js')}"></script>
-    <script src="${resource(dir: 'serenity/js', file: 'jquery.tweet.js')}"></script>
-    <script src="${resource(dir: 'serenity/js', file: 'jquery.prettyPhoto.js')}"></script>
-    <script src="${resource(dir: 'serenity/js', file: 'application.js')}"></script>
-    <script src="${resource(dir: 'serenity/js', file: 'jquery.flexslider.js')}"></script>
-    <!-- Portfolio hover -->
-    <script src="${resource(dir: 'serenity/js/hover', file: 'jquery-hover-effect.js')}"></script>
-    <script src="${resource(dir: 'serenity/js/hover', file: 'setting.js')}"></script>
-    <script src="${resource(dir: 'serenity/js', file: 'custom.js')}"></script>
-    <!-- css -->
+    <link href="${resource(dir: 'ace/css', file: 'bootstrap.min.css')}" rel="stylesheet" />
+    <link rel="stylesheet" href="${resource(dir: 'ace/css', file: 'font-awesome.min.css')}" />
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+    <![endif]-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+    <link rel="stylesheet" href="${resource(dir: 'ace/css', file: 'ace.min.css')}" />
+    <link rel="stylesheet" href="${resource(dir: 'ace/css', file: 'ace-rtl.min.css')}" />
+    
+    <script src="${resource(dir: 'ace/js', file: 'ace-extra.min.js')}"></script>
 
     <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
@@ -53,81 +32,84 @@
   <r:layoutResources />
 </head>
 
-<body>
-  <div id="wrap" >
-       <header>
-      <!-- Navbar
-          ================================================== -->
-      <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-          <div class="container">
-            <!-- logo -->
-            <a class="brand logo" href="index.html">
-              <img src="${resource(dir: 'serenity/img', file: 'logo.png')}" alt="" style="width: 85px; height: 59px;"/>
-            </a>
-            <!-- end logo -->
-            <!-- top menu -->
-            <div class="navigation">
-              <nav>
-                <ul class="nav topnav">
-                  <shiro:authenticated>
-                    <li>
-                    <g:link controller="auth" action="signOut">Salir
-                    </g:link>
-                    </li>
-                    <li>
-                    <g:link controller="auth" action="cambiar">Cambiar contraseña
-                    </g:link>
-                    </li>
-                  </shiro:authenticated>
-                  <shiro:notAuthenticated>
-                    <li><a href="index.html#mySignup" data-toggle="modal">Registro</a></li>
-                    <li>
-                    <g:link controller="auth" action="index">Entrar
-                    </g:link>
-                    </li>
-                  </shiro:notAuthenticated>
-                </ul>
-                </ul>
-              </nav>
+<body class="login-layout">
+  <div class="main-container">
+    <div class="main-content">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <div class="login-container">
+            <div class="center">
+              <!--h1>
+                <i class="icon-leaf green"></i>
+                <span class="red">Ace</span>
+                <span class="white">Application</span>
+              </h1>
+              <h4 class="blue">&copy; Company Name</h4-->
+              <img src="${resource(dir: 'serenity/img', file: 'logo.png')}" alt=""/>
             </div>
-            <!-- end menu -->
-          </div>
-        </div>
-      </div>
-    </header>
-    <g:layoutBody/>
-    <div id="push"></div>
-  </div>
-  <!-- Footer
-   ================================================== -->
-  <footer id="footer" class="footer" style="background: #303030;">
-    <div  class="verybottom" style="padding-top: 0px;">
-      <div class="container">
-        <div class="row">
-          <div class="span6">
-            <a href="http://lucasianmexico.com/">
-              &copy; Lucasian Labs 2013 All right reserved.
-            </a>
-          </div>
-          <div class="span6">
-            <p class="pull-right" style="margin: -10 0 0 0;">
-              <a href="https://twitter.com/Mil_Chequeras" title="Twitter"><i class="icon-rounded icon-32 icon-twitter" style="margin-bottom: 0px;"></i></a>
-              <a href="https://www.facebook.com/milchequeras" title="Facebook"><i class="icon-rounded icon-32 icon-facebook" style="margin-bottom: 0px;"></i></a>
-              <a href="#" title="Google plus"><i class="icon-rounded icon-32 icon-google-plus" style="margin-bottom: 0px;"></i></a>
-              <a href="#" title="Linkedin"><i class="icon-rounded icon-32 icon-linkedin" style="margin-bottom: 0px;"></i></a>
-              <a href="#" title="Pinterest"><i class="icon-rounded icon-32 icon-pinterest" style="margin-bottom: 0px;"></i></a>
-            </p>  
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
 
-  <script>
-    $($(".topnav").children()).hover(function() {
-    $(this).toggleClass('active');
-    });
+            <div class="space-6"></div>
+            <div class="position-relative">
+              <div id="login-box" class="login-box visible widget-box no-border">
+                <div class="widget-body">
+                  <g:layoutBody/>
+                </div><!-- /widget-body -->
+              </div><!-- /login-box -->
+            </div><!-- /position-relative -->            
+          </div>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div>
+  </div><!-- /.main-container -->
+
+  <!-- basic scripts -->
+
+  <!--[if !IE]> -->
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+  <!-- <![endif]-->
+
+  <!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<![endif]-->
+
+  <!--[if !IE]> -->
+
+  <script type="text/javascript">
+         window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+  </script>
+
+  <!-- <![endif]-->
+
+  <!--[if IE]>
+<script type="text/javascript">
+window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+
+  <script type="text/javascript">
+         if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+  </script>
+
+  <!-- inline scripts related to this page -->
+  <script src="${resource(dir: 'ace/js', file: 'bootstrap.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js', file: 'typeahead-bs2.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js', file: 'jquery-ui-1.10.3.custom.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js', file: 'jquery.ui.touch-punch.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js', file: 'jquery.slimscroll.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js', file: 'jquery.easy-pie-chart.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js', file: 'jquery.sparkline.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js', file: 'jquery.flot.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js', file: 'jquery.flot.pie.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js', file: 'jquery.flot.resize.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js', file: 'ace-elements.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js', file: 'ace.min.js')}"></script>              
+    <script type="text/javascript">
+         function show_box(id) {
+          jQuery('.widget-box.visible').removeClass('visible');
+          jQuery('#'+id).addClass('visible');
+         }
   </script>
   <script type="text/javascript">
 

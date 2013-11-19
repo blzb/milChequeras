@@ -14,9 +14,9 @@
       <div class="row-fluid" style="margin-top: 20px;">
         <div id="list-tienda" class="content scaffold-list span12" role="main">
           <g:if test="${flash.message}">
-            <div class="alert alert-info">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
+            <div class="alert  alert-info">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
           </g:if>
-          <table class="table table-striped">
+          <table class="table table-striped dataTable">
             <thead>
               <tr>
             <g:sortableColumn property="nombre" title="${message(code: 'tienda.nombre.label', default: 'Nombre')}" />
@@ -24,7 +24,7 @@
       
             <g:sortableColumn property="clave" title="${message(code: 'tienda.clave.label', default: 'Clave')}" />
       
-            <th class="acciones">
+            <th >
             </th>
             </tr>
             </thead>

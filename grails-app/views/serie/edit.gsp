@@ -14,9 +14,9 @@
         <div id="edit-serie" class="content scaffold-edit" role="main">
 
           <div class="span12 well">  
-            <h2><g:message code="default.edit.label" args="[entityName]" /></h2>
+            <h2 class="header smaller lighter blue"><g:message code="default.edit.label" args="[entityName]" /></h2>
             <g:if test="${flash.message}">
-              <div class="alert alert-info">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
+              <div class="alert  alert-info">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
             </g:if>
             <g:hasErrors bean="${serieInstance}">
               <ul class="errors" role="alert">
@@ -25,7 +25,7 @@
                 </g:eachError>
               </ul>
             </g:hasErrors>
-            <g:form url="[resource:serieInstance, action:'update']" method="PUT" >
+            <g:form class="form-horizontal" url="[resource:serieInstance, action:'update']" method="PUT" >
               <g:hiddenField name="version" value="${serieInstance?.version}" />
               <fieldset class="form">
                 <g:render template="form"/>
@@ -36,12 +36,12 @@
             </g:form>
 
             <br/>
-            <div class="fieldcontain ${hasErrors(bean: serieInstance, field: 'cheques', 'error')} ">
-              <label for="cheques">
+            <div class="fieldcontain form-group ${hasErrors(bean: serieInstance, field: 'cheques', 'error')} ">
+              <label class="col-sm-3 control-label no-padding-right" for="cheques">
                 <g:message code="serie.cheques.label" default="Cheques" />
                 <g:link class="btn" controller="cheque" action="create" params="['serie.id': serieInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'cheque.label', default: 'Cheque')])}</g:link>
               </label>
-              <table class="table table-striped">
+              <table class="table table-striped dataTable">
                 <thead>
                   <tr>
 
@@ -61,7 +61,7 @@
                     <td>${fieldValue(bean: chequeInstance, field: "tienda")}</td>
 
                     <td>
-                  <g:form url="[resource:chequeInstance, action:'delete']" method="DELETE" style="margin-bottom: 0px;">
+                  <g:form class="form-horizontal" url="[resource:chequeInstance, action:'delete']" method="DELETE" style="margin-bottom: 0px;">
                     <fieldset class="buttons">
                       <g:link class="edit btn" action="edit" resource="${chequeInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
                       <g:actionSubmit class="delete btn" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />

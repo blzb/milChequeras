@@ -12,7 +12,17 @@ class AuthController {
        def shiroSecurityManager
        MailService mailService
 
-       def index = { redirect(action: "login", params: params) }
+       def index = { 
+              if(SecurityUtils.subject.hasRole("empleado")){
+                     redirect(controller: "consulta", action: "index")
+              }else if(SecurityUtils.subject.hasRole("administrador")){
+                     redirect(controller: "dashboard", action:"index")
+              }else if(SecurityUtils.subject.hasRole("vendedor")){
+                     redirect(controller: "chequera", action:"index")
+              }else{
+                     redirect(action: "login", params: params) 
+              }
+       }
 
        def login = {
               return [ username: params.username, rememberMe: (params.rememberMe != null), targetUri: params.targetUri ]
@@ -92,6 +102,8 @@ class AuthController {
                             }else{
                                    redirect(uri: targetUri)
                             }                   
+                     }else if(SecurityUtils.subject.hasRole("vendedor")){
+                            redirect(controller: "chequera", action:"index")
                      }else{
                             redirect(uri: targetUri)
                      }

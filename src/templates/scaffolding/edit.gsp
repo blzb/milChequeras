@@ -14,9 +14,9 @@
         <div id="edit-${domainClass.propertyName}" class="content scaffold-edit" role="main">
           
           <div class="span12 well">  
-            <h2><g:message code="default.edit.label" args="[entityName]" /></h2>
+            <h2 class="header smaller lighter blue"><g:message code="default.edit.label" args="[entityName]" /></h2>
             <g:if test="\${flash.message}">
-              <div class="alert alert-error">                 <button type="button" class="close" data-dismiss="alert">×</button>\${flash.message}</div>
+              <div class="alert  alert-danger">                 <button type="button" class="close" data-dismiss="alert">×</button>\${flash.message}</div>
             </g:if>
             <g:hasErrors bean="\${${propertyName}}">
               <ul class="errors" role="alert">
@@ -25,7 +25,7 @@
                 </g:eachError>
               </ul>
             </g:hasErrors>
-            <g:form url="[resource:${propertyName}, action:'update']" method="PUT" <%= multiPart ? ' enctype="multipart/form-data"' : '' %>>
+            <g:form class="form-horizontal" url="[resource:${propertyName}, action:'update']" method="PUT" <%= multiPart ? ' enctype="multipart/form-data"' : '' %>>
                     <g:hiddenField name="version" value="\${${propertyName}?.version}" />
               <fieldset class="form">
                 <g:render template="form"/>

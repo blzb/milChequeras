@@ -1,8 +1,3 @@
-<!--
-  To change this template, choose Tools | Templates
-  and open the template in the editor.
--->
-
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html lang="en">
   <head>
@@ -10,217 +5,190 @@
     <title>Mil Chequeras</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />    
-    <meta name="author" content="" />
-    <link href="${resource(dir: 'serenity/css', file: 'bootstrap.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/css', file: 'bootstrap-responsive.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/css', file: 'docs.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/css', file: 'prettyPhoto.css')}" rel="stylesheet">
-    <!--link href="${resource(dir: 'serenity/js/google-code-prettify', file: 'prettify.css')}" rel="stylesheet"-->
-    <link href="${resource(dir: 'serenity/css', file: 'flexslider.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/css', file: 'font-awesome.min.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/css', file: 'overwrite.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/css', file: 'style.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/color', file: 'default.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/css', file: 'milchequeras.css')}" rel="stylesheet">
-    <link href="${resource(dir: 'serenity/css', file: 'datepicker.css')}" rel="stylesheet">
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-    <script src="${resource(dir: 'serenity/js', file: 'jquery-1.8.2.min.js')}"></script>
-    <script src="${resource(dir: 'serenity/js', file: 'jquery.easing.1.3.js')}"></script>
-    <script src="${resource(dir: 'serenity/js/google-code-prettify', file: 'prettify.js')}"></script>
-    <script src="${resource(dir: 'serenity/js', file: 'modernizr.js')}"></script>
-    <script src="${resource(dir: 'serenity/js', file: 'bootstrap.js')}"></script>
-    <script src="${resource(dir: 'serenity/js', file: 'jquery.elastislide.js')}"></script>
-    <script src="${resource(dir: 'serenity/js', file: 'jquery.tweet.js')}"></script>
-    <script src="${resource(dir: 'serenity/js', file: 'jquery.prettyPhoto.js')}"></script>
-    <script src="${resource(dir: 'serenity/js', file: 'application.js')}"></script>
-    <script src="${resource(dir: 'serenity/js', file: 'jquery.flexslider.js')}"></script>
-    <!-- Portfolio hover -->
-    <script src="${resource(dir: 'serenity/js/hover', file: 'jquery-hover-effect.js')}"></script>
-    <script src="${resource(dir: 'serenity/js/hover', file: 'setting.js')}"></script>
-    <script src="${resource(dir: 'serenity/js', file: 'custom.js')}"></script>
-    <script src="${resource(dir: 'serenity/js', file: 'bootstrap-datepicker.js')}"></script>
-    <!-- css -->
+    <meta name="author" content="" />   
+    <link href="${resource(dir: 'ace/css', file: 'bootstrap.min.css')}" rel="stylesheet" />
+    <link rel="stylesheet" href="${resource(dir: 'ace/css', file: 'font-awesome.min.css')}" />
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+    <![endif]-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+    <link rel="stylesheet" href="${resource(dir: 'ace/css', file: 'ace.min.css')}" />
+    <link rel="stylesheet" href="${resource(dir: 'ace/css', file: 'ace-rtl.min.css')}" />
+    <link rel="stylesheet" href="${resource(dir: 'ace/css', file: 'ace-skins.min.css')}" />    
+    <script src="${resource(dir: 'ace/js', file: 'ace-extra.min.js')}"></script>
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <script src="${resource(dir: 'ace/js', file: 'bootstrap.min.js')}"></script>
+    
+  </head>
 
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
-    <link rel="shortcut icon" href="ico/favicon.png" />
-  <g:layoutHead/>
-  <r:layoutResources />
-</head>
+  <body >
+    <div class="navbar navbar-default" id="navbar" style="height: 45px;">
+      <script type="text/javascript">
+             try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+      </script>
 
-<body>
-  <div id="wrap" >
-    <header>
-      <!-- Navbar
-          ================================================== -->
-      <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-          <div class="container">
-            <!-- logo -->
-            <a class="brand logo" href="index.html">
-              <img src="${resource(dir: 'serenity/img', file: 'logo.png')}" alt="" style="width: 85px; height: 59px;"/>
-            </a>
-            <!-- end logo -->
-            <!-- top menu -->
-            <div class="navigation">
-              <nav>
-                <ul class="nav topnav">
-                  <shiro:authenticated>
-                    <li class="visible-tablet">
-                      <g:link controller="chequera" class="menu">Chequeras</g:link>
-                    </li>
-                    <li class="visible-tablet">
-                      <g:link controller="serie" class="menu">Series</g:link>
-                    </li>
-                    <li class="visible-tablet">
-                      <g:link controller="tienda" class="menu">Tiendas</g:link>
-                    </li>
-                    <li class="visible-tablet">
-                       <g:link controller="vendedor" class="menu">Vendedores</g:link>
-                    </li>
-                    <li class="visible-tablet">
-                       <g:link controller="usuario" class="menu">Admins</g:link>
-                    </li>
-                    <li>
-                    <g:link controller="auth" action="signOut">Salir
-                    </g:link>
-                    </li>
-                    <li>
-                    <g:link controller="auth" action="cambiar">Cambiar contraseña
-                    </g:link>
-                    </li>                    
-                  </shiro:authenticated>
-                  <shiro:notAuthenticated>
-                    <li><a href="index.html#mySignup" data-toggle="modal">Registro</a></li>
-                    <li>
-<g:link controller="auth" action="index">Entrar
-                    </g:link>
-                    </li>
-                  </shiro:notAuthenticated>
-                </ul>
-                </ul>
-              </nav>
-            </div>
-            <!-- end menu -->
-          </div>
-        </div>
-      </div>
-    </header>
-    <shiro:hasRole name="administrador">
-      <section id="content">
-        <div class="container-fluid">        
-          <div class="row-fluid">
-            <div class="span2 visible-desktop" style="margin-top: 115px; " >
-              <aside class="left-sidebar span2" data-spy="affix" data-offset-top="0" style="background-color: white;">
-                <div class="widget ">
-                  <div align="center"><h4>Catalogos</h4></div>
-                  <div style="width: 78px; display: inline-block" class="centered">
-                        <g:link controller="chequera" class="menu">
-                          <i class="icon-circled active  icon-tags icon-64 pull-left"></i>
-                          Chequeras
-                        </g:link>
-                    </div>
-                   
-                     <div style="width: 78px; display: inline-block" class="centered">
-                        <g:link controller="serie" class="menu">
-                          <i class="icon-circled active  icon-barcode icon-64 pull-left"></i>
-                          Series
-                        </g:link>
-                    </div>
-                    <div style="width: 78px; display: inline-block" class="centered">
-                        <g:link controller="tienda" class="menu">
-                          <i class="icon-circled active  icon-shopping-cart icon-64 pull-left"></i>
-                          Tiendas
-                        </g:link>
-                    </div>
-                    <div style="width: 78px; display: inline-block" class="centered">
-                        <g:link controller="vendedor" class="menu">
-                          <i class="icon-circled active  icon-money icon-64 pull-left"></i>
-                          Vendedores
-                        </g:link>
-                    </div>
-                    <div style="width: 78px; display: inline-block" class="centered">
-                        <g:link controller="usuario" class="menu">
-                          <i class="icon-circled active  icon-user icon-64 pull-left"></i>
-                          Admins
-                        </g:link>
-                    </div>
-                   <div style="width: 78px; display: inline-block" class="centered">
-                        <g:link controller="reporte" class="menu">
-                          <i class="icon-circled active  icon-magic icon-64 pull-left"></i>
-                          Reportes
-                        </g:link>
-                    </div>
-                  <div style="width: 78px; display: inline-block" class="centered">
-                        <g:link controller="dashboard" class="menu">
-                          <i class="icon-circled active  icon-bar-chart icon-64 pull-left"></i>
-                          Dashboard
-                        </g:link>
-                    </div>
-                </div>                 	
-              </aside>
-            </div>
-            <div class="span10" id="contenido">          
-              <g:layoutBody/>
-            </div>
-          </div>
-        </div>
-      </section>
-    </shiro:hasRole>
-    <shiro:lacksRole name="administrador">
-      <g:layoutBody/>
-    </shiro:lacksRole>
-    <div id="push"></div>
-  </div>
-  <!-- Footer
-   ================================================== -->
-  <footer id="footer" class="footer" style="background: #303030;">
-    <div  class="verybottom" style="padding-top: 0px;">
-      <div class="container">
-        <div class="row">
-          <div class="span6">
-            <a href="http://lucasianmexico.com/">
-              &copy; Lucasian Labs 2013 All right reserved.
-            </a>
-          </div>
-          <div class="span6">
-            <p class="pull-right" style="margin: -10 0 0 0;">
-              <a href="https://twitter.com/Mil_Chequeras" title="Twitter"><i class="icon-rounded icon-32 icon-twitter" style="margin-bottom: 0px;"></i></a>
-              <a href="https://www.facebook.com/milchequeras" title="Facebook"><i class="icon-rounded icon-32 icon-facebook" style="margin-bottom: 0px;"></i></a>
-              <a href="#" title="Google plus"><i class="icon-rounded icon-32 icon-google-plus" style="margin-bottom: 0px;"></i></a>
-              <a href="#" title="Linkedin"><i class="icon-rounded icon-32 icon-linkedin" style="margin-bottom: 0px;"></i></a>
-              <a href="#" title="Pinterest"><i class="icon-rounded icon-32 icon-pinterest" style="margin-bottom: 0px;"></i></a>
-            </p>  
-          </div>
-        </div>
-      </div>
+      <div class="navbar-container" id="navbar-container">
+        <div class="navbar-header pull-left">
+          <a href="#" class="navbar-brand">
+            <small>
+              <i class="icon-desktop"></i>
+              Mil chequeras
+            </small>
+          </a><!-- /.brand -->
+        </div><!-- /.navbar-header -->
+
+        <div class="navbar-header pull-right" role="navigation">
+          <ul class="nav ace-nav">          
+            <li class="light-blue">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                <img class="nav-user-photo" src="${resource(dir: 'ace/avatars', file: 'user.jpg')}" alt="Jason's Photo">
+                <span class="user-info">
+                  Bienvenido
+                </span>
+
+                <i class="icon-caret-down"></i>
+              </a>
+
+              <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                <li>
+                  <g:link controller="auth" action="cambiar">
+                    <i class="icon-cog"></i>
+                    Cambiar Contraseña
+                  </g:link>
+                </li>
+
+                <li class="divider"></li>
+
+                <li>
+                   <g:link controller="auth" action="signOut">
+                    <i class="icon-off"></i>
+                    Salir
+                   </g:link>
+                </li>
+              </ul>
+            </li>
+          </ul><!-- /.ace-nav -->
+        </div><!-- /.navbar-header -->
+      </div><!-- /.container -->
     </div>
-  </footer>
 
-  <script>
-    $($(".topnav").children()).hover(function() {
-    $(this).toggleClass('active');
-    });
-  </script>
+    <div class="main-container" id="main-container">
+      <script type="text/javascript">
+             try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+      </script>
+
+      <div class="main-container-inner">
+        <a class="menu-toggler" id="menu-toggler" href="#">
+          <span class="menu-text"></span>
+        </a>
+
+        <div class="sidebar" id="sidebar">
+          <script type="text/javascript">
+                 try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+          </script>
+
+
+          <ul class="nav nav-list">
+            <shiro:hasRole name="administrador">
+              <li>
+              <g:link controller="chequera" class="menu">
+                <i class="icon-tags"></i>
+                <span class="menu-text"> Chequeras</span>
+              </g:link>
+              </li>
+              <li >
+              <g:link controller="serie" class="menu">
+                <i class="icon-barcode"></i>
+                <span class="menu-text"> Series</span>
+              </g:link>
+              </li>
+              <li >
+              <g:link controller="tienda" class="menu">
+                <i class="icon-shopping-cart"></i>
+                <span class="menu-text"> Tiendas</span>
+              </g:link>
+              </li>
+              <li >
+              <g:link controller="vendedor" class="menu">
+                <i class="icon-money"></i>
+                <span class="menu-text"> Vendedores</span>
+              </g:link>
+              </li>
+              <li >
+              <g:link controller="usuario" class="menu">
+                <i class="icon-user"></i>
+                <span class="menu-text"> Admins</span>
+              </g:link>
+              </li>
+              <li>
+                <g:link controller="reporte" class="menu">
+                  <i class="icon-bar-chart"></i>
+                  <span class="menu-text"> Reportes </span>              
+                </g:link>
+              </li>
+              <li>
+                <g:link controller="dashboard" class="menu">
+                  <i class="icon-dashboard"></i>
+                  <span class="menu-text"> Dashboard </span>              
+                </g:link>
+              </li>
+            </shiro:hasRole>
+          </ul><!-- /.nav-list -->
+
+          <div class="sidebar-collapse" id="sidebar-collapse">
+            <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+          </div>
+
+          <script type="text/javascript">
+                 try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+          </script>
+        </div>
+
+        <div class="main-content">       
+
+          <div class="page-content">
+            <div class="row">
+              <div class="col-xs-12">
+                <!-- PAGE CONTENT BEGINS -->
+                <g:layoutBody/>
+                <!-- PAGE CONTENT ENDS -->
+              </div><!-- /.col -->
+            </div><!-- /.row -->
+          </div><!-- /.page-content -->
+        </div><!-- /.main-content -->
+
+      </div><!-- /.main-container-inner -->
+
+      <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+        <i class="icon-double-angle-up icon-only bigger-110"></i>
+      </a>
+    </div><!-- /.main-container -->
+
+    <!-- basic scripts -->
+
+    <!--[if !IE]> -->
+
+   
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <![endif]-->
+
+    <!--[if !IE]> -->
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
   <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-45232320-1']);
-      _gaq.push(['_setDomainName', 'dialectika.com.mx']);
-      _gaq.push(['_setAllowLinker', true]);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
+  window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
   </script>
-</body>
+  <![endif]-->
+
+    
+    <script src="${resource(dir: 'ace/js', file: 'typeahead-bs2.min.js')}"></script>
+    <script src="${resource(dir: 'ace/js', file: 'ace-elements.min.js')}"></script>
+    <script src="${resource(dir: 'ace/js', file: 'ace.min.js')}"></script>
+    <!-- inline scripts related to this page -->
+  </body>

@@ -18,7 +18,7 @@
         <div class="row-fluid">
           <div class="span12">
             <g:if test="${noEncontrado}">
-              <div class="alert alert-error">
+              <div class="alert  alert-danger">
                 <button type="button" class="close" data-dismiss="alert">×</button>
                 <h4>La chequera con numero de serie : <strong>"${serie}"</strong> no fue encontrada</h4>
               </div>
@@ -27,17 +27,15 @@
             <br/>
             <g:form action="buscar">                  
               <div class="row-fluid">
-                <div class="span1"></div>
-                <div class="span10">
-                  <g:textField  name="serie" required="" class="span12 input-medium search-query" style=" font-size: 2.5em; min-height: 2em;">
+                <div class="col-xs-12">
+                  <g:textField  name="serie" required="" class="col-xs-12 " style=" font-size: 2.5em; min-height: 2em;">
                   </g:textField>
                 </div>
               </div>
               <br/>
               <div class="row-fluid">
-                <div class="span1"></div>
-                <div class="span10">
-                  <input type="submit" value="Buscar" class="btn btn-large btn-theme btn-rounded span12">
+                <div class="col-xs-12">
+                  <input type="submit" value="Buscar" class="btn btn-lg btn-theme btn-rounded col-xs-12">
                 </div>
               </div>
               <br/>

@@ -14,9 +14,9 @@
       <div class="row-fluid" style="margin-top: 20px;">
         <div id="list-cheque" class="content scaffold-list span12" role="main">
           <g:if test="${flash.message}">
-            <div class="alert alert-error">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
+            <div class="alert  alert-danger">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
           </g:if>
-          <table class="table table-striped">
+          <table class="table table-striped dataTable">
             <thead>
               <tr>
 
@@ -27,7 +27,7 @@
                 <th><g:message code="cheque.serie.label" default="Serie" /></th>
       
                 <th><g:message code="cheque.tienda.label" default="Tienda" /></th>
-      
+                <th></th>
             </tr>
             </thead>
             <tbody>

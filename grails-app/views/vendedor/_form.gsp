@@ -2,51 +2,63 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: vendedorInstance, field: 'username', 'error')} required">
-	<label for="username">
+<div class="fieldcontain form-group ${hasErrors(bean: vendedorInstance, field: 'username', 'error')} required">
+	<label class="col-sm-3 control-label no-padding-right" for="username">
 		<g:message code="vendedor.username.label" default="Username" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="username" required="" maxLength="50" value="${vendedorInstance?.username}"/>
+  <div class="col-sm-9">
+	<g:textField class="col-xs-10 col-sm-10" name="username" required="" maxLength="50" value="${vendedorInstance?.username}"/>
+  </div>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: vendedorInstance, field: 'nombre', 'error')} required">
-	<label for="nombre">
+<div class="fieldcontain form-group ${hasErrors(bean: vendedorInstance, field: 'nombre', 'error')} required">
+	<label class="col-sm-3 control-label no-padding-right" for="nombre">
 		<g:message code="vendedor.nombre.label" default="Nombre" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="nombre" required="" maxLength="100" value="${vendedorInstance?.nombre}"/>
+  <div class="col-sm-9">
+	<g:textField class="col-xs-10 col-sm-10" name="nombre" required="" maxLength="100" value="${vendedorInstance?.nombre}"/>
+  </div>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: vendedorInstance, field: 'apellidoPaterno', 'error')} required">
-	<label for="apellidoPaterno">
+<div class="fieldcontain form-group ${hasErrors(bean: vendedorInstance, field: 'apellidoPaterno', 'error')} required">
+	<label class="col-sm-3 control-label no-padding-right" for="apellidoPaterno">
 		<g:message code="vendedor.apellidoPaterno.label" default="Apellido Paterno" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="apellidoPaterno" required="" maxLength="100" value="${vendedorInstance?.apellidoPaterno}"/>
+  <div class="col-sm-9">
+	<g:textField class="col-xs-10 col-sm-10" name="apellidoPaterno" required="" maxLength="100" value="${vendedorInstance?.apellidoPaterno}"/>
+  </div>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: vendedorInstance, field: 'apellidoMaterno', 'error')} ">
-	<label for="apellidoMaterno">
+<div class="fieldcontain form-group ${hasErrors(bean: vendedorInstance, field: 'apellidoMaterno', 'error')} ">
+	<label class="col-sm-3 control-label no-padding-right" for="apellidoMaterno">
 		<g:message code="vendedor.apellidoMaterno.label" default="Apellido Materno" />
 		
 	</label>
-	<g:textField name="apellidoMaterno" maxLength="100" value="${vendedorInstance?.apellidoMaterno}"/>
+  <div class="col-sm-9">
+	<g:textField class="col-xs-10 col-sm-10" name="apellidoMaterno" maxLength="100" value="${vendedorInstance?.apellidoMaterno}"/>
+  </div>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: vendedorInstance, field: 'email', 'error')} required">
-	<label for="email">
+<div class="fieldcontain form-group ${hasErrors(bean: vendedorInstance, field: 'email', 'error')} required">
+	<label class="col-sm-3 control-label no-padding-right" for="email">
 		<g:message code="vendedor.email.label" default="Email" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field type="email" name="email" required="" maxLength="255" value="${vendedorInstance?.email}"/>
+  <div class="col-sm-9">
+	<g:field class="col-xs-10 col-sm-10" type="email" name="email" required="" maxLength="255" value="${vendedorInstance?.email}"/>
+  </div>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: vendedorInstance, field: 'passwordHash', 'error')} ">
-	<label for="passwordHash">
+<div class="fieldcontain form-group ${hasErrors(bean: vendedorInstance, field: 'passwordHash', 'error')} ">
+	<label class="col-sm-3 control-label no-padding-right" for="passwordHash">
 		<g:message code="vendedor.passwordHash.label" default="Password" />
 		
 	</label>
-	<g:textField name="passwordHash" value=""/>
+  <div class="col-sm-9">
+	<g:textField class="col-xs-10 col-sm-10" name="passwordHash" value=""/>
+  </div>
 </div>
 
