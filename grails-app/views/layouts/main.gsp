@@ -187,8 +187,16 @@
   <![endif]-->
 
     
-    <script src="${resource(dir: 'ace/js', file: 'typeahead-bs2.min.js')}"></script>
-    <script src="${resource(dir: 'ace/js', file: 'ace-elements.min.js')}"></script>
-    <script src="${resource(dir: 'ace/js', file: 'ace.min.js')}"></script>
+  <script src="${resource(dir: 'ace/js', file: 'typeahead-bs2.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js', file: 'jquery-ui-1.10.3.custom.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js', file: 'jquery.ui.touch-punch.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js', file: 'jquery.slimscroll.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js', file: 'jquery.easy-pie-chart.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js', file: 'jquery.sparkline.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js/flot', file: 'jquery.flot.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js/flot', file: 'jquery.flot.pie.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js/flot', file: 'jquery.flot.resize.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js', file: 'ace-elements.min.js')}"></script>              
+  <script src="${resource(dir: 'ace/js', file: 'ace.min.js')}"></script>   
     <!-- inline scripts related to this page -->
   </body>
