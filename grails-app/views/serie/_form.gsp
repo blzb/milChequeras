@@ -28,22 +28,11 @@
     <span class="required-indicator">*</span>
   </label>  
   <div class="col-sm-9">
-  <div class="input-append date" id="datetimepicker1" data-date="${formatDate(format:'dd/mm/yyyy',date:serieInstance?.vigencia)}" data-date-format="dd/mm/yyyy">
-    <g:textField readonly="" class="span12" name="vigencia" required="" value="${formatDate(format:'dd/mm/yyyy',date:serieInstance?.vigencia)}"/>
-    <span class="add-on">
-      <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="icon-calendar">
-      </i>
-    </span>
-  </div>
+    <g:textField name="vigencia" class="date-picker col-xs-3 col-sm-3" required="true" value="${formatDate(format:'dd/MM/yyyy',date:serieInstance?.vigencia)}" data-date-format="dd/mm/yyyy" />      
   <script type="text/javascript">
-       var nowTemp = new Date();
-    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-    $('#datetimepicker1').datepicker({
-     onRender: function(date) {
-        return date.valueOf() < now.valueOf() ? 'disabled' : '';
-      }
-    });
-
+     $('.date-picker').datepicker({autoclose:true}).next().on(ace.click_event, function(){
+                                   $(this).prev().focus();
+                            });
   </script>
   </div>
 <!--g:datePicker name="vigencia" precision="day"  value="${serieInstance?.vigencia}"  /-->

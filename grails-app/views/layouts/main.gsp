@@ -14,11 +14,21 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
     <link rel="stylesheet" href="${resource(dir: 'ace/css', file: 'ace.min.css')}" />
     <link rel="stylesheet" href="${resource(dir: 'ace/css', file: 'ace-rtl.min.css')}" />
-    <link rel="stylesheet" href="${resource(dir: 'ace/css', file: 'ace-skins.min.css')}" />    
+    <link rel="stylesheet" href="${resource(dir: 'ace/css', file: 'ace-skins.min.css')}" /> 
+    <link rel="stylesheet" href="${resource(dir: 'ace/css', file: 'datepicker.css')}" />
+    <link rel="stylesheet" href="${resource(dir: 'ace/css', file: 'bootstrap-timepicker.css')}" />
+    <link rel="stylesheet" href="${resource(dir: 'ace/css', file: 'daterangepicker.css')}" />
+
     <script src="${resource(dir: 'ace/js', file: 'ace-extra.min.js')}"></script>
-     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-     <script src="${resource(dir: 'ace/js', file: 'bootstrap.min.js')}"></script>
-    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="${resource(dir: 'ace/js', file: 'bootstrap.min.js')}"></script>
+
+    <script src="${resource(dir: 'ace/js/date-time', file: 'bootstrap-datepicker.min.js')}"></script>
+    <script src="${resource(dir: 'ace/js/date-time', file: 'bootstrap-timepicker.min.js')}"></script>
+    <script src="${resource(dir: 'ace/js/date-time', file: 'moment.min.js')}"></script>
+    <script src="${resource(dir: 'ace/js/date-time', file: 'daterangepicker.min.js')}"></script>
+
+
   </head>
 
   <body >
@@ -51,22 +61,22 @@
 
               <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                 <li>
-                  <g:link controller="auth" action="cambiar">
-                    <i class="icon-cog"></i>
-                    Cambiar Contraseña
-                  </g:link>
-                </li>
-
-                <li class="divider"></li>
-
-                <li>
-                   <g:link controller="auth" action="signOut">
-                    <i class="icon-off"></i>
-                    Salir
-                   </g:link>
-                </li>
-              </ul>
+                <g:link controller="auth" action="cambiar">
+                  <i class="icon-cog"></i>
+                  Cambiar Contraseña
+                </g:link>
             </li>
+
+            <li class="divider"></li>
+
+            <li>
+            <g:link controller="auth" action="signOut">
+              <i class="icon-off"></i>
+              Salir
+            </g:link>
+            </li>
+          </ul>
+          </li>
           </ul><!-- /.ace-nav -->
         </div><!-- /.navbar-header -->
       </div><!-- /.container -->
@@ -121,16 +131,16 @@
               </g:link>
               </li>
               <li>
-                <g:link controller="reporte" class="menu">
-                  <i class="icon-bar-chart"></i>
-                  <span class="menu-text"> Reportes </span>              
-                </g:link>
+              <g:link controller="reporte" class="menu">
+                <i class="icon-bar-chart"></i>
+                <span class="menu-text"> Reportes </span>              
+              </g:link>
               </li>
               <li>
-                <g:link controller="dashboard" class="menu">
-                  <i class="icon-dashboard"></i>
-                  <span class="menu-text"> Dashboard </span>              
-                </g:link>
+              <g:link controller="dashboard" class="menu">
+                <i class="icon-dashboard"></i>
+                <span class="menu-text"> Dashboard </span>              
+              </g:link>
               </li>
             </shiro:hasRole>
           </ul><!-- /.nav-list -->
@@ -168,7 +178,7 @@
 
     <!--[if !IE]> -->
 
-   
+
 
     <!-- <![endif]-->
 
@@ -186,17 +196,17 @@
   </script>
   <![endif]-->
 
-    
-  <script src="${resource(dir: 'ace/js', file: 'typeahead-bs2.min.js')}"></script>              
-  <script src="${resource(dir: 'ace/js', file: 'jquery-ui-1.10.3.custom.min.js')}"></script>              
-  <script src="${resource(dir: 'ace/js', file: 'jquery.ui.touch-punch.min.js')}"></script>              
-  <script src="${resource(dir: 'ace/js', file: 'jquery.slimscroll.min.js')}"></script>              
-  <script src="${resource(dir: 'ace/js', file: 'jquery.easy-pie-chart.min.js')}"></script>              
-  <script src="${resource(dir: 'ace/js', file: 'jquery.sparkline.min.js')}"></script>              
-  <script src="${resource(dir: 'ace/js/flot', file: 'jquery.flot.min.js')}"></script>              
-  <script src="${resource(dir: 'ace/js/flot', file: 'jquery.flot.pie.min.js')}"></script>              
-  <script src="${resource(dir: 'ace/js/flot', file: 'jquery.flot.resize.min.js')}"></script>              
-  <script src="${resource(dir: 'ace/js', file: 'ace-elements.min.js')}"></script>              
-  <script src="${resource(dir: 'ace/js', file: 'ace.min.js')}"></script>   
+
+    <script src="${resource(dir: 'ace/js', file: 'typeahead-bs2.min.js')}"></script>              
+    <script src="${resource(dir: 'ace/js', file: 'jquery-ui-1.10.3.custom.min.js')}"></script>              
+    <script src="${resource(dir: 'ace/js', file: 'jquery.ui.touch-punch.min.js')}"></script>              
+    <script src="${resource(dir: 'ace/js', file: 'jquery.slimscroll.min.js')}"></script>              
+    <script src="${resource(dir: 'ace/js', file: 'jquery.easy-pie-chart.min.js')}"></script>              
+    <script src="${resource(dir: 'ace/js', file: 'jquery.sparkline.min.js')}"></script>              
+    <script src="${resource(dir: 'ace/js/flot', file: 'jquery.flot.min.js')}"></script>              
+    <script src="${resource(dir: 'ace/js/flot', file: 'jquery.flot.pie.min.js')}"></script>              
+    <script src="${resource(dir: 'ace/js/flot', file: 'jquery.flot.resize.min.js')}"></script>              
+    <script src="${resource(dir: 'ace/js', file: 'ace-elements.min.js')}"></script>              
+    <script src="${resource(dir: 'ace/js', file: 'ace.min.js')}"></script>   
     <!-- inline scripts related to this page -->
   </body>

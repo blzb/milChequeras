@@ -61,17 +61,12 @@
   </label>
   <!--g:datePicker name="fechaNacimiento" precision="day"  value="${chequeraInstance?.fechaNacimiento}"  /-->
   <div class="col-sm-9">
-    <div class="input-append date" id="datetimepicker1" data-date="${formatDate(format:'dd/mm/yyyy',date:chequeraInstance?.fechaNacimiento)}" data-date-format="dd/mm/yyyy">
-      <g:textField readonly="" class="span12" name="fechaNacimiento" required="" value="${formatDate(format:'dd/mm/yyyy',date:chequeraInstance?.fechaNacimiento)}"/>
-      <span class="add-on">
-        <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="icon-calendar">
-        </i>
-      </span>
-    </div>
+      <g:textField  name="fechaNacimiento" class="date-picker col-xs-3 col-sm-3" required="true" value="${formatDate(format:'dd/MM/yyyy',date:chequeraInstance?.fechaNacimiento)}" data-date-format="dd/mm/yyyy" />      
     <script type="text/javascript">
-      $('#datetimepicker1').datepicker({
-        language: 'es'
-      });
+      $('.date-picker').datepicker({autoclose:true}).next().on(ace.click_event, function(){
+                                   $(this).prev().focus();
+                            });
+
     </script>
   </div>
 </div>
@@ -82,7 +77,7 @@
     <span class="required-indicator">*</span>
   </label>
   <div class="col-sm-9">
-    <g:select name="sexo" from="${chequeraInstance.constraints.sexo.inList}" required=""  value="${chequeraInstance?.sexo}" valueMessagePrefix="chequera.sexo"/>
+    <g:select class="col-xs-3 col-sm-3" name="sexo" from="${chequeraInstance.constraints.sexo.inList}" required=""  value="${chequeraInstance?.sexo}" valueMessagePrefix="chequera.sexo"/>
   </div>
 </div>
 
@@ -133,6 +128,6 @@
     <span class="required-indicator">*</span>
   </label>
   <div class="col-sm-9">
-    <g:select id="serie" name="serie.id" from="${com.lucasian.cheques.Serie.list()}" optionKey="id" required="" value="${chequeraInstance?.serie?.id}" class="many-to-one"/>
+    <g:select id="serie" name="serie.id" from="${com.lucasian.cheques.Serie.list()}" optionKey="id" required="" value="${chequeraInstance?.serie?.id}" class="many-to-one  col-xs-3 col-sm-3"/>
   </div>
 </div>
