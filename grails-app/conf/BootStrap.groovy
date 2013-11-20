@@ -8,6 +8,7 @@ class BootStrap {
         admin.save()
         def empleado = new Rol(name: "empleado")
         empleado.addToPermissions("consulta:*")
+        empleado.addToPermissions("chequesUsados:*")
         empleado.save()
         def vendedor = new Rol(name:"vendedor")
         vendedor.addToPermissions("chequera:*")
