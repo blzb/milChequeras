@@ -37,7 +37,7 @@ class ShiroDbRealm {
         if(user.rol.name == "empleado"){
                def empleado = Empleado.findByUsername(user.username)
                println("ESTA ENTRANDO UN EMPLEADO de la tienda:"+empleado.tienda.clave)
-               userInfo = new UserInfo(username: user.username, rol: user.rol.name, tienda: empleado.tienda.clave );
+               userInfo = new UserInfo(username: user.username, rol: user.rol.name, tienda: empleado.tienda );
         }else{
               userInfo = new UserInfo(username: user.username, rol: user.rol.name );              
         }        

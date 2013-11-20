@@ -99,6 +99,21 @@
 
 
           <ul class="nav nav-list">
+              <shiro:hasRole name="empleado">
+                  <li>
+                      <g:link controller="consulta" class="menu">
+                          <i class="icon-apple"></i>
+                          <span class="menu-text"> Consulta</span>
+                      </g:link>
+                  </li>
+                  <li >
+                      <g:link controller="chequesUsados" class="menu">
+                          <i class="icon-tags"></i>
+                          <span class="menu-text"> Cheques Usados</span>
+                      </g:link>
+                  </li>
+              </shiro:hasRole>
+
             <shiro:hasRole name="administrador">
               <li>
               <g:link controller="chequera" class="menu">

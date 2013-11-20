@@ -1,3 +1,5 @@
+import com.lucasian.cheques.Tienda
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -10,7 +12,7 @@
 class UserInfo {
        String username
        String rol
-       String tienda
+       Tienda tienda
        String toString(){
               return username;
        }
