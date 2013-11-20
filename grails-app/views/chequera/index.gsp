@@ -26,6 +26,7 @@
 
           <g:sortableColumn property="apellidoPaterno" title="${message(code: 'chequera.apellidoPaterno.label', default: 'Apellido Paterno')}" />
           <g:sortableColumn class="hidden-phone" property="apellidoMaterno" title="${message(code: 'chequera.apellidoMaterno.label', default: 'Apellido Materno')}" />
+          <th>Registrado por</th>
           <th >
           </th>
           </tr>
@@ -42,6 +43,10 @@
               <td>${fieldValue(bean: chequeraInstance, field: "apellidoPaterno")}</td>
               <td class="hidden-phone">${fieldValue(bean: chequeraInstance, field: "apellidoMaterno")}</td>
 
+              
+              <td>
+                  ${fieldValue(bean: chequeraInstance, field: "registradoPor")}
+              </td>
               <td>
             <g:form url="[resource:chequeraInstance, action:'delete']" method="DELETE" style="margin-bottom: 0px;"  style="margin-bottom: 0px;">
               <fieldset class="buttons">

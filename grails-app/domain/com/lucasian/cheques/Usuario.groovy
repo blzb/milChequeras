@@ -8,6 +8,7 @@ class Usuario {
        String email
     
        static belongsTo = [rol: Rol]
+       static hasMany = [chequerasRegistradas: Chequera]
 
        static constraints = {
               username(nullable: false, blank: false, unique: true, size:5..50)
@@ -28,5 +29,8 @@ class Usuario {
               }
            
        }
-       static transients = ['apellidos']
+       static transients = ['apellidos', 'nombreCompleto']
+       String getNombreCompleto(){
+              return nombre +" "+ getApellidos()
+       }
 }
