@@ -10,6 +10,7 @@ class ActivationService {
 
        }
        def activar(Chequera chequera){
+              chequera.save flush:true
               if(chequera?.email){
                      mailService.sendMail {     
                             to chequera.email

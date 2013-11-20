@@ -97,7 +97,7 @@
                     </li>                    
                   </shiro:authenticated>
                   <shiro:notAuthenticated>
-                    <li><a href="index.html#mySignup" data-toggle="modal">Registro</a></li>
+                     <li><g:link controller="activacion" action="index">Activación</g:link></li>
                     <li>
 <g:link controller="auth" action="index">Entrar
                     </g:link>
