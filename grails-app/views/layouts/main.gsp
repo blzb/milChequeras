@@ -99,20 +99,20 @@
 
 
           <ul class="nav nav-list">
-              <shiro:hasRole name="empleado">
-                  <li>
-                      <g:link controller="consulta" class="menu">
-                          <i class="icon-apple"></i>
-                          <span class="menu-text"> Consulta</span>
-                      </g:link>
-                  </li>
-                  <li >
-                      <g:link controller="chequesUsados" class="menu">
-                          <i class="icon-tags"></i>
-                          <span class="menu-text"> Cheques Usados</span>
-                      </g:link>
-                  </li>
-              </shiro:hasRole>
+            <shiro:hasRole name="empleado">
+              <li>
+              <g:link controller="consulta" class="menu">
+                <i class="icon-apple"></i>
+                <span class="menu-text"> Consulta</span>
+              </g:link>
+              </li>
+              <li >
+              <g:link controller="chequesUsados" class="menu">
+                <i class="icon-tags"></i>
+                <span class="menu-text"> Cheques Usados</span>
+              </g:link>
+              </li>
+            </shiro:hasRole>
 
             <shiro:hasRole name="administrador">
               <li>
@@ -150,12 +150,30 @@
                 <i class="icon-bar-chart"></i>
                 <span class="menu-text"> Reportes </span>              
               </g:link>
-              </li>
+              </li>              
               <li>
-              <g:link controller="dashboard" class="menu">
-                <i class="icon-dashboard"></i>
-                <span class="menu-text"> Dashboard </span>              
-              </g:link>
+                <a href="#" class="dropdown-toggle">
+                  <i class="icon-dashboard"></i>
+                  <span class="menu-text"> Dashboards </span>
+
+                  <b class="arrow icon-angle-down"></b>
+                </a>
+
+                <ul class="submenu">
+                  <li>
+                     <g:link controller="dashboard" class="menu">
+                      <i class="icon-double-angle-right"></i>
+                      Datos Generales
+                     </g:link>
+                  </li>
+
+                  <li>
+                     <g:link controller="dashboard" action="chequesRedimidos" class="menu">
+                      <i class="icon-double-angle-right"></i>
+                      Cheques Redimidos
+                    </g:link>
+                  </li>
+                </ul>
               </li>
             </shiro:hasRole>
           </ul><!-- /.nav-list -->
