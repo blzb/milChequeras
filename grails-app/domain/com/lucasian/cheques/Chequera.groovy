@@ -43,10 +43,10 @@ class Chequera {
     }
     String getRegistradoPor(){
            if(registrador != null){
-              return registrador.rol.name+":"+registrador.nombreCompleto
+              return registrador.rol.name.capitalize()+": "+registrador.nombreCompleto
                   
            }else{
-                  return "Registro Publico:"+nombre+" "+getApellidos();
+                  return "Registro Publico: "+nombre+" "+getApellidos();
            }
     }
 }

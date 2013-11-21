@@ -4,7 +4,10 @@ import  groovy.time.TimeCategory
 class DashboardController {
        def ChequesRedimidosService chequesRedimidosService
        def TopRedimidosService topRedimidosService
-       def index() { }
+       def ConcentradoService concentradoService
+       def index() {
+              model:[chequerasRegistradas:concentradoService.getChequerasRegistradas(), chequesUsados:concentradoService.getChequesUsados(), porcentaje: concentradoService.getPorcentajeChequesRedimidos()  ]
+       }
     
        def dashboard() { }
     
