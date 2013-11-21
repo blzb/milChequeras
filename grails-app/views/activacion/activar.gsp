@@ -30,13 +30,15 @@
         <div class="row-fluid" style="margin-top: 20px;">
           <div id="create-chequera" class="content scaffold-create" role="main">
             <div class="span8 offset2 well">
-              <h2>Tu chequera ha sido registrada. Espera un email de confirmacion</h2>
+              <h2>Tu chequera ha sido registrada, Espera un email de confirmacion.</h2>
               Siguenos en:
               <br/>
               <a href="https://twitter.com/Mil_Chequeras" target="_blank" title="Twitter"><i class="icon-rounded icon-64 icon-twitter" style="margin-bottom: 0px;"></i></a>
               <a href="https://www.facebook.com/milchequeras" target="_blank" title="Facebook"><i class="icon-rounded icon-64 icon-facebook" style="margin-bottom: 0px;"></i></a>
               <br/>
-              <g:link uri="/" class="btn">Regresar</g:link>
+              <br/>
+              <br/>
+              <g:link uri="/" class="btn btn-large">Regresar</g:link>
             </div>
           </div>
         </div>
