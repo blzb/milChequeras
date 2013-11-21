@@ -163,7 +163,7 @@
                   <li>
                      <g:link controller="dashboard" class="menu">
                       <i class="icon-double-angle-right"></i>
-                      Datos Generales
+                      Concentrado
                      </g:link>
                   </li>
 

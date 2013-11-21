@@ -23,7 +23,7 @@
           </div>
           <div class="infobox-data">
             <span class="infobox-data-number">${chequerasRegistradas}</span>
-            <div class="infobox-content">Chequeras registradas</div>
+            <div class="infobox-content">Chequeras activadas</div>
           </div>
         </div>        
         <div class="infobox infobox-blue ">
@@ -32,7 +32,7 @@
           </div>
           <div class="infobox-data">
             <span class="infobox-data-number">${chequesUsados}</span>
-            <div class="infobox-content">Cheques usados</div>
+            <div class="infobox-content">Cheques redimidos</div>
           </div>
         </div>   
         <div class="infobox infobox-green  ">
@@ -42,11 +42,11 @@
               <canvas width="46" height="46"></canvas></div>
           </div>
           <div class="infobox-data">
-            <span class="infobox-text">Cheques usados</span>
+            <span class="infobox-text">Porcentaje</span>
 
             <div class="infobox-content">
 
-              Cheques
+              Cheques redimidos
             </div>
           </div>
         </div>
