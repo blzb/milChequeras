@@ -20,69 +20,24 @@
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="content scaffold-list span12">
-                <g:form action="usar">
-                    <input type="hidden" name="serie" value="${serie}"/>
-                    <input type="hidden" name="usar" id="usar" value=""/>
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                        <tr>
-                            <th class="" style="text-align: center; width: 73px;">
-                                Clave
-                            </th>
-                            <th class="" style="text-align: center; width: 73px;">
-                                Descripcion
-                            </th>
-                            <th class="" style="text-align: center; width: 73px;">
-                                Fecha Uso
-                            </th>
-                            <th class="" style="text-align: center; width: 73px;">
-                                Referencia
-                            </th>
-                            <th class="" style="text-align: center; width: 73px;">
-                                Clave Serie
-                            </th>
-                            <th class="" style="text-align: center; width: 73px;">
-                                Nombre Serie
-                            </th>
-                            <th class="" style="text-align: center; width: 73px;">
-                                Nombre Chequera
-                            </th>
-
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <g:each in="${chequesUsados}">
-                                <tr>
-                                    <td style="text-align: center;">
-                                      ${it.cheque.clave}
-                                    </td>
-                                    <td style="text-align: center;">
-                                      ${it.cheque.descripcion}
-                                    </td>
-                                    <td style="text-align: center;">
-                                        ${it.dateCreated}
-                                    </td>
-                                    <td style="text-align: center;">
-                                        ${it.referencia}
-                                    </td>
-                                    <td style="text-align: center;">
-                                        ${it.cheque.serie.clave}
-                                    </td>
-                                    <td style="text-align: center;">
-                                        ${it.cheque.serie.nombre}
-                                    </td>
-                                    <td style="text-align: center;">
-                                        ${it.chequera.nombre}
-                                    </td>
-                                </tr>
-                        </g:each>
-                        </tbody>
-                    </table>
-                    <div class="pagination-centered align-center">
-                        <g:paginate total="${chequesUsadosInstanceCount}" />
-                    </div>
-                </g:form>
-                <g:link action="index" class="btn btn-large btn-theme btn-rounded align-center" >Regresar</g:link>
+                <div class="align-center">
+                    Cheque:&nbsp;<input type="text" name="numeroChequera" value="" id="inputNumCheque"
+                                        onkeyup="${remoteFunction(action: 'index', controller: 'chequesUsados', params: '\'serie=\' + document.getElementById(\'inputSerie\').value + \'&propietario=\' + document.getElementById(\'inputPropietario\').value + \'&numChequera=\' + document.getElementById(\'inputNumChequera\').value + \'&numCheque=\' + document.getElementById(\'inputNumCheque\').value', options: '[asynchronous: true]', update: 'tablaChequesUsados')}"/>&nbsp;&nbsp;&nbsp;
+                Serie:&nbsp;<input type="text" name="serie" value="" id="inputSerie"
+                                   onkeyup="${remoteFunction(action: 'index', controller: 'chequesUsados', params: '\'serie=\' + document.getElementById(\'inputSerie\').value + \'&propietario=\' + document.getElementById(\'inputPropietario\').value + \'&numChequera=\' + document.getElementById(\'inputNumChequera\').value + \'&numCheque=\' + document.getElementById(\'inputNumCheque\').value', options: '[asynchronous: true]', update: 'tablaChequesUsados')}"/>&nbsp;&nbsp;&nbsp;
+                Propietario:&nbsp;<input type="text" name="propietario" value="" id="inputPropietario"
+                                         onkeyup="${remoteFunction(action: 'index', controller: 'chequesUsados', params: '\'serie=\' + document.getElementById(\'inputSerie\').value + \'&propietario=\' + document.getElementById(\'inputPropietario\').value + \'&numChequera=\' + document.getElementById(\'inputNumChequera\').value + \'&numCheque=\' + document.getElementById(\'inputNumCheque\').value', options: '[asynchronous: true]', update: 'tablaChequesUsados')}"/>&nbsp;&nbsp;&nbsp;
+                Chequera:&nbsp;<input type="text" name="numeroChequera" value="" id="inputNumChequera"
+                                         onkeyup="${remoteFunction(action: 'index', controller: 'chequesUsados', params: '\'serie=\' + document.getElementById(\'inputSerie\').value + \'&propietario=\' + document.getElementById(\'inputPropietario\').value + \'&numChequera=\' + document.getElementById(\'inputNumChequera\').value + \'&numCheque=\' + document.getElementById(\'inputNumCheque\').value', options: '[asynchronous: true]', update: 'tablaChequesUsados')}"/>&nbsp;
+                </div>
+                <div id="tablaChequesUsados">
+                    <g:form>
+                        <fieldset class="form">
+                            <g:render template="tabla"/>
+                        </fieldset>
+                    </g:form>
+                </div>
+                <g:link action="index" class="btn btn-large btn-theme btn-rounded align-center">Regresar</g:link>
                 <br/>
             </div>
         </div>
