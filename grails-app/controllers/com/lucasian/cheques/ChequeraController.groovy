@@ -37,8 +37,6 @@ class ChequeraController {
             respond chequeraInstance.errors, view:'create'
             return
         }
-
-        chequeraInstance.save flush:true
         activationService.activar(chequeraInstance)
         request.withFormat {
             form {

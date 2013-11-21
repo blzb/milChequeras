@@ -17,6 +17,9 @@ class ShiroSecurityFilters {
                                    }                                    
                                    return true
                             } 
+                            if(controllerName == "activacion"){
+                                   return true
+                            }
                             // Access control by convention.
                             accessControl()
                      }

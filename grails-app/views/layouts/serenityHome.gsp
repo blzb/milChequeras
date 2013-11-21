@@ -23,6 +23,7 @@
     <link href="${resource(dir: 'serenity/css', file: 'style.css')}" rel="stylesheet">
     <link href="${resource(dir: 'serenity/color', file: 'default.css')}" rel="stylesheet">
     <link href="${resource(dir: 'serenity/css', file: 'milchequeras.css')}" rel="stylesheet">
+    <link href="${resource(dir: 'serenity/css', file: 'datepicker.css')}" rel="stylesheet">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -41,6 +42,7 @@
     <script src="${resource(dir: 'serenity/js/hover', file: 'jquery-hover-effect.js')}"></script>
     <script src="${resource(dir: 'serenity/js/hover', file: 'setting.js')}"></script>
     <script src="${resource(dir: 'serenity/js', file: 'custom.js')}"></script>
+    <script src="${resource(dir: 'serenity/js', file: 'bootstrap-datepicker.js')}"></script>
     <!-- css -->
 
     <!-- Fav and touch icons -->
@@ -81,7 +83,7 @@
                     </li>
                   </shiro:authenticated>
                   <shiro:notAuthenticated>
-                    <li><a href="index.html#mySignup" data-toggle="modal">Registro</a></li>
+                    <li><g:link controller="activacion" action="index">Activación</g:link></li>
                     <li>
                     <g:link controller="auth" action="index">Entrar
                     </g:link>

@@ -3,6 +3,7 @@ package com.lucasian.cheques
 class Chequera {
     static belongsTo = [serie: Serie]
     static hasMany = [usados: ChequesUsados]
+    static hasOne = [registrador: Usuario]
     String numero
     String nombre
     String apellidoPaterno
@@ -13,7 +14,7 @@ class Chequera {
     String facebook
     String twitter
     String colonia
-    String telefono
+    String telefono    
     static constraints = {
            numero (nullable: false, blank: false, size:1..100)
            email (nullable: false, blank: false, email:true, size: 1..255)
@@ -26,6 +27,7 @@ class Chequera {
            telefono (nullable: true, size: 0..20)
            facebook(nullable:true, size: 0..255)
            twitter(nullable:true, size:0..255)
+           registrador(nullable: true)
     }
     String getApellidos(){
            if(apellidoMaterno){
@@ -35,8 +37,16 @@ class Chequera {
            }
            
     }
-    static transients = ['apellidos']
+    static transients = ['apellidos', 'registradoPor']
     String toString(){
            return numero+"("+nombre+" "+apellidos+")"
+    }
+    String getRegistradoPor(){
+           if(registrador != null){
+              return registrador.rol.name+":"+registrador.nombreCompleto
+                  
+           }else{
+                  return "Registro Publico:"+nombre+" "+getApellidos();
+           }
     }
 }
