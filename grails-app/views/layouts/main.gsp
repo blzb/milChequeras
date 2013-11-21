@@ -102,8 +102,8 @@
             <shiro:hasRole name="empleado">
               <li>
               <g:link controller="consulta" class="menu">
-                <i class="icon-apple"></i>
-                <span class="menu-text"> Consulta</span>
+                <i class="icon-search"></i>
+                <span class="menu-text">Usar cheque</span>
               </g:link>
               </li>
               <li >

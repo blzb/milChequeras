@@ -18,7 +18,7 @@ class ConsultaController {
                             def usadosMap = usados.collectEntries { 
                                    [(it.cheque.id): it]
                             }
-                            def result = Cheque.executeQuery("from Cheque c where c.tienda.clave = :claveTienda and c.serie.id = :idSerie",parametros )
+                            def result = Cheque.executeQuery("from Cheque c where c.tienda.clave = :claveTienda and c.serie.id = :idSerie",parametros )                            
                             def cheques = result.collect{
                                    if(usadosMap[it.id]){
                                           [cheque: it, usado: usadosMap[it.id]]
@@ -26,7 +26,7 @@ class ConsultaController {
                                           [cheque: it]
                                    }
                             }
-                            [cheques: cheques, serie: params.serie]                            
+                            [cheques: cheques, serie: params.serie, chequera:chequera]                            
                      }              
               }else{
                      render(view: "/consulta/index", model: [noEncontrado: true, serie:params.serie])
