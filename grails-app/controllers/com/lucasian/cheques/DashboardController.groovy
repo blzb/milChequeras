@@ -3,6 +3,7 @@ import  groovy.time.TimeCategory
 
 class DashboardController {
        def ChequesRedimidosService chequesRedimidosService
+       def TopRedimidosService topRedimidosService
        def index() { }
     
        def dashboard() { }
@@ -19,5 +20,8 @@ class DashboardController {
                      }
               }
            
+       }
+       def top(){
+              model:[columnas:[['string', 'Cheque'], ['number', 'Redimidos']], datos:topRedimidosService.getTop(5)]
        }
 }

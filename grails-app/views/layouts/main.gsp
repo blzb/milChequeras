@@ -173,6 +173,12 @@
                       Cheques Redimidos
                     </g:link>
                   </li>
+                  <li>
+                     <g:link controller="dashboard" action="top" class="menu">
+                      <i class="icon-double-angle-right"></i>
+                      Top 5 
+                    </g:link>
+                  </li>
                 </ul>
               </li>
             </shiro:hasRole>
