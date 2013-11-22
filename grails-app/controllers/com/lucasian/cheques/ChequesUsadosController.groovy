@@ -63,13 +63,13 @@ class ChequesUsadosController {
     }
 
 
-    boolean validarFiltros(GrailsParameterMap params){
+    def validarFiltros(GrailsParameterMap params){
         if (params.serie!=null || params.propietario !=null || params.numChequera != null || params.numCheque){
             return true
         }
     }
 
-    boolean validarPaginacion(GrailsParameterMap params){
+    def validarPaginacion(GrailsParameterMap params){
         if(params.p!=null || params.q!=null || params.n!=null || params.c!=null){
             return true
         }

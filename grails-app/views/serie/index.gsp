@@ -23,8 +23,11 @@
             <g:sortableColumn property="clave" title="${message(code: 'serie.clave.label', default: 'Clave')}" />
       
             <g:sortableColumn property="nombre" title="${message(code: 'serie.nombre.label', default: 'Nombre')}" />
+            
+            <g:sortableColumn  class="hidden-phone" property="inicioVigencia" title="${message(code: 'serie.inicioVigencia.label', default: 'Inicio de Vigencia')}" />
       
-            <g:sortableColumn  class="hidden-phone" property="vigencia" title="${message(code: 'serie.vigencia.label', default: 'Vigencia')}" />
+            <g:sortableColumn  class="hidden-phone" property="vigencia" title="${message(code: 'serie.vigencia.label', default: 'Fin de Vigencia')}" />            
+            
             <th >
             </th>
       
@@ -37,7 +40,7 @@
                   <td>${fieldValue(bean: serieInstance, field: "clave")}</td>
     
               <td>${fieldValue(bean: serieInstance, field: "nombre")}</td>
-      
+              <td  class="hidden-phone"><g:formatDate format="dd/MMMM/yyyy"  date="${serieInstance.inicioVigencia}" /></td>
               <td  class="hidden-phone"><g:formatDate format="dd/MMMM/yyyy"  date="${serieInstance.vigencia}" /></td>
               <td>
                  <g:form url="[resource:serieInstance, action:'delete']" method="DELETE" style="margin-bottom: 0px;">

@@ -22,21 +22,34 @@
   </div>
 </div>
 
-<div class="fieldcontain form-group ${hasErrors(bean: serieInstance, field: 'vigencia', 'error')} required">
-  <label class="col-sm-3 control-label no-padding-right" for="vigencia">
-    <g:message code="serie.vigencia.label" default="Vigencia" />
+
+<div class="fieldcontain form-group ${hasErrors(bean: serieInstance, field: 'inicioVigencia', 'error')} required">
+  <label class="col-sm-3 control-label no-padding-right" for="inicioVigencia">
+    <g:message code="serie.inicioVicengiavigencia.label" default="Inicio de Vigencia" />
     <span class="required-indicator">*</span>
   </label>  
   <div class="col-sm-9">
-    <g:textField name="vigencia" class="date-picker col-xs-3 col-sm-3" required="true" value="${formatDate(format:'dd/MM/yyyy',date:serieInstance?.vigencia)}" data-date-format="dd/mm/yyyy" />      
-  <script type="text/javascript">
+    <g:textField name="inicioVigencia" class="date-picker col-xs-3 col-sm-3" required="true" value="${formatDate(format:'dd/MM/yyyy',date:serieInstance?.inicioVigencia)}" data-date-format="dd/mm/yyyy" />       
+  </div>
+</div>
+
+<div class="fieldcontain form-group ${hasErrors(bean: serieInstance, field: 'vigencia', 'error')} required">
+  <label class="col-sm-3 control-label no-padding-right" for="vigencia">
+    <g:message code="serie.vigencia.label" default="Fin de Vigencia" />
+    <span class="required-indicator">*</span>
+  </label>  
+  <div class="col-sm-9">
+    <g:textField name="vigencia" class="date-picker col-xs-3 col-sm-3" required="true" value="${formatDate(format:'dd/MM/yyyy',date:serieInstance?.vigencia)}" data-date-format="dd/mm/yyyy" />       
+  </div>
+   <script type="text/javascript">
      $('.date-picker').datepicker({autoclose:true}).next().on(ace.click_event, function(){
                                    $(this).prev().focus();
                             });
   </script>
-  </div>
 <!--g:datePicker name="vigencia" precision="day"  value="${serieInstance?.vigencia}"  /-->
 </div>
+
+
 
 <!--div class="fieldcontain ${hasErrors(bean: serieInstance, field: 'chequeras', 'error')} ">
        <label class="col-sm-3 control-label no-padding-right" for="chequeras">

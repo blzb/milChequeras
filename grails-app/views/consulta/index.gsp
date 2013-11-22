@@ -20,7 +20,14 @@
             <g:if test="${noEncontrado}">
               <div class="alert  alert-danger">
                 <button type="button" class="close" data-dismiss="alert">×</button>
-                <h4>La chequera con numero de serie : <strong>"${serie}"</strong> no fue encontrada</h4>
+                <h4>La chequera no fue encontrada dentro del sistema</h4>
+              </div>
+            </g:if>
+             <g:if test="${noVigente}">
+              <div class="alert  alert-danger">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <h4>La chequera <strong>ya no se encuentra vigente</strong></h4>  <br/>
+                vigencia: (${formatDate(format:'dd/MMMM/yyyy',date:inicioVigencia)} - ${formatDate(format:'dd/MMMM/yyyy',date:finVigencia)})
               </div>
             </g:if>
             <br/>

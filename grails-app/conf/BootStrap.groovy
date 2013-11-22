@@ -31,19 +31,19 @@ class BootStrap {
         def tienda1 = new Tienda(local:"Mexico tacuba 76", clave:"MT3", nombre:"Mexico Store")
         tienda1.save()
         
-        def serie = new Serie(clave: "W2013", nombre:"Invierno 2013", vigencia: new Date())
+        def serie = new Serie(clave: "W2013", nombre:"Invierno 2013", vigencia: new Date(), inicioVigencia: (new Date()).minus(20))
         serie.save()
-        System.out.println(serie.id)
+        System.out.println(serie.id)      
         
-        def serie1 = new Serie(clave: "Serie A", nombre:"Demo", vigencia: new Date())
+        def serie1 = new Serie(clave: "Serie A", nombre:"Demo", vigencia: new Date(), inicioVigencia: (new Date()).minus(20))
         serie1.save()
         System.out.println(serie1.id)
         
-        def serie2 = new Serie(clave: "Serie B", nombre:"Demostracion", vigencia: new Date())
+        def serie2 = new Serie(clave: "Serie B", nombre:"Demostracion", vigencia: new Date(), inicioVigencia: (new Date()).minus(20))
         serie2.save()
         System.out.println(serie2.id)
         
-        def serie3 = new Serie(clave: "Serie C", nombre:"serie c", vigencia: new Date())
+        def serie3 = new Serie(clave: "Serie C", nombre:"serie c", vigencia: new Date(), inicioVigencia: (new Date()).minus(20))
         serie3.save()
         System.out.println(serie3.id)
         

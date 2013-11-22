@@ -34,6 +34,7 @@ class SerieController {
               
               serieInstance.clearErrors()
               serieInstance.vigencia = Date.parse("dd/MM/yyyy", params.vigencia)
+              serieInstance.inicioVigencia = Date.parse("dd/MM/yyyy", params.inicioVigencia)
               serieInstance.validate()
               
               if (serieInstance.hasErrors()) {
