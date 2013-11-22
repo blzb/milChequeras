@@ -97,7 +97,7 @@
                               salida = response
                                   $("#fechaNacimiento").val(response.birthday);  
                                    $("#nombre").val(response.first_name);
-                                   $("#apellidoPaterno").val(response.last_name);
+                                   $("#apellidos").val(response.last_name);
                                    $("#email").val(response.email);
                                    if(response.gender=="male"){
                                      $("#sexo").val("Hombre");
@@ -137,21 +137,13 @@
                     <g:textField class="span12" name="nombre" required="" maxLength="100" value="${chequeraInstance?.nombre}"/>
                   </div>
 
-                  <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'apellidoPaterno', 'error')} required">
-                    <label for="apellidoPaterno">
-                      <g:message code="chequera.apellidoPaterno.label" default="Apellido Paterno" />
+                  <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'apellidos', 'error')} required">
+                    <label for="apellidos">
+                      <g:message code="chequera.apellidos.label" default="Apellidos" />
                       <span class="required-indicator">*</span>
                     </label>
-                    <g:textField class="span12"  name="apellidoPaterno" required="" maxLength="100" value="${chequeraInstance?.apellidoPaterno}"/>
+                    <g:textField class="span12"  name="apellidos" required="" maxLength="100" value="${chequeraInstance?.apellidos}"/>
                   </div>
-
-                  <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'apellidoMaterno', 'error')} required">
-                    <label for="apellidoMaterno">
-                      <g:message code="chequera.apellidoMaterno.label" default="Apellido Materno" />
-                    </label>
-                    <g:textField class="span12" name="apellidoMaterno" maxLength="100" value="${chequeraInstance?.apellidoMaterno}"/>
-                  </div>
-
 
                   <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'email', 'error')} required">
                     <label for="email">
@@ -191,20 +183,12 @@
                     <g:select name="sexo" from="${chequeraInstance.constraints.sexo.inList}" required=""  value="${chequeraInstance?.sexo}" valueMessagePrefix="chequera.sexo"/>
                   </div>
 
-                  <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'colonia', 'error')} ">
-                    <label for="colonia">
-                      <g:message code="chequera.colonia.label" default="Colonia" />
+                  <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'codigoPostal', 'error')} ">
+                    <label for="codigoPostal">
+                      <g:message code="chequera.codigoPostal.label" default="Codigo Postal" />
 
                     </label>
-                    <g:textField class="span12" name="colonia" maxLength="100" value="${chequeraInstance?.colonia}"/>
-                  </div>
-
-                  <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'telefono', 'error')} ">
-                    <label for="telefono">
-                      <g:message code="chequera.telefono.label" default="Telefono" />
-
-                    </label>
-                    <g:textField class="span12" name="telefono" maxLength="20" value="${chequeraInstance?.telefono}"/>
+                    <g:textField class="span12" name="codigoPostal" maxLength="100" value="${chequeraInstance?.codigoPostal}"/>
                   </div>
 
                   <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'facebook', 'error')} ">

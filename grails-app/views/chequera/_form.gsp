@@ -22,24 +22,17 @@
   </div>
 </div>
 
-<div class="fieldcontain form-group ${hasErrors(bean: chequeraInstance, field: 'apellidoPaterno', 'error')} required">
-  <label class="col-sm-3 control-label no-padding-right" for="apellidoPaterno">
-    <g:message code="chequera.apellidoPaterno.label" default="Apellido Paterno" />
+<div class="fieldcontain  form-group ${hasErrors(bean: chequeraInstance, field: 'apellidos', 'error')} required">
+  <label class="col-sm-3 control-label no-padding-right" for="apellidos">
+    <g:message code="chequera.apellidos.label" default="Apellidos" />
     <span class="required-indicator">*</span>
   </label>
   <div class="col-sm-9">
-    <g:textField class="col-xs-10 col-sm-10" name="apellidoPaterno" required="" maxLength="100" value="${chequeraInstance?.apellidoPaterno}"/>
+  <g:textField class="col-xs-10 col-sm-10" name="apellidos" required="" maxLength="200" value="${chequeraInstance?.apellidos}"/>
   </div>
 </div>
 
-<div class="fieldcontain form-group ${hasErrors(bean: chequeraInstance, field: 'apellidoMaterno', 'error')} required">
-  <label class="col-sm-3 control-label no-padding-right" for="apellidoMaterno">
-    <g:message code="chequera.apellidoMaterno.label" default="Apellido Materno" />
-  </label>
-  <div class="col-sm-9">
-    <g:textField class="col-xs-10 col-sm-10" name="apellidoMaterno" maxLength="100" value="${chequeraInstance?.apellidoMaterno}"/>
-  </div>
-</div>
+
 
 
 <div class="fieldcontain form-group ${hasErrors(bean: chequeraInstance, field: 'email', 'error')} required">
@@ -61,7 +54,7 @@
   </label>
   <!--g:datePicker name="fechaNacimiento" precision="day"  value="${chequeraInstance?.fechaNacimiento}"  /-->
   <div class="col-sm-9">
-      <g:textField  name="fechaNacimiento" class="date-picker col-xs-3 col-sm-3" required="true" value="${formatDate(format:'dd/MM/yyyy',date:chequeraInstance?.fechaNacimiento)}" data-date-format="dd/mm/yyyy" />      
+    <g:textField  name="fechaNacimiento" class="date-picker col-xs-3 col-sm-3" required="true" value="${formatDate(format:'dd/MM/yyyy',date:chequeraInstance?.fechaNacimiento)}" data-date-format="dd/mm/yyyy" />      
     <script type="text/javascript">
       $('.date-picker').datepicker({autoclose:true}).next().on(ace.click_event, function(){
                                    $(this).prev().focus();
@@ -81,25 +74,16 @@
   </div>
 </div>
 
-<div class="fieldcontain form-group ${hasErrors(bean: chequeraInstance, field: 'colonia', 'error')} ">
-  <label class="col-sm-3 control-label no-padding-right" for="colonia">
-    <g:message code="chequera.colonia.label" default="Colonia" />
+<div class="fieldcontain form-group ${hasErrors(bean: chequeraInstance, field: 'codigoPostal', 'error')} ">
+  <label class="col-sm-3 control-label no-padding-right" for="codigoPostal">
+    <g:message code="chequera.codigoPostal.label" default="Codigo Postal" />
 
   </label>
   <div class="col-sm-9">
-    <g:textField class="col-xs-10 col-sm-10" name="colonia" maxLength="100" value="${chequeraInstance?.colonia}"/>
+    <g:textField class="col-xs-10 col-sm-10" name="codigoPostal" maxLength="100" value="${chequeraInstance?.codigoPostal}"/>
   </div>
 </div>
 
-<div class="fieldcontain form-group ${hasErrors(bean: chequeraInstance, field: 'telefono', 'error')} ">
-  <label class="col-sm-3 control-label no-padding-right" for="telefono">
-    <g:message code="chequera.telefono.label" default="Telefono" />
-
-  </label>
-  <div class="col-sm-9">
-    <g:textField class="col-xs-10 col-sm-10" name="telefono" maxLength="20" value="${chequeraInstance?.telefono}"/>
-  </div>
-</div>
 
 <div class="fieldcontain form-group ${hasErrors(bean: chequeraInstance, field: 'facebook', 'error')} ">
   <label class="col-sm-3 control-label no-padding-right" for="facebook">

@@ -94,7 +94,7 @@ class BootStrap {
         cheque9.save()
         
         def chequera = new Chequera(numero:"A12", nombre:"Angel", 
-               apellidoPaterno:"Pimentel", apellidoMaterno:"Meza", email:"angelpmza@gmail.com", facebook:"angel.pimentel.90",
+               apellidos:"Pimentel Meza", email:"angelpmza@gmail.com", facebook:"angel.pimentel.90",
                twitter: "blzb", fechaNacimiento: new Date(), sexo:"Hombre")
         chequera.setSerie(serie)
         chequera.save()

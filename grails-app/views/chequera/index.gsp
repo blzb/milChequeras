@@ -24,8 +24,7 @@
 
           <g:sortableColumn property="nombre" title="${message(code: 'chequera.nombre.label', default: 'Nombre')}" />            
 
-          <g:sortableColumn property="apellidoPaterno" title="${message(code: 'chequera.apellidoPaterno.label', default: 'Apellido Paterno')}" />
-          <g:sortableColumn class="hidden-phone" property="apellidoMaterno" title="${message(code: 'chequera.apellidoMaterno.label', default: 'Apellido Materno')}" />
+          <g:sortableColumn property="apellidos" title="${message(code: 'chequera.apellidos.label', default: 'Apellidos')}" />
           <th>Registrado por</th>
           <th >
           </th>
@@ -40,8 +39,7 @@
 
               <td>${fieldValue(bean: chequeraInstance, field: "nombre")}</td>
 
-              <td>${fieldValue(bean: chequeraInstance, field: "apellidoPaterno")}</td>
-              <td class="hidden-phone">${fieldValue(bean: chequeraInstance, field: "apellidoMaterno")}</td>
+              <td>${fieldValue(bean: chequeraInstance, field: "apellidos")}</td>
 
               
               <td>
