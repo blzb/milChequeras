@@ -41,7 +41,7 @@ class ConsultaController {
                                                  [cheque: it]
                                           }
                                    }
-                                   [cheques: cheques, serie: params.serie, chequera:chequera]
+                                   [cheques: cheques, serie: chequera.numero, chequera:chequera]
                             }              
                      }else{
                             render(view: "/consulta/index", model: [noVigente :true, inicioVigencia: chequera.serie.inicioVigencia, finVigencia: chequera.serie.vigencia ])
