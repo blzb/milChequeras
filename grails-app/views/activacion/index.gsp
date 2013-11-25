@@ -116,7 +116,7 @@
                 Learn more about options for the login button plugin:
                 /docs/reference/plugins/login/ -->
 
-              <fb:login-button size="xlarge" show-faces="true" scope="email, user_birthday, user_hometown, user_interests, user_location, user_relationship_details, user_religion_politics, user_work_history">
+              <fb:login-button size="xlarge" show-faces="true" scope="email, user_birthday, user_interests, user_location ">
                 Activa con tu cuenta
               </fb:login-button>
               <g:form class="form-horizontal" action="activar" >
