@@ -11,7 +11,7 @@ class Cheque {
        String clave
     
        String toString(){           
-              return "("+tienda.nombre+")"+serie.clave+"-"+clave+": "+descripcion;
+              return serie.clave+"-"+clave+": "+descripcion;
        }
        static transients = ['display']
        String getDisplay(){
