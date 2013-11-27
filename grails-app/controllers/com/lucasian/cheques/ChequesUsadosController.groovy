@@ -13,15 +13,17 @@ class ChequesUsadosController {
         params.remove("format")
         params.remove("controller")
 
+
         def flag = validarFiltros(params)
         def flagPag = validarPaginacion(params)
 
         if (flagPag) {
-            if (params.q.length() > 2 || params.p.length() > 2 || params.n.length() > 2 || params.c.length() > 2) {
-                params.serie = params.q
-                params.propietario = params.p
-                params.numChequera = params.n
-                params.numCheque = params.c
+            if (params.q.length() > 2 || params.p.length() > 2 || params.n.length() > 2 || params.c.length() > 2 ) {
+                params.serie = params.q?.replace(' ','').toLowerCase()
+                //params.propietario = params.p?.replace(' ','').toLowerCase()
+                params.propietario = params.p.toLowerCase()
+                params.numChequera = params.n?.replace(' ','').toLowerCase()
+                params.numCheque = params.c?.replace(' ','').toLowerCase()
                 params.remove("q")
                 params.remove("p")
                 params.remove("n")
@@ -39,10 +41,11 @@ class ChequesUsadosController {
             params.remove("p")
             params.remove("n")
             params.remove("c")
-            params.serie = (params.serie == null) ? '%%' : '%' + params.serie + '%'//hacer lo mismo para propietario y etc
-            params.propietario = (params.propietario == null) ? '%%' : '%' + params.propietario + '%'//
-            params.numChequera = (params.numChequera == null) ? '%%' : '%' + params.numChequera + '%'//
-            params.numCheque = (params.numCheque == null) ? '%%' : '%' + params.numCheque + '%'//
+            params.serie = (params.serie == null) ? '%%' : '%' + params.serie.replace(' ','').toLowerCase() + '%'//hacer lo mismo para propietario y etc
+            //params.propietario = (params.propietario == null) ? '%%' : '%' + params.propietario.replace(' ','').toLowerCase() + '%'//
+            params.propietario = (params.propietario == null) ? '%%' : '%' + params.propietario.toLowerCase() + '%'//
+            params.numChequera = (params.numChequera == null) ? '%%' : '%' + params.numChequera.replace(' ','').toLowerCase() + '%'//
+            params.numCheque = (params.numCheque == null) ? '%%' : '%' + params.numCheque.replace(' ','').toLowerCase() + '%'//
             def chequesUsados = chequesUsadosService.obtenerChequesUsados(params)
             def totalRegistos = chequesUsadosService.obtenerCountChequesUsados()
 
@@ -52,10 +55,11 @@ class ChequesUsadosController {
             params.remove("p")
             params.remove("n")
             params.remove("c")
-            params.serie = (params.serie == null) ? '%%' : '%' + params.serie + '%'
-            params.propietario = (params.propietario == null) ? '%%' : '%' + params.propietario + '%'
-            params.numChequera = (params.numChequera == null) ? '%%' : '%' + params.numChequera + '%'
-            params.numCheque = (params.numCheque == null) ? '%%' : '%' + params.numCheque + '%'
+            params.serie = (params.serie == null) ? '%%' : '%' + params.serie.replace(' ','').toLowerCase() + '%'
+            //params.propietario = (params.propietario == null) ? '%%' : '%' + params.propietario.replace(' ','').toLowerCase()  + '%'
+            params.propietario = (params.propietario == null) ? '%%' : '%' + params.propietario.toLowerCase() + '%'
+            params.numChequera = (params.numChequera == null) ? '%%' : '%' + params.numChequera.replace(' ','').toLowerCase() + '%'
+            params.numCheque = (params.numCheque == null) ? '%%' : '%' + params.numCheque.replace(' ','').toLowerCase() + '%'
             def chequesUsados = chequesUsadosService.obtenerChequesUsadosFiltro(params)
             def totalRegistos = chequesUsadosService.obtenerCountChequesUsadosFiltro(params)
             render(template: 'tabla', model: [chequesUsados: chequesUsados, chequesUsadosInstanceCount: totalRegistos])
@@ -64,7 +68,7 @@ class ChequesUsadosController {
 
 
     def validarFiltros(GrailsParameterMap params){
-        if (params.serie!=null || params.propietario !=null || params.numChequera != null || params.numCheque){
+        if (params.serie!=null || params.propietario !=null || params.numChequera != null || params.numCheque != null){
             return true
         }
     }

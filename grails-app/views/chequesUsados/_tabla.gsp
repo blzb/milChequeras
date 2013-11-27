@@ -3,28 +3,22 @@
     <thead>
     <tr>
         <th class="" style="text-align: center; width: 73px;">
-            Clave Cheque
-        </th>
-        <th class="" style="text-align: center; width: 73px;">
-            Descripcion
-        </th>
-        <th class="" style="text-align: center; width: 73px;">
-            Fecha Uso
-        </th>
-        <th class="" style="text-align: center; width: 73px;">
-            Referencia
-        </th>
-        <th class="" style="text-align: center; width: 73px;">
             Serie
         </th>
         <th class="" style="text-align: center; width: 73px;">
             Nombre Serie
         </th>
         <th class="" style="text-align: center; width: 73px;">
-            Propietario Chequera
+            Chequera
         </th>
         <th class="" style="text-align: center; width: 73px;">
-            Chequera
+            Clave Cheque
+        </th>
+        <th class="" style="text-align: center; width: 73px;">
+            Fecha Uso
+        </th>
+        <th class="" style="text-align: center; width: 73px;">
+            Propietario Chequera
         </th>
 
     </tr>
@@ -33,29 +27,24 @@
     <g:each in="${chequesUsados}">
         <tr>
             <td style="text-align: center;">
-                ${it.cheque.clave}
-            </td>
-            <td style="text-align: center;">
-                ${it.cheque.descripcion}
-            </td>
-            <td style="text-align: center;">
-                ${it.dateCreated}
-            </td>
-            <td style="text-align: center;">
-                ${it.referencia}
-            </td>
-            <td style="text-align: center;">
                 ${it.cheque.serie.clave}
             </td>
             <td style="text-align: center;">
                 ${it.cheque.serie.nombre}
             </td>
             <td style="text-align: center;">
-                ${it.chequera.nombre}
-            </td>
-            <td style="text-align: center;">
                 ${it.chequera.numero}
             </td>
+            <td style="text-align: center;">
+                ${it.cheque.clave}
+            </td>
+            <td style="text-align: center;">
+                ${formatDate(format:'dd/MM/yyyy',date:it.dateCreated)}
+            </td>
+            <td style="text-align: center;">
+                ${it.chequera.nombre}&nbsp;${it.chequera.apellidos}
+            </td>
+
         </tr>
     </g:each>
     </tbody>

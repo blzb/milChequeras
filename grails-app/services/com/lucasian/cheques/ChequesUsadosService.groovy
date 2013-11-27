@@ -19,14 +19,15 @@ class ChequesUsadosService {
     def obtenerChequesUsados(GrailsParameterMap params) {
         def idTienda = SecurityUtils.subject.principal.tienda.id
         params.idTienda=idTienda
-        def chequesUsados = ChequesUsados.executeQuery("from ChequesUsados cu where cu.cheque.tienda.id = :idTienda and cu.cheque.serie.clave like :serie and cu.chequera.nombre like :propietario and cu.chequera.numero like :numChequera and cu.cheque.clave like :numCheque order by cu.dateCreated desc", params)
+        def chequesUsados = ChequesUsados.
+                executeQuery("from ChequesUsados cu where cu.cheque.tienda.id = :idTienda and lower(cu.cheque.serie.clave) like :serie and  lower(CONCAT(cu.chequera.nombre,' ',cu.chequera.apellidos)) like :propietario   and lower(cu.chequera.numero) like :numChequera and lower(cu.cheque.clave) like :numCheque order by cu.dateCreated desc", params)
         return chequesUsados
     }
 
     def obtenerChequesUsadosFiltro(GrailsParameterMap params) {
         def idTienda = SecurityUtils.subject.principal.tienda.id
         params.idTienda=idTienda
-        def chequesUsados = ChequesUsados.executeQuery("from ChequesUsados cu where cu.cheque.tienda.id = :idTienda and cu.cheque.serie.clave like :serie and cu.chequera.nombre like :propietario and cu.chequera.numero like :numChequera and cu.cheque.clave like :numCheque order by cu.dateCreated desc", params)
+        def chequesUsados = ChequesUsados.executeQuery("from ChequesUsados cu where cu.cheque.tienda.id = :idTienda and lower(cu.cheque.serie.clave) like :serie and lower(CONCAT(cu.chequera.nombre,' ',cu.chequera.apellidos)) like :propietario  and lower(cu.chequera.numero) like :numChequera and lower(cu.cheque.clave) like :numCheque order by cu.dateCreated desc", params)
         return chequesUsados
     }
 
@@ -45,7 +46,7 @@ class ChequesUsadosService {
         def idTienda = SecurityUtils.subject.principal.tienda.id
         params.idTienda=idTienda
         params.remove("offset")
-        def countChequesUsados = ChequesUsados.executeQuery("select count(*) from ChequesUsados cu where cu.cheque.tienda.id = :idTienda and cu.cheque.serie.clave like :serie and cu.chequera.nombre like :propietario and cu.chequera.numero like :numChequera and cu.cheque.clave like :numCheque", params)
+        def countChequesUsados = ChequesUsados.executeQuery("select count(*) from ChequesUsados cu where cu.cheque.tienda.id = :idTienda and lower(cu.cheque.serie.clave) like :serie and lower(CONCAT(cu.chequera.nombre,' ',cu.chequera.apellidos)) like :propietario and lower(cu.chequera.numero) like :numChequera and lower(cu.cheque.clave) like :numCheque", params)
         return countChequesUsados[0]
     }
 }
