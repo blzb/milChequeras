@@ -31,7 +31,7 @@
                     <h3>¿Está seguro de que quiere reactivar éste cheque?</h3>
                 </div>
                 <div class="modal-footer" style="border-radius: 0px 0px 12px 12px;">
-                    <input type="submit" value="Revocar"  class="btn btn-large btn-theme btn-rounded">
+                    <input type="submit" value="Reactivar"  class="btn btn-large btn-theme btn-rounded">
                 </div>
             </div>
         </div>
