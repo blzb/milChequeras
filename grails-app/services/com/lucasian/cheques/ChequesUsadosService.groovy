@@ -49,4 +49,11 @@ class ChequesUsadosService {
         def countChequesUsados = ChequesUsados.executeQuery("select count(*) from ChequesUsados cu where cu.cheque.tienda.id = :idTienda and lower(cu.cheque.serie.clave) like :serie and lower(CONCAT(cu.chequera.nombre,' ',cu.chequera.apellidos)) like :propietario and lower(cu.chequera.numero) like :numChequera and lower(cu.cheque.clave) like :numCheque", params)
         return countChequesUsados[0]
     }
+
+    def revocarChequeUsado(id){
+        def p = [idChequeUsado: Long.valueOf(id)]
+        def res = ChequesUsados.executeUpdate("delete from ChequesUsados where id = :idChequeUsado", p)
+        res = (res>0)?true:false
+        return res;
+    }
 }

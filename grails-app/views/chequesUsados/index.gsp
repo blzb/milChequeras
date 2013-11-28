@@ -18,18 +18,41 @@
 <g:render template="/headers/header" model="['titulo': 'Cheques Usados']"/>
 <section id="content">
     <div class="container-fluid">
+        <div>
+            <g:if test="${isRevocado}">
+                <g:if test="${status}">
+                    <div class="alert alert-block alert-success">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <i class="icon-remove"></i>
+                        </button>
+                        <i class="icon-ok green"></i>
+                        Éxito al reactivar cheque <b></b>
+                    </div>
+                </g:if>
+                <g:else>
+                    <div class="alert  alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <i class="icon-remove"></i>
+                        </button>
+                        Error al reactivar cheque <b></b>
+                    </div>
+                </g:else>
+            </g:if>
+        </div>
+
         <div class="row-fluid">
             <div class="content scaffold-list span12">
                 <div class="align-center">
-                Serie:&nbsp;<input type="text" size="10" name="serie" value="" id="inputSerie"
+                    Serie:&nbsp;<input type="text" size="10" name="serie" value="" id="inputSerie"
                                        onkeyup="${remoteFunction(action: 'index', controller: 'chequesUsados', params: '\'serie=\' + document.getElementById(\'inputSerie\').value + \'&propietario=\' + document.getElementById(\'inputPropietario\').value + \'&numChequera=\' + document.getElementById(\'inputNumChequera\').value + \'&numCheque=\' + document.getElementById(\'inputNumCheque\').value', options: '[asynchronous: true]', update: 'tablaChequesUsados')}"/>&nbsp;&nbsp;&nbsp;
                 Chequera:&nbsp;<input type="text" size="10" name="numeroChequera" value="" id="inputNumChequera"
                                       onkeyup="${remoteFunction(action: 'index', controller: 'chequesUsados', params: '\'serie=\' + document.getElementById(\'inputSerie\').value + \'&propietario=\' + document.getElementById(\'inputPropietario\').value + \'&numChequera=\' + document.getElementById(\'inputNumChequera\').value + \'&numCheque=\' + document.getElementById(\'inputNumCheque\').value', options: '[asynchronous: true]', update: 'tablaChequesUsados')}"/>&nbsp;
                 Cheque:&nbsp;<input type="text" size="10" name="numeroChequera" value="" id="inputNumCheque"
-                                        onkeyup="${remoteFunction(action: 'index', controller: 'chequesUsados', params: '\'serie=\' + document.getElementById(\'inputSerie\').value + \'&propietario=\' + document.getElementById(\'inputPropietario\').value +  \'&numChequera=\' + document.getElementById(\'inputNumChequera\').value + \'&numCheque=\' + document.getElementById(\'inputNumCheque\').value', options: '[asynchronous: true]', update: 'tablaChequesUsados')}"/>&nbsp;&nbsp;&nbsp;
+                                    onkeyup="${remoteFunction(action: 'index', controller: 'chequesUsados', params: '\'serie=\' + document.getElementById(\'inputSerie\').value + \'&propietario=\' + document.getElementById(\'inputPropietario\').value +  \'&numChequera=\' + document.getElementById(\'inputNumChequera\').value + \'&numCheque=\' + document.getElementById(\'inputNumCheque\').value', options: '[asynchronous: true]', update: 'tablaChequesUsados')}"/>&nbsp;&nbsp;&nbsp;
                 Propietario:&nbsp;<input type="text" size="25" name="propietario" value="" id="inputPropietario"
                                          onkeyup="${remoteFunction(action: 'index', controller: 'chequesUsados', params: '\'serie=\' + document.getElementById(\'inputSerie\').value + \'&propietario=\' + document.getElementById(\'inputPropietario\').value +  \'&numChequera=\' + document.getElementById(\'inputNumChequera\').value + \'&numCheque=\' + document.getElementById(\'inputNumCheque\').value', options: '[asynchronous: true]', update: 'tablaChequesUsados')}"/>&nbsp;&nbsp;&nbsp;
                 </div>
+
                 <div id="tablaChequesUsados">
                     <g:form>
                         <fieldset class="form">
