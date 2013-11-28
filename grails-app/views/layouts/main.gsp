@@ -41,7 +41,7 @@
         <div class="navbar-header pull-left">
           <a href="#" class="navbar-brand">
   
-              <img src="/static/serenity/img/logo.png" style="width: 35px;">
+              <img src="${resource(dir: 'serenity/img', file: 'logo.png')}" style="width: 35px;">
               Mil chequeras
   
           </a><!-- /.brand -->
