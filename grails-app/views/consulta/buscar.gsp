@@ -15,13 +15,14 @@
   <g:render  template="/headers/header" model="['titulo':'Cheques encontrados']"/>   
   <section id="content">
     <div class="container-fluid">
-      <div class="alert alert-block alert-success">
-        <button type="button" class="close" data-dismiss="alert">
-          <i class="icon-remove"></i>
-        </button>
-        <i class="icon-ok green"></i>
-         Chequera perteneciente a : <b>${chequera.nombre} ${chequera.apellidos}</b>
+      <div class="row">
+        
+        <div class="well col-sm-12">
+          <h4 class="green smaller lighter">Dueño</h4>
+          Chequera perteneciente a : <b>${chequera.nombre} ${chequera.apellidos}</b>
+        </div>
       </div>
+      
       <div class="row-fluid">
         <div class="span12">
           <g:form action="usar">    

@@ -52,7 +52,7 @@
               </fieldset>
               <br/>
               <fieldset class="">
-                <g:submitButton name="create" class="btn btn-large btn-theme btn-rounded" value="${message(code: 'default.button.create.label', default: 'Create')}" /><g:link controller="serie" action="edit" id="${params.serie.id}" class="btn btn-large btn-theme btn-rounded">Cancelar</g:link>
+                <g:submitButton name="create" class="btn btn-success" value="${message(code: 'default.button.create.label', default: 'Create')}" /> <g:link controller="serie" action="edit" id="${params.serie.id}" class="btn btn-danger">Cancelar</g:link>
               </fieldset>
             </g:form>
           </div>

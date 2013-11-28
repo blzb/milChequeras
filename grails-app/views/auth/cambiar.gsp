@@ -40,7 +40,7 @@ ${flash.message}
             <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">                    
               Guardar
             </button>
-            <g:link action="index" class="width-35 pull-left btn btn-sm btn-primary">Cancelar</g:link>
+            <g:link action="index" class="width-35 pull-left btn btn-sm btn-danger">Cancelar</g:link>
           </div>
         </fieldset>        
       </g:form>

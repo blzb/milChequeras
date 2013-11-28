@@ -40,10 +40,10 @@
       <div class="navbar-container" id="navbar-container">
         <div class="navbar-header pull-left">
           <a href="#" class="navbar-brand">
-            <small>
-              <i class="icon-desktop"></i>
+  
+              <img src="/static/serenity/img/logo.png" style="width: 35px;">
               Mil chequeras
-            </small>
+  
           </a><!-- /.brand -->
         </div><!-- /.navbar-header -->
 

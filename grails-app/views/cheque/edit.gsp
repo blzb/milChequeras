@@ -31,7 +31,7 @@
                 <g:render template="form"/>
               </fieldset>
               <fieldset class="buttons">
-                <g:actionSubmit class="save btn btn-large btn-theme btn-rounded" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" /><g:link controller="serie" action="edit" id="${chequeInstance.serie.id}" class="btn btn-large btn-theme btn-rounded">Cancelar</g:link>
+                <g:actionSubmit class="save btn btn-success" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" /> <g:link controller="serie" action="edit" id="${chequeInstance.serie.id}" class="btn btn-danger">Cancelar</g:link>
               </fieldset>
             </g:form>
           </div>

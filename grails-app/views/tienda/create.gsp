@@ -6,7 +6,7 @@
   <title><g:message code="default.create.label" args="[entityName]" /></title>
 </head>
 <body>
-  <g:render  template="/headers/header" model="['titulo':message(code:'default.list.label',args:[entityName]), 'boton':message(code:'default.new.label',args:[entityName]), 'accion':'create' ]"/>   
+  <g:render  template="/headers/header" model="['titulo':message(code:'default.list.label',args:[entityName])]"/>   
   <section id="content">
     <div class="container-fluid">
       <div class="row-fluid" style="margin-top: 20px;">
@@ -30,7 +30,7 @@
               </fieldset>
               <br/>
               <fieldset class="">
-                <g:submitButton name="create" class="btn btn-large btn-theme btn-rounded" value="${message(code: 'default.button.create.label', default: 'Create')}" /><g:link action="index" class="btn btn-large btn-theme btn-rounded">Cancelar</g:link>
+                <g:submitButton name="create" class="btn btn-success" value="${message(code: 'default.button.create.label', default: 'Create')}" /> <g:link action="index" class="btn btn-danger">Cancelar</g:link>
               </fieldset>
             </g:form>
           </div>
