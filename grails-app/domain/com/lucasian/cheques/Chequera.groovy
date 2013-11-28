@@ -2,7 +2,7 @@ package com.lucasian.cheques
 
 class Chequera {
     static belongsTo = [serie: Serie]
-    static hasMany = [usados: ChequesUsados]
+    static hasMany = [usados: ChequesUsados, gustos:Gusto]
     static hasOne = [registrador: Usuario]
     String numero
     String nombre
@@ -13,6 +13,12 @@ class Chequera {
     String twitter
     String codigoPostal
     String apellidos
+    List<Gusto> gustos
+
+    static mapping = {
+        gustos joinTable: [name:"mm_chequera_gustos", key:'mm_chequera_id']
+    }
+
     static constraints = {
            numero (nullable: false, blank: false, size:1..100)
            email (nullable: false, blank: false, email:true, size: 1..255)
@@ -26,9 +32,11 @@ class Chequera {
            codigoPostal(nullable: true)
     }    
     static transients = ['registradoPor']
+
     String toString(){
-           return numero+"("+nombre+" "+apellidos+")"
+           return numero+"("+nombre+" "+apellidos+" "+ gustos +")"
     }
+
     String getRegistradoPor(){
            if(registrador != null){
               return registrador.rol.name.capitalize()+": "+registrador.nombreCompleto

@@ -115,3 +115,40 @@
     <g:select id="serie" name="serie.id" from="${com.lucasian.cheques.Serie.list()}" optionKey="id" required="" value="${chequeraInstance?.serie?.id}" class="many-to-one  col-xs-3 col-sm-3"/>
   </div>
 </div>
+
+
+<g:if test="${isCreate}">
+    <div class="fieldcontain form-group ${hasErrors(bean: chequeraInstance, field: 'gustos', 'error')} required">
+        <label class="col-sm-3 control-label no-padding-right" for="gustoLabel">
+            <g:message code="chequera.serie.label" default="Gusto"/>
+        </label>
+        <div class="col-sm-9" id="gustoLabel">
+            <g:each in="${com.lucasian.cheques.Gusto.list()}" var="gustoInstance" status="i">
+                <g:checkBox name="gusto.id" id="gusto"  value="${gustoInstance?.id}" checked="false" optionKey="id"/>
+                <label for="gusto">${gustoInstance?.gusto}</label>
+            </g:each>
+        </div>
+    </div>
+</g:if>
+<g:else>
+    <div class="fieldcontain form-group ${hasErrors(bean: chequeraInstance, field: 'gustos', 'error')} required">
+        <label class="col-sm-3 control-label no-padding-right" for="gustoLabel1">
+            <g:message code="chequera.serie.label" default="Gusto"/>
+        </label>
+        <div class="col-sm-9" id="gustoLabel1">
+            <g:each in="${listaFinal}">
+                <g:if test="${it.gusta}">
+                    <g:checkBox name="gusto.id1" id="gusto1"  value="${it.gusto.id}" checked="true" optionKey="idk"/>
+                    <label for="gusto1">${it.gusto.gusto}</label>
+                </g:if>
+                <g:else>
+                    <g:checkBox name="gusto.id1" id="gusto1"  value="${it.gusto.id}" checked="false" optionKey="idk"/>
+                    <label for="gusto1">${it.gusto.gusto}</label>
+                </g:else>
+            </g:each>
+        </div>
+    </div>
+</g:else>
+
+
+

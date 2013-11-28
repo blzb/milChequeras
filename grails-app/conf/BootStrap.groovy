@@ -31,19 +31,19 @@ class BootStrap {
         def tienda1 = new Tienda(local:"Mexico tacuba 76", clave:"MT3", nombre:"Mexico Store")
         tienda1.save()
         
-        def serie = new Serie(clave: "W2013", nombre:"Invierno 2013", vigencia: new Date(), inicioVigencia: (new Date()).minus(20))
+        def serie = new Serie(clave: "W2013", nombre:"Invierno 2013", vigencia: new Date().plus(1), inicioVigencia: (new Date()).minus(20))
         serie.save()
         System.out.println(serie.id)      
         
-        def serie1 = new Serie(clave: "Serie A", nombre:"Demo", vigencia: new Date(), inicioVigencia: (new Date()).minus(20))
+        def serie1 = new Serie(clave: "Serie A", nombre:"Demo", vigencia: new Date().plus(1), inicioVigencia: (new Date()).minus(20))
         serie1.save()
         System.out.println(serie1.id)
         
-        def serie2 = new Serie(clave: "Serie B", nombre:"Demostracion", vigencia: new Date(), inicioVigencia: (new Date()).minus(20))
+        def serie2 = new Serie(clave: "Serie B", nombre:"Demostracion", vigencia: new Date().plus(1), inicioVigencia: (new Date()).minus(20))
         serie2.save()
         System.out.println(serie2.id)
         
-        def serie3 = new Serie(clave: "Serie C", nombre:"serie c", vigencia: new Date(), inicioVigencia: (new Date()).minus(20))
+        def serie3 = new Serie(clave: "Serie C", nombre:"serie c", vigencia: new Date().plus(1), inicioVigencia: (new Date()).minus(20))
         serie3.save()
         System.out.println(serie3.id)
         
@@ -92,15 +92,27 @@ class BootStrap {
         cheque9.setTienda(tienda1)
         cheque9.setSerie(serie)
         cheque9.save()
-        
-        def chequera = new Chequera(numero:"A12", nombre:"Angel", 
+
+        Gusto g1 = new Gusto(gusto: "deportes")
+        g1.save()
+        Gusto g2 = new Gusto(gusto: "musica")
+        g2.save()
+        Gusto g3 = new Gusto(gusto: "libros")
+        g3.save()
+        Gusto g4 = new Gusto(gusto: "arte")
+        g4.save()
+        Gusto g5 = new Gusto(gusto: "internet")
+        g5.save()
+
+        def chequera = new Chequera(numero:"A12", nombre:"Angel",
                apellidos:"Pimentel Meza", email:"angelpmza@gmail.com", facebook:"angel.pimentel.90",
                twitter: "blzb", fechaNacimiento: new Date(), sexo:"Hombre")
         chequera.setSerie(serie)
+        chequera.setGustos(Gusto.list())
         chequera.save()
-        Locale.setDefault(new Locale("es","MX")) 
-        
-        
+        Locale.setDefault(new Locale("es","MX"))
+
+
         def chequeUsado= new ChequesUsados(referencia:"Referencia 1")
         chequeUsado.setChequera(chequera)
         chequeUsado.setCheque(cheque1)
