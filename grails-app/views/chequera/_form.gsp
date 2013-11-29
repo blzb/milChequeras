@@ -124,6 +124,7 @@
         </label>
         <div class="col-sm-9" id="gustoLabel">
             <g:each in="${com.lucasian.cheques.Gusto.list()}" var="gustoInstance" status="i">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <g:checkBox name="gusto.id" id="gusto"  value="${gustoInstance?.id}" checked="false" optionKey="id"/>
                 <label for="gusto">${gustoInstance?.gusto}</label>
             </g:each>
@@ -137,6 +138,7 @@
         </label>
         <div class="col-sm-9" id="gustoLabel1">
             <g:each in="${listaFinal}">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <g:if test="${it.gusta}">
                     <g:checkBox name="gusto.id1" id="gusto1"  value="${it.gusto.id}" checked="true" optionKey="idk"/>
                     <label for="gusto1">${it.gusto.gusto}</label>

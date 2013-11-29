@@ -5,8 +5,19 @@ class DashboardController {
        def ChequesRedimidosService chequesRedimidosService
        def TopRedimidosService topRedimidosService
        def ConcentradoService concentradoService
+
        def index() {
-              model:[chequerasRegistradas:concentradoService.getChequerasRegistradas(), chequesUsados:concentradoService.getChequesUsados(), porcentaje: concentradoService.getPorcentajeChequesRedimidos()  ]
+           def Date now = new Date()
+           use(TimeCategory) {
+               if(params.mes){
+                   model:[columnas:[['string', 'Dia'], ['number', 'Cheques Redimidos']], datos:chequesRedimidosService.byDayForInterval(now-1.months, now), chequerasRegistradas:concentradoService.getChequerasRegistradas(), chequesUsados:concentradoService.getChequesUsados(), porcentaje: concentradoService.getPorcentajeChequesRedimidos(), columnasTop:[['string', 'Cheque'], ['number', 'Redimidos']], datosTop:topRedimidosService.getTop(5)]
+               }else if(params.semana){
+                   model:[columnas:[['string', 'Dia'], ['number', 'Cheques Redimidos']], datos:chequesRedimidosService.byDayForInterval(now-1.weeks, now), chequerasRegistradas:concentradoService.getChequerasRegistradas(), chequesUsados:concentradoService.getChequesUsados(), porcentaje: concentradoService.getPorcentajeChequesRedimidos(), columnasTop:[['string', 'Cheque'], ['number', 'Redimidos']], datosTop:topRedimidosService.getTop(5)]
+               }else {
+                   model:[columnas:[['string', 'Hora'], ['number', 'Cheques Redimidos']], datos:chequesRedimidosService.byHourForInterval(now-1.days, now), chequerasRegistradas:concentradoService.getChequerasRegistradas(), chequesUsados:concentradoService.getChequesUsados(), porcentaje: concentradoService.getPorcentajeChequesRedimidos(), columnasTop:[['string', 'Cheque'], ['number', 'Redimidos']], datosTop:topRedimidosService.getTop(5)]
+               }
+           }
+           //darle continuidad al model :D
        }
     
        def dashboard() { }
@@ -15,16 +26,16 @@ class DashboardController {
               def Date now = new Date()      
               use(TimeCategory) {
                      if(params.mes){
-                            model:[columnas:[['string', 'Dia'], ['number', 'Cheques Redimidos']], datos:chequesRedimidosService.byDayForInterval(now-1.months, now)]
+                            model:[columnas:[['string', 'Dia'], ['number', 'Cheques Redimidos']], datos:chequesRedimidosService.byDayForInterval(now-1.months, now), chequerasRegistradas:concentradoService.getChequerasRegistradas(), chequesUsados:concentradoService.getChequesUsados(), porcentaje: concentradoService.getPorcentajeChequesRedimidos(), columnasTop:[['string', 'Cheque'], ['number', 'Redimidos']], datosTop:topRedimidosService.getTop(5)]
                      }else if(params.semana){
-                            model:[columnas:[['string', 'Dia'], ['number', 'Cheques Redimidos']], datos:chequesRedimidosService.byDayForInterval(now-1.weeks, now)]
+                            model:[columnas:[['string', 'Dia'], ['number', 'Cheques Redimidos']], datos:chequesRedimidosService.byDayForInterval(now-1.weeks, now), chequerasRegistradas:concentradoService.getChequerasRegistradas(), chequesUsados:concentradoService.getChequesUsados(), porcentaje: concentradoService.getPorcentajeChequesRedimidos(), columnasTop:[['string', 'Cheque'], ['number', 'Redimidos']], datosTop:topRedimidosService.getTop(5)]
                      }else {
-                            model:[columnas:[['string', 'Hora'], ['number', 'Cheques Redimidos']], datos:chequesRedimidosService.byHourForInterval(now-1.days, now)]
+                            model:[columnas:[['string', 'Hora'], ['number', 'Cheques Redimidos']], datos:chequesRedimidosService.byHourForInterval(now-1.days, now), chequerasRegistradas:concentradoService.getChequerasRegistradas(), chequesUsados:concentradoService.getChequesUsados(), porcentaje: concentradoService.getPorcentajeChequesRedimidos(), columnasTop:[['string', 'Cheque'], ['number', 'Redimidos']], datosTop:topRedimidosService.getTop(5)]
                      }
               }
            
        }
        def top(){
-              model:[columnas:[['string', 'Cheque'], ['number', 'Redimidos']], datos:topRedimidosService.getTop(5)]
+              model:[columnasTop:[['string', 'Cheque'], ['number', 'Redimidos']], datosTop:topRedimidosService.getTop(5)]
        }
 }

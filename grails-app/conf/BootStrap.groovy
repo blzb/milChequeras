@@ -93,15 +93,15 @@ class BootStrap {
         cheque9.setSerie(serie)
         cheque9.save()
 
-        Gusto g1 = new Gusto(gusto: "deportes")
+        Gusto g1 = new Gusto(gusto: "Deportes")
         g1.save()
-        Gusto g2 = new Gusto(gusto: "musica")
+        Gusto g2 = new Gusto(gusto: "Música")
         g2.save()
-        Gusto g3 = new Gusto(gusto: "libros")
+        Gusto g3 = new Gusto(gusto: "Libros")
         g3.save()
-        Gusto g4 = new Gusto(gusto: "arte")
+        Gusto g4 = new Gusto(gusto: "Arte")
         g4.save()
-        Gusto g5 = new Gusto(gusto: "internet")
+        Gusto g5 = new Gusto(gusto: "Internet")
         g5.save()
 
         def chequera = new Chequera(numero:"A12", nombre:"Angel",
