@@ -3,10 +3,10 @@
   <head>
     <meta name="layout" content="main">
   <g:set var="entityName" value="${message(code: 'serie.label', default: 'Serie')}" />
-  <title><g:message code="default.create.label" args="[entityName]" /></title>
+  <title><g:message code="default.create.label" args="['Serie']" /></title>
 </head>
 <body>
-  <g:render  template="/headers/header" model="['titulo':message(code:'default.list.label',args:[entityName])]"/>   
+  <g:render  template="/headers/header" model="['titulo':message(code:'default.list.label',args:['Series'])]"/>
   <section id="content">
     <div class="container-fluid">
       <div class="row-fluid" style="margin-top: 20px;">

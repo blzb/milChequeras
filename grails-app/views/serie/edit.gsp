@@ -3,18 +3,18 @@
 <html>
   <head>
     <meta name="layout" content="main">
-  <g:set var="entityName" value="${message(code: 'serie.label', default: 'Serie')}" />
+  <g:set var="entityName" value="${message(code: 'serie.label', default: 'Series')}" />
   <title><g:message code="default.edit.label" args="[entityName]" /></title>
 </head>
 <body>
-  <g:render  template="/headers/header" model="['titulo':message(code:'default.list.label',args:[entityName]), 'boton':message(code:'default.new.label',args:[entityName]), 'accion':'create' ]"/>   
+  <g:render  template="/headers/header" model="['titulo':message(code:'default.list.label',args:[entityName]), 'boton':message(code:'default.new.label.fem',args:['Serie']), 'accion':'create' ]"/>
   <section id="content">
     <div class="container-fluid">
       <div class="row-fluid" style="margin-top: 20px;">
         <div id="edit-serie" class="content scaffold-edit" role="main">
 
           <div class="span12 well">  
-            <h2 class="header smaller lighter blue"><g:message code="default.edit.label" args="[entityName]" /></h2>
+            <h2 class="header smaller lighter blue"><g:message code="default.edit.label" args="['Serie']" /></h2>
             <g:if test="${flash.message}">
               <div class="alert  alert-info">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
             </g:if>
@@ -45,7 +45,7 @@
                 <thead>
                   <tr>
 
-                <g:sortableColumn property="descripcion" title="${message(code: 'cheque.descripcion.label', default: 'Descripcion')}" />
+                <g:sortableColumn property="descripcion" title="${message(code: 'cheque.descripcion.label', default: 'Descripci\u00F3n')}" />
 
                 <th><g:message code="cheque.tienda.label" default="Tienda" /></th>
 

@@ -12,7 +12,7 @@
     <title>Sample title</title>
   </head>
   <body>
-    <g:render  template="/headers/header" model="['titulo':'Buscar Numero de Chequera']"/>   
+    <g:render  template="/headers/header" model="['titulo':'Buscar N\u00FAmero de Chequera']"/>
     <section id="content" >
       <div class="container-fluid">
         <div class="row-fluid">

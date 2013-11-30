@@ -4,11 +4,11 @@
         width="100%" height="${500}"
         columns="${columnas}"
         data="${datos}" pointSize="${10}"/>
-<g:render  template="/headers/header" model="['titulo':'Dashboard de Cheques Redimidos']"/>
+<g:render  template="/headers/header" model="['titulo':'Cheques Redimidos']"/>
 <div class="row">
     <br/>
     <br/>
-    <div class="col-md-11 col-md-offset-2" aling="center">
+    <div class="col-md-9 col-md-offset-2" aling="center">
 
         <g:form action="index">
             <g:submitButton name="dia" value="Ultimas 24 Hrs" class="btn  btn-primary btn-lg"/>

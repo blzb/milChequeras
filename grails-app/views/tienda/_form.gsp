@@ -33,20 +33,35 @@
   </div>
 </div>
 
+
 <div class="fieldcontain form-group ${hasErrors(bean: tiendaInstance, field: 'imagen', 'error')}">
   <label class="col-sm-3 control-label no-padding-right" for="imagen">
     <g:message code="tienda.imagen.label" default="Imagen" />
   </label>
   <div class="col-sm-9">
-  <input type="file" name="imagen"/>
+  <input type="file" name="imagen" id="imagen"/>
+      <label for="imagen" class="text-info smaller-80">Máximo 1024 x 1024 píxeles</label>
   </div>
 </div>
 
-<div class="fieldcontain form-group ${hasErrors(bean: tiendaInstance, field: 'imagen', 'error')}">
-  <g:if test="${tiendaInstance.imagen != null}">
-    <img  src="${createLink(controller:'tienda', action:'showPayload', id:tiendaInstance.id)}" 
-  </g:if>
-</div>
+
+
+<g:if test="${tiendaInstance.imagen != null}">
+    <div class="fieldcontain form-group ${hasErrors(bean: tiendaInstance, field: 'imagen', 'error')}" style="text-align:center">
+            <img  src="${createLink(controller:'tienda', action:'showPayload', id:tiendaInstance.id)}" id="imagenId"/>
+    </div>
+</g:if>
+<g:else>
+    <div style="text-align:center">
+    <img class="nav-user-photo" src="${resource(dir: 'images', file: 'sinImagen.jpg')}"
+         alt="A\u00FAn sin imagen" height="200" >
+    </div>
+</g:else>
+
+
+
+
+
 
 <!--div class="fieldcontain ${hasErrors(bean: tiendaInstance, field: 'cheques', 'error')} ">
        <label class="col-sm-3 control-label no-padding-right" for="cheques">

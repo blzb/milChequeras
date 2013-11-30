@@ -53,7 +53,7 @@
             Clave Cheque
         </th>
         <th class="" style="text-align: center; width: 73px;">
-            Fecha Uso
+            Fecha de Uso
         </th>
         <th class="" style="text-align: center; width: 73px;">
             Propietario Chequera

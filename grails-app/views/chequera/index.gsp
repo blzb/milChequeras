@@ -8,7 +8,7 @@
   <title><g:message code="default.list.label" args="[entityName]" /></title>
 </head>
 <body>	
-<g:render  template="/headers/header" model="['titulo':message(code:'default.list.label',args:[entityName]), 'boton':'Activar Chequera', 'accion':'create' ]"/> 
+<g:render  template="/headers/header" model="['titulo':message(code:'default.list.label',args:['Chequeras']), 'boton':'Activar Chequera', 'accion':'create' ]"/>
 <section id="content">
   <div class="container-fluid">
     <div class="row-fluid" style="margin-top: 20px;">

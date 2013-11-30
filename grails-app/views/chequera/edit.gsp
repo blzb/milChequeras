@@ -7,7 +7,7 @@
   <title><g:message code="default.edit.label" args="[entityName]" /></title>
 </head>
 <body>
-  <g:render  template="/headers/header" model="['titulo':message(code:'default.list.label',args:[entityName]), 'boton':message(code:'default.new.label',args:[entityName]), 'accion':'create' ]"/>   
+  <g:render  template="/headers/header" model="['titulo':message(code:'default.list.label',args:['Chequeras']), 'boton':message(code:'default.new.label.fem',args:['Chequera']), 'accion':'create' ]"/>
   <section id="content">
     <div class="container-fluid">
       <div class="row-fluid" style="margin-top: 20px;">

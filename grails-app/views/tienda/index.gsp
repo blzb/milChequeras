@@ -4,11 +4,11 @@
 <html>
   <head>
     <meta name="layout" content="main">
-  <g:set var="entityName" value="${message(code: 'tienda.label', default: 'Tienda')}" />
+  <g:set var="entityName" value="${message(code: 'tienda.label', default: 'Tiendas')}" />
   <title><g:message code="default.list.label" args="[entityName]" /></title>
 </head>
 <body>				
-  <g:render  template="/headers/header" model="['titulo':message(code:'default.list.label',args:[entityName]), 'boton':message(code:'default.new.label',args:[entityName]), 'accion':'create' ]"/>   
+  <g:render  template="/headers/header" model="['titulo':message(code:'default.list.label',args:[entityName]), 'boton':message(code:'default.new.label.fem',args:['Tienda']), 'accion':'create' ]"/>
   <section id="content">
     <div class="container-fluid">
       <div class="row-fluid" style="margin-top: 20px;">

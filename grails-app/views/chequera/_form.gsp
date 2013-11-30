@@ -4,7 +4,7 @@
 
 <div class="fieldcontain form-group ${hasErrors(bean: chequeraInstance, field: 'numero', 'error')} required ">
   <label class="col-sm-3 control-label no-padding-right" for="numero">
-    <g:message code="chequera.numero.label" default="Numero" />
+    <g:message code="chequera.numero.label" default="N\u00FAmero" />
     <span class="required-indicator">*</span>
   </label>
   <div class="col-sm-9">
@@ -76,7 +76,7 @@
 
 <div class="fieldcontain form-group ${hasErrors(bean: chequeraInstance, field: 'codigoPostal', 'error')} ">
   <label class="col-sm-3 control-label no-padding-right" for="codigoPostal">
-    <g:message code="chequera.codigoPostal.label" default="Codigo Postal" />
+    <g:message code="chequera.codigoPostal.label" default="C\u00F3digo Postal" />
 
   </label>
   <div class="col-sm-9">

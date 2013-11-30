@@ -123,7 +123,7 @@
                 <fieldset class="form">
                   <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'numero', 'error')} required ">
                     <label for="numero">
-                      <g:message code="chequera.numero.label" default="Numero" />
+                      <g:message code="chequera.numero.label" default="N\u00FAmero" />
                       <span class="required-indicator">*</span>
                     </label>
                     <g:textField class="span12" name="numero" required=""  maxLength="100"  value="${chequeraInstance?.numero}"/>
@@ -185,7 +185,7 @@
 
                   <div class="fieldcontain ${hasErrors(bean: chequeraInstance, field: 'codigoPostal', 'error')} ">
                     <label for="codigoPostal">
-                      <g:message code="chequera.codigoPostal.label" default="Codigo Postal" />
+                      <g:message code="chequera.codigoPostal.label" default="C\u00F3digo Postal" />
 
                     </label>
                     <g:textField class="span12" name="codigoPostal" maxLength="100" value="${chequeraInstance?.codigoPostal}"/>

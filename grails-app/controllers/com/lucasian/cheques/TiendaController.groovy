@@ -25,11 +25,11 @@ class TiendaController {
 
     @Transactional
     def save(Tienda tiendaInstance) {
-        if (tiendaInstance.imagen.length == 0){ tiendaInstance.imagen=null}
         if (tiendaInstance == null) {
             notFound()
             return
         }
+        if (tiendaInstance.imagen.length == 0){ tiendaInstance.imagen=null}
 
         if (tiendaInstance.hasErrors()) {
             respond tiendaInstance.errors, view:'create'
@@ -57,12 +57,13 @@ class TiendaController {
     }
 
     @Transactional
-    def update(Tienda tiendaInstance) {  
-        if (tiendaInstance.imagen.length == 0){ tiendaInstance.imagen=null}
+    def update(Tienda tiendaInstance) {
+
         if (tiendaInstance == null) {
             notFound()
             return
         }
+        if (tiendaInstance.imagen.length == 0){ tiendaInstance.imagen=null}
 
         if (tiendaInstance.hasErrors()) {
             respond tiendaInstance.errors, view:'edit'
@@ -105,10 +106,10 @@ class TiendaController {
     }
     
     
-    def showPayload() { 
-        def tiendaInstance = Tienda.get(params.id) 
+    def showPayload() {
+        def tiendaInstance = Tienda.get(params.id)
         response.outputStream << tiendaInstance.imagen // write the image to the outputstream
-        response.outputStream.flush() 
+        response.outputStream.flush()
     }
 
     protected void notFound() {
