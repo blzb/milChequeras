@@ -9,104 +9,115 @@ import org.apache.shiro.crypto.hash.Sha256Hash
 @Transactional(readOnly = true)
 class UsuarioController {
 
-       static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-       def index(Integer max) {
-              params.max = Math.min(max ?: 10, 100)
-              def adminRol = Rol.findByName("administrador")        
-              [usuarioInstanceList:Usuario.executeQuery("from Usuario u where u.rol.id = :idRol", [idRol: adminRol.id], params), usuarioInstanceCount: Usuario.countByRol(adminRol)]
-       }
+    def index(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        def adminRol = Rol.findByName("administrador")
+        [usuarioInstanceList: Usuario.executeQuery("from Usuario u where u.rol.id = :idRol", [idRol: adminRol.id], params), usuarioInstanceCount: Usuario.countByRol(adminRol)]
+    }
 
-       def show(Usuario usuarioInstance) {
-              respond usuarioInstance
-       }
+    def show(Usuario usuarioInstance) {
+        respond usuarioInstance
+    }
 
-       def create() {
-              respond new Usuario(params)
-       }
+    def create() {
+        respond new Usuario(params)
+    }
 
-       @Transactional
-       def save(Usuario usuarioInstance) {
-              usuarioInstance.rol = Rol.findByName("administrador")
-              if (usuarioInstance == null) {
-                     notFound()
-                     return
-              }
+    @Transactional
+    def save(Usuario usuarioInstance) {
+        if (params.passwordHash != params.passwordConfirmHash) {
+            flash.message = message(code: "La confirmación no es igual, verifica")
+            respond usuarioInstance.errors, view: 'create'
+            return
+        }
+        usuarioInstance.rol = Rol.findByName("administrador")
+        if (usuarioInstance == null) {
+            notFound()
+            return
+        }
 
-              if (usuarioInstance.hasErrors()) {
-                     respond usuarioInstance.errors, view:'create'
-                     return
-              }
+        if (usuarioInstance.hasErrors()) {
+            respond usuarioInstance.errors, view: 'create'
+            return
+        }
 
-              usuarioInstance.passwordHash = new Sha256Hash(params.passwordHash).toHex()
-        
-              usuarioInstance.save flush:true
+        usuarioInstance.passwordHash = new Sha256Hash(params.passwordHash).toHex()
 
-              request.withFormat {
-                     form {
-                            flash.message = message(code: 'default.created.message', args: [message(code: 'usuarioInstance.label', default: 'Usuario'), usuarioInstance.id])
-                            redirect(view:"index")
-                     }
+        usuarioInstance.save flush: true
+
+        request.withFormat {
+            form {
+                flash.message = message(code: 'default.created.message', args: [message(code: 'usuarioInstance.label', default: 'Usuario'), usuarioInstance.id])
+                redirect(view: "index")
+            }
             '*' { respond usuarioInstance, [status: CREATED] }
-              }
-       }
+        }
+    }
 
-       def edit(Usuario usuarioInstance) {
-              respond usuarioInstance
-       }
+    def edit(Usuario usuarioInstance) {
+        respond usuarioInstance
+    }
 
-       @Transactional
-       def update(Usuario usuarioInstance) {
-              usuarioInstance.rol = Rol.findByName("administrador")
-              if (usuarioInstance == null) {
-                     notFound()
-                     return
-              }
+    @Transactional
+    def update(Usuario usuarioInstance) {
+        if (params.passwordHash != params.passwordConfirmHash) {
+            flash.message = message(code: "La confirmación no es igual, verifica")
+            respond usuarioInstance.errors, view: 'edit'
+            return
+        }
 
-              if (usuarioInstance.hasErrors()) {
-                     respond usuarioInstance.errors, view:'edit'
-                     return
-              }
-              if(params.passwordHash){
-                     usuarioInstance.passwordHash = new Sha256Hash(params.passwordHash).toHex()
-              }
-              usuarioInstance.save flush:true
+        usuarioInstance.rol = Rol.findByName("administrador")
+        if (usuarioInstance == null) {
+            notFound()
+            return
+        }
 
-              request.withFormat {
-                     form {
-                            flash.message = message(code: 'default.updated.message', args: [message(code: 'Usuario.label', default: 'Usuario'), usuarioInstance.id])
-                            redirect(view:"index")
-                     }
-            '*'{ respond usuarioInstance, [status: OK] }
-              }
-       }
+        if (usuarioInstance.hasErrors()) {
+            respond usuarioInstance.errors, view: 'edit'
+            return
+        }
+        if (params.passwordHash) {
+            usuarioInstance.passwordHash = new Sha256Hash(params.passwordHash).toHex()
+        }
+        usuarioInstance.save flush: true
 
-       @Transactional
-       def delete(Usuario usuarioInstance) {
+        request.withFormat {
+            form {
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'Usuario.label', default: 'Usuario'), usuarioInstance.id])
+                redirect(view: "index")
+            }
+            '*' { respond usuarioInstance, [status: OK] }
+        }
+    }
 
-              if (usuarioInstance == null) {
-                     notFound()
-                     return
-              }
+    @Transactional
+    def delete(Usuario usuarioInstance) {
 
-              usuarioInstance.delete flush:true
+        if (usuarioInstance == null) {
+            notFound()
+            return
+        }
 
-              request.withFormat {
-                     form {
-                            flash.message = message(code: 'default.deleted.message', args: [message(code: 'Usuario.label', default: 'Usuario'), usuarioInstance.id])
-                            redirect action:"index", method:"GET"
-                     }
-            '*'{ render status: NO_CONTENT }
-              }
-       }
+        usuarioInstance.delete flush: true
 
-       protected void notFound() {
-              request.withFormat {
-                     form {
-                            flash.message = message(code: 'default.not.found.message', args: [message(code: 'usuarioInstance.label', default: 'Usuario'), params.id])
-                            redirect action: "index", method: "GET"
-                     }
-            '*'{ render status: NOT_FOUND }
-              }
-       }
+        request.withFormat {
+            form {
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Usuario.label', default: 'Usuario'), usuarioInstance.id])
+                redirect action: "index", method: "GET"
+            }
+            '*' { render status: NO_CONTENT }
+        }
+    }
+
+    protected void notFound() {
+        request.withFormat {
+            form {
+                flash.message = message(code: 'default.not.found.message', args: [message(code: 'usuarioInstance.label', default: 'Usuario'), params.id])
+                redirect action: "index", method: "GET"
+            }
+            '*' { render status: NOT_FOUND }
+        }
+    }
 }

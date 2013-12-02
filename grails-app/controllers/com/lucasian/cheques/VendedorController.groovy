@@ -25,6 +25,11 @@ class VendedorController {
 
     @Transactional
     def save(Vendedor vendedorInstance) {
+        if(params.passwordHash != params.passwordConfirmHash){
+            flash.message = message(code: "La confirmación no es igual, verifica")
+            respond vendedorInstance.errors, view:'create'
+            return
+        }
         vendedorInstance.rol = Rol.findByName("vendedor")
         if (vendedorInstance == null) {
             notFound()
@@ -54,6 +59,11 @@ class VendedorController {
 
     @Transactional
     def update(Vendedor vendedorInstance) {
+        if(params.passwordHash != params.passwordConfirmHash){
+            flash.message = message(code: "La confirmación no es igual, verifica")
+            respond vendedorInstance.errors, view:'edit'
+            return
+        }
         vendedorInstance.rol = Rol.findByName("vendedor")
         if (vendedorInstance == null) {
             notFound()

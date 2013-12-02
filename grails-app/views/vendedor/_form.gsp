@@ -52,13 +52,23 @@
   </div>
 </div>
 
-<div class="fieldcontain form-group ${hasErrors(bean: vendedorInstance, field: 'passwordHash', 'error')} ">
+<div class="fieldcontain form-group required ${hasErrors(bean: vendedorInstance, field: 'passwordHash', 'error')}">
 	<label class="col-sm-3 control-label no-padding-right" for="passwordHash">
 		<g:message code="vendedor.passwordHash.label" default="Password" />
-		
+        <span class="required-indicator">*</span>
 	</label>
   <div class="col-sm-9">
-	<g:textField class="col-xs-10 col-sm-10" name="passwordHash" value=""/>
+	<g:passwordField class="col-xs-10 col-sm-10" name="passwordHash" required="" value=""/>
   </div>
 </div>
 
+
+<div class="fieldcontain form-group required" >
+    <label class="col-sm-3 control-label no-padding-right" for="passwordConfirmHash">
+        <g:message code="vendedor.passwordConfirmHash.label" default="Confirmar Password" />
+        <span class="required-indicator">*</span>
+    </label>
+    <div class="col-sm-9">
+        <g:passwordField class="col-xs-10 col-sm-10" name="passwordConfirmHash" value="" required=""/>
+    </div>
+</div>

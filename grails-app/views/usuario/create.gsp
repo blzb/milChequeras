@@ -14,9 +14,9 @@
           
           <div class="span12 well">                       
             <h2 class="header smaller lighter blue"><g:message code="default.create.label" args="[entityName]" /></h2>
-            <g:if test="${flash.message}">
-              <div class="alert  alert-info">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
-            </g:if>
+              <g:if test="${flash.message}">
+                  <div class="alert  alert-danger">                 <button type="button" class="close" data-dismiss="alert">×</button>${flash.message}</div>
+              </g:if>
             <g:hasErrors bean="${usuarioInstance}">
               <ul class="errors" role="alert">
                 <g:eachError bean="${usuarioInstance}" var="error">

@@ -52,15 +52,25 @@
   </div>
 </div>
 
-<g:if test="${!usuarioInstance.passwordHash}">
+
   <div class="fieldcontain form-group ${hasErrors(bean: usuarioInstance, field: 'passwordHash', 'error')} ">
     <label class="col-sm-3 control-label no-padding-right" for="passwordHash">
       <g:message code="usuario.passwordHash.label" default="Password" />
-
+        <span class="required-indicator">*</span>
     </label>
     <div class="col-sm-9">
-      <g:textField class="col-xs-10 col-sm-10" name="passwordHash" value=""/>
+      <g:textField class="col-xs-10 col-sm-10" name="passwordHash" value="" required=""/>
     </div>
   </div>
-</g:if>
+
+    <div class="fieldcontain form-group required">
+        <label class="col-sm-3 control-label no-padding-right" for="passwordConfirmHash">
+            <g:message code="usuario.passwordHash.label" default="Confirmar Password" />
+            <span class="required-indicator">*</span>
+        </label>
+        <div class="col-sm-9">
+            <g:textField class="col-xs-10 col-sm-10" name="passwordConfirmHash" value="" required=""/>
+        </div>
+    </div>
+
 
