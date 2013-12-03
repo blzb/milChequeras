@@ -59,7 +59,7 @@
         <span class="required-indicator">*</span>
     </label>
     <div class="col-sm-9">
-      <g:textField class="col-xs-10 col-sm-10" name="passwordHash" value="" required=""/>
+      <g:passwordField class="col-xs-10 col-sm-10" name="passwordHash" value="" required=""/>
     </div>
   </div>
 
@@ -69,7 +69,7 @@
             <span class="required-indicator">*</span>
         </label>
         <div class="col-sm-9">
-            <g:textField class="col-xs-10 col-sm-10" name="passwordConfirmHash" value="" required=""/>
+            <g:passwordField class="col-xs-10 col-sm-10" name="passwordConfirmHash" value="" required=""/>
         </div>
     </div>
 
