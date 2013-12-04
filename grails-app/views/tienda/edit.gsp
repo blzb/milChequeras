@@ -39,7 +39,7 @@
                 <g:message code="tienda.empleados.label" default="Empleados" />
                 <g:link class="btn" controller="empleado" action="create" params="['tienda.id': tiendaInstance?.id]" class="btn">${message(code: 'default.add.label', args: [message(code: 'empleado.label', default: 'Empleado')])}</g:link>
               </label>
-
+                <br/>
               <table class="table table-striped dataTable">
                 <thead>
                   <tr>
@@ -47,7 +47,7 @@
                 <g:sortableColumn property="apellidoPaterno" title="${message(code: 'empleado.apellidoPaterno.label', default: 'Apellido Paterno')}" />
                 <g:sortableColumn property="apellidoMaterno" title="${message(code: 'empleado.apellidoMaterno.label', default: 'Apellido Materno')}" />
                 <g:sortableColumn property="puesto" title="${message(code: 'empleado.puesto.label', default: 'Puesto')}" />
-
+                <th></th>
                 </tr>
                 </thead>
                 <tbody>

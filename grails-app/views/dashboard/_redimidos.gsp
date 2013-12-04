@@ -6,10 +6,7 @@
         data="${datos}" pointSize="${10}"/>
 <g:render  template="/headers/header" model="['titulo':'Cheques Redimidos']"/>
 <div class="row">
-    <br/>
-    <br/>
     <div class="col-md-9 col-md-offset-2" aling="center">
-
         <g:form action="index">
             <g:submitButton name="dia" value="Ultimas 24 Hrs" class="btn  btn-primary btn-lg"/>
             <g:submitButton name="semana" value="Ultima Semana" class="btn btn-lg btn-primary"/>

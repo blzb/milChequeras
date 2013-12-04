@@ -29,7 +29,10 @@
     <span class="required-indicator">*</span>
   </label>  
   <div class="col-sm-9">
-    <g:textField name="inicioVigencia" class="date-picker col-xs-3 col-sm-3" required="true" value="${formatDate(format:'dd/MM/yyyy',date:serieInstance?.inicioVigencia)}" data-date-format="dd/mm/yyyy" />       
+      <g:textField name="inicioVigencia" class="date-picker col-xs-3 col-sm-3" required="true" value="${formatDate(format:'dd/MM/yyyy',date:serieInstance?.inicioVigencia)}" data-date-format="dd/mm/yyyy" />
+      <span class="input-group-addon" style="display:table">
+          <i class="icon-calendar bigger-120  "></i>
+      </span>
   </div>
 </div>
 
@@ -39,7 +42,10 @@
     <span class="required-indicator">*</span>
   </label>  
   <div class="col-sm-9">
-    <g:textField name="vigencia" class="date-picker col-xs-3 col-sm-3" required="true" value="${formatDate(format:'dd/MM/yyyy',date:serieInstance?.vigencia)}" data-date-format="dd/mm/yyyy" />       
+    <g:textField name="vigencia" class="date-picker col-xs-3 col-sm-3" required="true" value="${formatDate(format:'dd/MM/yyyy',date:serieInstance?.vigencia)}" data-date-format="dd/mm/yyyy" />
+      <span class="input-group-addon" style="display:table">
+          <i class="icon-calendar bigger-120  "></i>
+      </span>
   </div>
    <script type="text/javascript">
      $('.date-picker').datepicker({autoclose:true}).next().on(ace.click_event, function(){

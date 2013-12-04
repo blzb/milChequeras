@@ -14,7 +14,7 @@
 
 <body>
 
-<g:render template="concentrado"/>
+%{--<g:render template="concentrado"/>--}%
 <g:render template="top"/>
 <g:render template="redimidos"/>
 

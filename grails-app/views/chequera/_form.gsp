@@ -54,7 +54,10 @@
   </label>
   <!--g:datePicker name="fechaNacimiento" precision="day"  value="${chequeraInstance?.fechaNacimiento}"  /-->
   <div class="col-sm-9">
-    <g:textField  name="fechaNacimiento" class="date-picker col-xs-3 col-sm-3" required="true" value="${formatDate(format:'dd/MM/yyyy',date:chequeraInstance?.fechaNacimiento)}" data-date-format="dd/mm/yyyy" />      
+    <g:textField  name="fechaNacimiento" class="date-picker col-xs-3 col-sm-3" required="true" value="${formatDate(format:'dd/MM/yyyy',date:chequeraInstance?.fechaNacimiento)}" data-date-format="dd/mm/yyyy"/>
+    <span class="input-group-addon" style="display:table">
+        <i class="icon-calendar bigger-120"></i>
+    </span>
     <script type="text/javascript">
       $('.date-picker').datepicker({autoclose:true}).next().on(ace.click_event, function(){
                                    $(this).prev().focus();

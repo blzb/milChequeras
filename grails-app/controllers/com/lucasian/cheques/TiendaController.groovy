@@ -29,13 +29,15 @@ class TiendaController {
             notFound()
             return
         }
-        if (tiendaInstance.imagen.length == 0){ tiendaInstance.imagen=null}
+
+        if (tiendaInstance.imagen.length == 0){
+            tiendaInstance.imagen=null
+        }
 
         if (tiendaInstance.hasErrors()) {
             respond tiendaInstance.errors, view:'create'
             return
         }
-
         tiendaInstance.save flush:true
 
         request.withFormat {
@@ -56,18 +58,19 @@ class TiendaController {
         respond tiendaInstance
     }
 
-    @Transactional
-    def update(Tienda tiendaInstance) {
 
+    def update(Tienda tiendaInstance) {
         if (tiendaInstance == null) {
             notFound()
             return
         }
-        if (tiendaInstance.imagen.length == 0){ tiendaInstance.imagen=null}
-
         if (tiendaInstance.hasErrors()) {
             respond tiendaInstance.errors, view:'edit'
             return
+        }
+
+        if (tiendaInstance.imagen.length == 0){
+            tiendaInstance.imagen=null
         }
 
         tiendaInstance.save flush:true
@@ -107,9 +110,13 @@ class TiendaController {
     
     
     def showPayload() {
+        println("EN SHOW PAY LOAD")
         def tiendaInstance = Tienda.get(params.id)
-        response.outputStream << tiendaInstance.imagen // write the image to the outputstream
-        response.outputStream.flush()
+        if(tiendaInstance!=null){
+            response.outputStream << tiendaInstance.imagen // write the image to the outputstream
+            response.outputStream.flush()
+        }
+
     }
 
     protected void notFound() {

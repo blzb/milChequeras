@@ -46,17 +46,17 @@
 
 
 
-<g:if test="${tiendaInstance.imagen != null}">
+<g:if test="${tiendaInstance.imagen != null && tiendaInstance.imagen.length>0 }">
     <div class="fieldcontain form-group ${hasErrors(bean: tiendaInstance, field: 'imagen', 'error')}" style="text-align:center">
             <img  src="${createLink(controller:'tienda', action:'showPayload', id:tiendaInstance.id)}" id="imagenId"/>
     </div>
 </g:if>
-<g:else>
+<g:elseif test="${tiendaInstance.imagen == null || tiendaInstance.imagen.length==0 }">
     <div style="text-align:center">
     <img class="nav-user-photo" src="${resource(dir: 'images', file: 'sinImagen.jpg')}"
          alt="A\u00FAn sin imagen" height="200" >
     </div>
-</g:else>
+</g:elseif>
 
 
 

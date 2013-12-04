@@ -41,6 +41,7 @@
                 <g:message code="serie.cheques.label" default="Cheques" />
                 <g:link class="btn" controller="cheque" action="create" params="['serie.id': serieInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'cheque.label', default: 'Cheque')])}</g:link>
               </label>
+                <br/>
               <table class="table table-striped dataTable">
                 <thead>
                   <tr>
@@ -48,7 +49,7 @@
                 <g:sortableColumn property="descripcion" title="${message(code: 'cheque.descripcion.label', default: 'Descripci\u00F3n')}" />
 
                 <th><g:message code="cheque.tienda.label" default="Tienda" /></th>
-
+                  <th></th>
                 </tr>
                 </thead>
                 <tbody>
