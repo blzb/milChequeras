@@ -37,11 +37,19 @@ class SerieController {
 
         Date hoy = Date.parse("dd/MM/yyyy", new Date().format("dd/MM/yyyy"))
 
+        /*
         if (serieInstance.inicioVigencia < hoy){
             flash.message = message(code: "La fecha de inicio de vigencia no puede ser menor al dia de hoy")
             respond serieInstance.errors, view:'create'
             return
         }
+        */
+        if(serieInstance.vigencia < serieInstance.inicioVigencia){
+            flash.message = message(code: "La fecha de fin de vigencia debe ser mayor a la de inicio")
+            respond serieInstance.errors, view:'create'
+            return   
+        }        
+        
 
         if (serieInstance.vigencia <= hoy){
             flash.message = message(code: "La fecha de fin de vigencia debe ser mayor al dia de hoy")

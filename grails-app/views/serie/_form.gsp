@@ -48,9 +48,18 @@
       </span>
   </div>
    <script type="text/javascript">
-     $('.date-picker').datepicker({autoclose:true}).next().on(ace.click_event, function(){
+     $('#inicioVigencia').datepicker({
+       autoclose:true
+     }).next().on(ace.click_event, function(){
                                    $(this).prev().focus();
                             });
+     $('#vigencia').datepicker({
+       autoclose:true,
+       startDate: new Date()
+     }).next().on(ace.click_event, function(){
+                                   $(this).prev().focus();
+                            });
+                            
   </script>
 <!--g:datePicker name="vigencia" precision="day"  value="${serieInstance?.vigencia}"  /-->
 </div>

@@ -11,6 +11,9 @@ class Serie {
               nombre (nullable: false, blank: false, size: 1..100)
               vigencia (nullable: false)
               inicioVigencia(nullable:false)
+              vigencia validator: { value, instancia -> 
+                     return value && value >= instancia.inicioVigencia
+              }
        }
        String toString(){
               return nombre+"("+clave+")"
