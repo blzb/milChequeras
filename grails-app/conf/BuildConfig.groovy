@@ -65,7 +65,6 @@ grails.project.dependency.resolution = {
         compile ":trimmer:0.1"
         compile ":mail:1.0.1"
         //compile ":hdiv:1.0-RC2"
-        
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate:3.6.10.1" // or ":hibernate4:4.1.11.1"

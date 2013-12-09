@@ -161,11 +161,41 @@
                         </g:link>
                     </li>
                     <li>
+                      <a href="#" class="dropdown-toggle">
+								<i class="icon-tag"></i>
+								<span class="menu-text">Reportes</span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+                      <ul class="submenu" style="display: none;">
+                        <li>
                         <g:link controller="reporte" class="menu">
                             <i class="icon-bar-chart"></i>
-                            <span class="menu-text">Reportes</span>
+                            <span class="menu-text">Tiendas</span>
                         </g:link>
+                        </li>
+                         <li>
+                        <g:link controller="reporteUsuarios" action="adquirientes" class="menu">
+                            <i class="icon-bar-chart"></i>
+                            <span class="menu-text">Adquirientes</span>
+                        </g:link>
+                        </li>
+                         <li>
+                        <g:link controller="reporteUsuarios" action="unChequeUsado" class="menu">
+                            <i class="icon-bar-chart"></i>
+                            <span class="menu-text">Arquitientes con cheques usados</span>
+                        </g:link>
+                        </li>
+                         <li>
+                        <g:link controller="acumuladoDeCheques" class="menu">
+                            <i class="icon-bar-chart"></i>
+                            <span class="menu-text">Cheques usados acumulados</span>
+                        </g:link>
+                        </li>
+                      </ul>
                     </li>
+
                 </shiro:hasRole>
             </ul><!-- /.nav-list -->
 
