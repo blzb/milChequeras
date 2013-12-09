@@ -8,7 +8,7 @@
     <span class="required-indicator">*</span>
   </label>
   <div class="col-sm-9">
-  <g:textField class="col-xs-10 col-sm-10" name="username" required="" maxLength="50" value="${empleadoInstance?.username}"/>
+    <g:textField class="col-xs-10 col-sm-10" name="username" required="" maxLength="50" value="${empleadoInstance?.username}"/>
   </div>
 </div>
 
@@ -18,7 +18,7 @@
     <span class="required-indicator">*</span>
   </label>
   <div class="col-sm-9">
-  <g:textField class="col-xs-10 col-sm-10" name="puesto" required="" maxLength="100" value="${empleadoInstance?.puesto}"/>
+    <g:textField class="col-xs-10 col-sm-10" name="puesto" required="" maxLength="100" value="${empleadoInstance?.puesto}"/>
   </div>
 </div>
 
@@ -28,7 +28,7 @@
     <span class="required-indicator">*</span>
   </label>
   <div class="col-sm-9">
-  <g:field class="span12" type="email" name="email" required="" maxLength="255" value="${empleadoInstance?.email}"/>
+    <g:field class="span12" type="email" name="email" required="" maxLength="255" value="${empleadoInstance?.email}"/>
   </div>
 </div>
 
@@ -38,7 +38,7 @@
     <span class="required-indicator">*</span>
   </label>
   <div class="col-sm-9">
-  <g:textField class="col-xs-10 col-sm-10" name="nombre" required="" maxLength="100" value="${empleadoInstance?.nombre}"/>
+    <g:textField class="col-xs-10 col-sm-10" name="nombre" required="" maxLength="100" value="${empleadoInstance?.nombre}"/>
   </div>
 </div>
 
@@ -48,7 +48,7 @@
     <span class="required-indicator">*</span>
   </label>
   <div class="col-sm-9">
-  <g:textField class="col-xs-10 col-sm-10" name="apellidoPaterno" required="" maxLength="100" value="${empleadoInstance?.apellidoPaterno}"/>
+    <g:textField class="col-xs-10 col-sm-10" name="apellidoPaterno" required="" maxLength="100" value="${empleadoInstance?.apellidoPaterno}"/>
   </div>
 </div>
 
@@ -58,25 +58,32 @@
     <span class="required-indicator">*</span>
   </label>
   <div class="col-sm-9">
-  <g:textField class="col-xs-10 col-sm-10" name="apellidoMaterno" maxLength="100" value="${empleadoInstance?.apellidoMaterno}"/>
+    <g:textField class="col-xs-10 col-sm-10" name="apellidoMaterno" maxLength="100" value="${empleadoInstance?.apellidoMaterno}"/>
   </div>
 </div>
 
 
-  <div class="fieldcontain form-group ${hasErrors(bean: empleadoInstance, field: 'passwordHash', 'error')} ">
-    <label class="col-sm-3 control-label no-padding-right" for="passwordHash">
-      <g:message code="empleado.passwordHash.label" default="Password" />
-
-    </label>
-    <div class="col-sm-9">
-    <g:textField class="col-xs-10 col-sm-10" name="passwordHash" value=""/>
-    </div>
+<div class="fieldcontain form-group ${hasErrors(bean: empleadoInstance, field: 'passwordHash', 'error')} ">
+  <label class="col-sm-3 control-label no-padding-right" for="passwordHash">
+    <g:message code="empleado.passwordHash.label" default="Password" />
+  </label>
+  <div class="col-sm-9">
+    <g:passwordField class="col-xs-10 col-sm-10" name="passwordHash" value=""/>
   </div>
-  
-  <div class="fieldcontain form-group ${hasErrors(bean: empleadoInstance, field: 'tienda', 'error')} required">
-    <g:hiddenField  id="tienda" name="tienda.id" value="${empleadoInstance?.tienda?.id}" />
+</div>
+
+<div class="fieldcontain form-group required" >
+  <label class="col-sm-3 control-label no-padding-right" for="passwordConfirmHash">
+    <g:message code="vendedor.passwordConfirmHash.label" default="Confirmar Password" />
+    <span class="required-indicator">*</span>
+  </label>
+  <div class="col-sm-9">
+    <g:passwordField class="col-xs-10 col-sm-10" name="passwordConfirmHash" value="" required=""/>
   </div>
+</div>
 
-
+<div class="fieldcontain form-group ${hasErrors(bean: empleadoInstance, field: 'tienda', 'error')} required">
+  <g:hiddenField  id="tienda" name="tienda.id" value="${empleadoInstance?.tienda?.id}" />
+</div>
 
 
